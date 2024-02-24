@@ -1,6 +1,32 @@
 body{
     padding: 0px;
     margin: 0px;
-    background-color: black;
-    color: white;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.heading{
+    background-color: white;
+}
+.heading-logo{
+    position: absolute;
+    left: 12px;
+    
+}
+
+.open-nav{
+    padding: 17px;
+    background-image: url(/common/assets/TestSquare.png);
+    background-color: transparent;
+    background-size: auto;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+.main{}
+.main-solutions{}
+
+:root{
+    --black: #000001;
+    --white: #fffff1;
 }
