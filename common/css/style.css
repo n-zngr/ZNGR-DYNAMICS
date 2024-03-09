@@ -27,6 +27,23 @@ body{
 .main-solutions{}
 
 :root{
-    --black: #000001;
-    --white: #fffff1;
+    --white: #F9FBFD;
+    --white2: #EDEFF1;
+    --white3: #E0E3E4;
+
+    --lightgray: #BCBEC0;
+    --lightgray2: #B0B2B4;
+    --lightgray3: #A3A5A7;
+
+    --gray: #7E8082;
+    --gray2: #717376;
+    --gray3: #8A8D8F;
+
+    --darkgray: #404244;
+    --darkgray2: #595B5C;
+    --darkgray3: #4D4E51;
+
+    --black: #020406;
+    --black2: #1B1D1F;
+    --black3: #0F1112;
 }
