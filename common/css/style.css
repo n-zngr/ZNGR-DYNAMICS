@@ -5,17 +5,20 @@ body{
     color: var(--white);
 }
 
-.heading{
-    background-color: white;
-}
-.heading-logo{
-    position: absolute;
-    left: 12px;
-    
-}
-
+.header{
+    text-align: center;
+    padding: 64px;}
+    .header-logo{
+        position: absolute;
+        left: 12px;}
+    .header-title{}
+        .header-title-title{}
+    .header-description{
+    }
+        .header-description-description{}
+    .header-date{}
 .open-nav{
-    padding: 17px;
+    padding: 16px;
     background-image: url(/common/assets/TestSquare.png);
     background-color: transparent;
     background-size: auto;
@@ -25,6 +28,7 @@ body{
 
 .main{}
 .main-solutions{}
+.main-projects{}
 
 :root{
     --white: #F9FBFD;
