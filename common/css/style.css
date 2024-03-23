@@ -3,9 +3,20 @@ body{
     margin: 0px;
     background-color: var(--black);
     color: var(--white);
+    font-family: ethnocentric, sans-serif;
+    font-style: normal;
     font-family: termina, sans-serif;
     font-style: normal;
 }
+
+.testsquare {
+    display: inline-block; /* Ensures the icon behaves like an inline element */
+    width: 24px; /* Adjust the width and height as needed */
+    height: 24px;;
+    background-image: url('/common/assets/TestSquare.png'); /* Path to your icon file */
+    background-size: contain; /* Ensures the icon fills the container */
+  }
+  
 
 .header{
     text-align: center;
@@ -30,23 +41,50 @@ body{
 
 .main{}
 .main-solutions{}
-    .main-solutions-header{}
+    .main-solutions-header{
+        text-align: center;
+        margin-block: 32px;}
         .main-solutions-header-title{}
         .main-solutions-header-description{}
     .main-solutions-main{
         display: flex;
         flex-direction: row;
-        gap: 16px;
-    }
+        gap: 16px;}
         .solutionscard{
+            position: relative;
             display: flex;
             flex-direction: column;
-            height: 240px;
-            min-width: 240px;
+            height: 280px;
+            min-width: 280px;
             background-color: var(--black2);
+            border-radius: 4px;
+            border: solid 1px var(--white);
+            clip-path: polygon(100% 0%,100% 264px,264px 100%,0% 100%,0% 0%);}
+            .solutionscard::before{
+                content: '';
+                position: absolute;
+                width: 2px;
+                height: 32px;
+                background: var(--white);
+                /*box-shadow: 14px 2px 50px 4px rgba(0,112,202,.79), 2px 2px 12px 1px rgba(0,112,202,.5);*/
+                bottom: 0px;
+                right: 0px;
+                transform: skew(-45deg);
+                z-index: 1;}
+        .solutionscard-header{
+            display: flex;
+            flex-direction: column;
+            padding: 0px 16px 0px 16px;
         }
-        .solutionscard-header{}
-        .solutionscard-main{}
+            .solutionscard-header-icon{
+
+            }
+            .solutionscard-header-title{
+
+            }
+        .solutionscard-main{
+            padding: 0px 16px 0px 16px;
+        }
         .solutionscard-footer{
             padding: 16px 0px 16px 16px;
             margin-top: auto;
@@ -54,6 +92,10 @@ body{
         .solutionscard-footer-text{
         }
 
+
+
+
+        
 
 .main-projects{}
 
