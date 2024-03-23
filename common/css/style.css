@@ -3,6 +3,8 @@ body{
     margin: 0px;
     background-color: var(--black);
     color: var(--white);
+    font-family: termina, sans-serif;
+    font-style: normal;
 }
 
 .header{
@@ -28,7 +30,34 @@ body{
 
 .main{}
 .main-solutions{}
+    .main-solutions-header{}
+        .main-solutions-header-title{}
+        .main-solutions-header-description{}
+    .main-solutions-main{
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+    }
+        .solutionscard{
+            display: flex;
+            flex-direction: column;
+            height: 240px;
+            min-width: 240px;
+            background-color: var(--black2);
+        }
+        .solutionscard-header{}
+        .solutionscard-main{}
+        .solutionscard-footer{
+            padding: 16px 0px 16px 16px;
+            margin-top: auto;
+        }
+        .solutionscard-footer-text{
+        }
+
+
 .main-projects{}
+
+
 
 :root{
     --white: #F9FBFD;
