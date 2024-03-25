@@ -40,106 +40,105 @@ body{
 }
 
 .main{}
-.main-solutions{
-    margin-bottom: 64px;}
-    .main-solutions-header{
-        text-align: center;
-        margin-block: 32px;}
-        .main-solutions-header-title{}
-        .main-solutions-header-description{}
-    .main-solutions-main{
-        display: flex;
-        flex-direction: row;
-        gap: 16px;}
-        .solutioncard{
-            position: relative;
+    .main-solutions{
+        margin-bottom: 64px;}
+        .main-solutions-header{
+            text-align: center;
+            margin-block: 32px;}
+            .main-solutions-header-title{}
+            .main-solutions-header-description{}
+        .main-solutions-main{
             display: flex;
-            flex-direction: column;
-            height: 240px;
-            width: 240px;
-            min-width: 240px;
-            font-size: 12px;
-            background-color: var(--black3);
-            border-radius: 4px;
-            border: solid 1px var(--black2);
-            clip-path: polygon(100% 0%,100% 224px,224px 100%,0% 100%,0% 0%);}
-            .solutioncard::before{
-                content: '';
-                position: absolute;
-                width: 2px;
-                height: 32px;
-                background: var(--black2);
-                /*box-shadow: 14px 2px 50px 4px rgba(0,112,202,.79), 2px 2px 12px 1px rgba(0,112,202,.5);*/
-                bottom: 0px;
-                right: 0px;
-                transform: skew(-45deg);
-                z-index: 1;}
-        .solutioncard-header{
-            display: flex;
-            flex-direction: column;
-            padding: 0px 16px 0px 16px;
-        }
-            .solutioncard-header-icon{
-
-            }
-            .solutioncard-header-title{
-
-            }
-        .solutioncard-main{
-            padding: 0px 16px 0px 16px;
-        }
-        .solutioncard-footer{
-            padding: 16px 0px 16px 16px;
-            margin-top: auto;
-        }
-        .solutioncard-footer-text{
-        }
-
-.main-projects{}
-    .main-projects-header{
-        text-align: center;
-        margin-block: 32px;}
-        .main-projects-header-title{}
-        .main-projects-header-description{}
-    .main-projects-main{
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
-    }
-        .projectcard{
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            height: 360px;
-            width: 240px;
-            min-width: 240px;
-            font-size: 12px;
-            background-color: var(--black3);
-            border-radius: 4px;
-            border: solid 1px var(--black2);
-            clip-path: polygon(100% 0%,100% 344px,344px 100%,0% 100%,0% 0%);}
-            .projectcard::before{
-                content: '';
-                position: absolute;
-                width: 2px;
-                height: 16px;
-                background: var(--black2);
-                bottom: 0px;
-                right: 0px;
-                transform: skew(-45deg);
-                z-index: 1;}
-            .projectcard-header{
+            flex-direction: row;
+            gap: 16px;}
+            .solutioncard{
+                position: relative;
                 display: flex;
                 flex-direction: column;
-                padding: 0px 16px 0px 16px;}
-            .projectcard-main{
-                padding: 0px 16px 0px 16px;}
-            .projectcard-footer{
+                height: 240px;
+                width: 240px;
+                min-width: 240px;
+                font-size: 12px;
+                background-color: var(--black3);
+                border-radius: 4px;
+                border: solid 1px var(--black2);
+                clip-path: polygon(100% 0%,100% 224px,224px 100%,0% 100%,0% 0%);}
+                .solutioncard::before{
+                    content: '';
+                    position: absolute;
+                    width: 2px;
+                    height: 32px;
+                    background: var(--black2);
+                    /*box-shadow: 14px 2px 50px 4px rgba(0,112,202,.79), 2px 2px 12px 1px rgba(0,112,202,.5);*/
+                    bottom: 0px;
+                    right: 0px;
+                    transform: skew(-45deg);
+                    z-index: 1;}
+            .solutioncard-header{
+                display: flex;
+                flex-direction: column;
+                padding: 0px 16px 0px 16px;
+            }
+                .solutioncard-header-icon{
+
+                }
+                .solutioncard-header-title{
+
+                }
+            .solutioncard-main{
+                padding: 0px 16px 0px 16px;
+            }
+            .solutioncard-footer{
                 padding: 16px 0px 16px 16px;
-                margin-top: auto;}
+                margin-top: auto;
+            }
+            .solutioncard-footer-text{
+            }
+
+    .main-projects{}
+        .main-projects-header{
+            text-align: center;
+            margin-block: 32px;}
+            .main-projects-header-title{}
+            .main-projects-header-description{}
+        .main-projects-main{
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+        }
+            .projectcard{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                height: 360px;
+                width: 240px;
+                min-width: 240px;
+                font-size: 12px;
+                background-color: var(--black3);
+                border-radius: 4px;
+                border: solid 1px var(--black2);
+                clip-path: polygon(100% 0%,100% 344px,344px 100%,0% 100%,0% 0%);}
+                .projectcard::before{
+                    content: '';
+                    position: absolute;
+                    width: 2px;
+                    height: 16px;
+                    background: var(--black2);
+                    bottom: 0px;
+                    right: 0px;
+                    transform: skew(-45deg);
+                    z-index: 1;}
+                .projectcard-header{
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0px 16px 0px 16px;}
+                .projectcard-main{
+                    padding: 0px 16px 0px 16px;}
+                .projectcard-footer{
+                    padding: 16px 0px 16px 16px;
+                    margin-top: auto;}
         
 
-.main-projects{}
 
 
 
