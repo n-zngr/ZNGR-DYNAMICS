@@ -9,14 +9,40 @@ body{
     font-style: normal;
 }
 
+/*Test*/
 .testsquare {
     display: inline-block; /* Ensures the icon behaves like an inline element */
     width: 24px; /* Adjust the width and height as needed */
     height: 24px;;
     background-image: url('/common/assets/TestSquare.png'); /* Path to your icon file */
-    background-size: contain; /* Ensures the icon fills the container */
-  }
-  
+    background-size: contain; /* Ensures the icon fills the container */}
+
+
+.nav{
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black3);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.nav.open{
+    transform: translateX(100%);
+}
+
+
+.open-nav{
+    padding: 16px;
+    background-image: url(/common/assets/TestSquare.png);
+    background-color: transparent;
+    background-size: auto;
+    background-repeat: no-repeat;
+    border: none;}
+
 
 .header{
     text-align: center;
@@ -30,14 +56,7 @@ body{
     }
         .header-description-description{}
     .header-date{}
-.open-nav{
-    padding: 16px;
-    background-image: url(/common/assets/TestSquare.png);
-    background-color: transparent;
-    background-size: auto;
-    background-repeat: no-repeat;
-    border: none;
-}
+
 
 .main{}
     .main-solutions{
