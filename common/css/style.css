@@ -29,6 +29,20 @@ body{
     overflow-y: auto;
     z-index: 1;
 }
+    .nav-list{
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+    }
+    .nav-list-item{
+        font-weight: 900;
+        font-size: 36px;
+    }
+    .nav-list-subitem{
+        padding-left: 16px;
+        font-weight: 500;
+        font-size: 24px;
+    }
 
 .nav.open{
     transform: translateX(100%);
@@ -136,12 +150,12 @@ body{
                 background-color: var(--black3);
                 border-radius: 4px;
                 border: solid 1px var(--black2);
-                clip-path: polygon(100% 0%,100% 344px,344px 100%,0% 100%,0% 0%);}
+                clip-path: polygon(100% 0%,100% 328px,208px 100%,0% 100%,0% 0%);}
                 .projectcard::before{
                     content: '';
                     position: absolute;
                     width: 2px;
-                    height: 16px;
+                    height: 64px;
                     background: var(--black2);
                     bottom: 0px;
                     right: 0px;
