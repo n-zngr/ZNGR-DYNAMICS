@@ -36,12 +36,14 @@ body{
     .nav-list-item{
         font-weight: 900;
         font-size: 36px;
-        color: var(--white);}
+        color: var(--white);
+        text-decoration: none;}
     .nav-list-subitem{
         padding-left: 16px;
         font-weight: 500;
         font-size: 24px;
-        color: var(--white2);}
+        color: var(--white2);
+        text-decoration: none;}
 
 .nav.open{
     transform: translateX(100%);
