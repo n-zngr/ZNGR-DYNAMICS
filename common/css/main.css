@@ -67,6 +67,7 @@ body{
     width: 96px;
     border-right: solid 1px var(--black2);
     z-index: 1;
+    transition: box-shadow 0.3s ease;
 }
     .sidebar-container{/*BLUE LINE background-position: right,left,calc(var(--grid-gut-w) + var(--explore_video-deco-spacing-space));*/
         display: flex;
@@ -83,6 +84,18 @@ body{
 
 .content{
     margin-left: 96px;
+}
+
+.sidebar:hover{ /*TESTING METHOD*/
+    box-shadow: 0 0 10px 5px var(--white3);
+    transition: box-shadow 0.3s ease;
+}
+
+.line{
+    position: relative;
+    z-index: 0;
+    stroke: var(--white);
+    stroke-width: 4px;
 }
 
 .header{
