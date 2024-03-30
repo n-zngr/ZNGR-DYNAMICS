@@ -59,6 +59,32 @@ body{
     border: none;}
 
 
+.sidebar{
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100vh;
+    width: 96px;
+    border-right: solid 1px var(--black2);
+    z-index: 1;
+}
+    .sidebar-container{/*BLUE LINE background-position: right,left,calc(var(--grid-gut-w) + var(--explore_video-deco-spacing-space));*/
+        display: flex;
+        flex-direction: column;}
+        .sidebar-container-top{
+            width: 100%;
+        /*height: 192px;*/}
+        .sidebar-container-center{
+            width: 100%;}
+        .sidebar-container-bottom{
+            width: 100%;
+            /*height: 192px;*/}
+            .sidebar-container-bottom-right{}
+
+.content{
+    margin-left: 96px;
+}
+
 .header{
     text-align: center;
     padding: 64px;}
