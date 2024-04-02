@@ -1,6 +1,6 @@
 body{
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     background-color: var(--black);
     color: var(--white);
     font-family: ethnocentric, sans-serif;
@@ -83,6 +83,8 @@ body{
         .main-projects-main{
             display: flex;
             flex-direction: column;
+            padding-inline: 64px;
+            margin: 0;
         }
             .projectcard{
                 position: relative;
@@ -117,31 +119,61 @@ body{
                     margin-top: auto;}
 
 
-.project{
-    position: relative;
+.projects-list{
     display: flex;
     flex-direction: column;
-    height: 360px;
-    width: 480px;
-    min-width: 480px;
-    font-size: 12px;
-    background-color: var(--black3);
-    border-radius: 4px;
-    border: solid 1px var(--black2);
-    /*clip-path: polygon(100% 0%,100% 328px,208px 100%,0% 100%,0% 0%);*/
-}
+    padding-inline: 64px;
+    margin: 0;}
+    .project{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        height: 360px;
+        width: 100%;
+        min-width: 480px;
+        padding: 16px;
+        /*clip-path: polygon(100% 0%,100% 328px,208px 100%,0% 100%,0% 0%);*/
+    }
 .thumbnail{
     display: flex;
-    width: 100%;
-    height: 100%;
+    position: relative;
+    flex-direction: column;
+    width: 60%;
     background-image: var(--test-image);
     background-size: cover;
     background-position: center;
+    padding: 16px;
+    margin-right: 8px;
+    clip-path: polygon(100% 0%,100% 92%,95% 100%,0% 100%,0% 0%);
+    clip-path: inset(0 0 0 0 round 10%);
 }
-.thumbnail-title{
-    margin: 0;
-    align-self: flex-end;
-}
+.thumbnail::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 32px;
+    background: red;
+    bottom: 0px;
+    right: 16px;
+    transform: skew(-45deg);
+    z-index: 1;}
+    .thumbnail-title{
+        margin: 0;
+        align-self: flex-end;}
+.description{
+    width: 40%;
+    background-color: white;
+    border-radius: 8px;
+    padding: 16px;
+    margin-left: 8px;
+    }
+    .description-header{}
+        .description-header-button{
+            
+        }
+    .description-main{
+
+    }
 
 
 
