@@ -179,7 +179,17 @@ body{
             font-weight: 400;
             font-family: termina, sans-serif;
             color: var(--white);
-            border-radius: 4px;}
+            text-decoration: none;
+            padding: 4px 8px;
+            border: var(--black3) solid 1px;
+            border-radius: 4px;
+            transition: color var(--animation) ease, background-color var(--animation) ease;}
+            .description-header-button:hover{
+                background-color: transparent;
+                color: var(--black);
+                transition: color var(--animation) ease, background-color var(--animation) ease;
+                border: var(--black3) solid 1px;
+            }
         .description-header-title{
             align-self: center;
             font-size: 12px;
@@ -200,6 +210,7 @@ body{
 
 
 :root{
+    /*COLORS*/
     --white: #F9FBFD;
     --white2: #EDEFF1;
     --white3: #E0E3E4;
@@ -220,6 +231,9 @@ body{
     --black2: #1B1D1F;
     --black3: #0F1112;
 
-    /*Path*/
+    /*IMAGES*/
     --test-image: url(/common/assets/TestSquare.png); 
+
+    /*ANIMATIONS*/
+    --animation: 0.3s;
 }
