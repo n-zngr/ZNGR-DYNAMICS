@@ -83,14 +83,16 @@ body{
             .sidebar-container-bottom-right{}
 
 
-.content{
-    margin-left: 96px;
-}
 
-.sidebar:hover{ /*TESTING METHOD*/
+/*BOXSHADOW .sidebar:hover{
     box-shadow: 0 0 10px 5px var(--white3);
     transition: box-shadow 0.3s ease;
-}
+}*/
+
+
+
+.content{
+    margin-left: 96px;}
 
 .line{
     position: relative;
