@@ -57,12 +57,6 @@ body{
         transform: translateX(100%);
         transition: transform var(--anim-nav-duration) ease;
     }
-
-
-.sidebar > * {
-    margin: 0; /* Reset default margins */
-    align-self: stretch; /* Stretch flex items to fill container vertically */
-}
     
 
 .sidebar{
@@ -72,13 +66,16 @@ body{
     width: 97px;
     transition: transform var(--anim-nav-duration) ease;
     background-color: var(--black);
-    clip-path: polygon(0 0, 49px 0px, 49px 24%, 97px 29%, 97px 61%, 49px 66%, 49px 100%, 0px 100%);}
+    clip-path: polygon(0 0, 49px 0px, 49px 24%, 97px 29%, 97px 80%, 49px 80%, 49px 100%, 0px 100%);} /*OLD CLIPPATH BEFORE MOVING BOTTOM TO BOTTOM with margin-top: auto || clip-path: polygon(0 0, 49px 0px, 49px 24%, 97px 29%, 97px 61%, 49px 66%, 49px 100%, 0px 100%);*/
     .sidebar-container-top{
-        height: 336px;
     }
-    .sidebar-container-center{}
+    .sidebar-container-center{
+        height: 100%;
+        background-image: url('../assets/Vector.svg');
+    }
     .sidebar-container-bottom{
-        align-self: flex-end;}
+        margin-top: auto;
+    }
     .sidebar.open{
         transform: translateX(100vw);
         transition: transform 0.3s ease;}
@@ -88,6 +85,11 @@ body{
     stroke-width: 1px;
 }
 
+.middle-line{
+    height: calc(100%);
+}
+
+.svg{display: block;}
 
 /*BOXSHADOW .sidebar:hover{
     box-shadow: 0 0 10px 5px var(--white3);
