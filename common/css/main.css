@@ -53,39 +53,41 @@ body{
             font-size: 24px;
             color: var(--white2);
             text-decoration: none;}
-
     .nav.open{
         transform: translateX(100%);
-        transition: transform 0.3s ease;
+        transition: transform var(--anim-nav-duration) ease;
     }
 
 
+.sidebar > * {
+    margin: 0; /* Reset default margins */
+    align-self: stretch; /* Stretch flex items to fill container vertically */
+}
+    
+
 .sidebar{
+    display: flex;
+    flex-direction: column;
     height: 100vh;
     width: 97px;
-    border-right: solid 1px var(--black2); /*TEMPORARY*/
-    transition: transform 0.3s ease;
+    transition: transform var(--anim-nav-duration) ease;
     background-color: var(--black);
-    clip-path: polygon(0 0, 49px 0px, 49px 24%, 97px 29%, 97px 61%, 49px 66%, 49px 100%, 0px 100%);
+    clip-path: polygon(0 0, 49px 0px, 49px 24%, 97px 29%, 97px 61%, 49px 66%, 49px 100%, 0px 100%);}
+    .sidebar-container-top{
+        height: 336px;
+    }
+    .sidebar-container-center{}
+    .sidebar-container-bottom{
+        align-self: flex-end;}
+    .sidebar.open{
+        transform: translateX(100vw);
+        transition: transform 0.3s ease;}
+
+.line{
+    stroke: var(--white);
+    stroke-width: 1px;
 }
-    .sidebar-container{/*BLUE LINE background-position: right,left,calc(var(--grid-gut-w) + var(--explore_video-deco-spacing-space));*/
-        display: flex;
-        flex-direction: column;}
-        .sidebar-container-top{
-            width: 100%;
-        /*height: 192px;*/}
-        .sidebar-container-center{
-            width: 100%;}
-        .sidebar-container-bottom{
-            width: 100%;
-            /*height: 192px;*/}
-            .sidebar-container-bottom-right{}
 
-
-            .sidebar.open{
-                transform: translateX(100vw);
-                transition: transform 0.3s ease;
-            }
 
 /*BOXSHADOW .sidebar:hover{
     box-shadow: 0 0 10px 5px var(--white3);
@@ -97,11 +99,7 @@ body{
 .content{
     margin-left: 96px;}
 
-.line{
-    position: relative;
-    stroke: var(--white);
-    stroke-width: 1px;
-}
+
 
 .header{
     text-align: center;
@@ -240,4 +238,6 @@ body{
     --black: #020406;
     --black2: #1B1D1F;
     --black3: #0F1112;
+
+    --anim-nav-duration: 0.5s;
 }
