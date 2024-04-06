@@ -42,7 +42,7 @@ body{
     width: 97px;
     height: 100vh;
     display: flex;
-    transition: transform 1s ease;
+    transition: transform 0.3s ease;
     z-index: 1;}
     .container-container.open{
         transform: translateX(100vw);
