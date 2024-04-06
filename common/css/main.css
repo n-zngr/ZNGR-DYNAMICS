@@ -28,8 +28,7 @@ body{
     transition: transform 0.3s ease;
     z-index: 1;}
     .container-container.open{
-        transform: translateX(100vw);
-    }
+        transform: translateX(100vw);}
 
 .nav{
     position: fixed;
@@ -67,6 +66,7 @@ body{
     border-right: solid 1px var(--black2); /*TEMPORARY*/
     transition: transform 0.3s ease;
     background-color: var(--black);
+    clip-path: polygon(0 0, 49px 0px, 49px 24%, 97px 29%, 97px 61%, 49px 66%, 49px 100%, 0px 100%);
 }
     .sidebar-container{/*BLUE LINE background-position: right,left,calc(var(--grid-gut-w) + var(--explore_video-deco-spacing-space));*/
         display: flex;
