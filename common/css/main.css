@@ -59,6 +59,8 @@ body{
     }
     
 
+.sidebar_mobile{}
+
 .sidebar{
     display: flex;
     flex-direction: column;
