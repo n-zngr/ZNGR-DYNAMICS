@@ -58,34 +58,50 @@ body{
         transition: transform var(--anim-nav-duration) ease;
     }
     
-
-.sidebar_mobile{}
-
-.sidebar{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 97px;
-    transition: transform var(--anim-nav-duration) ease;
-    background-color: var(--black);
-    clip-path: polygon(0 0, 49px 0px, 49px 228px, 97px 264px, 97px calc(100% - 264px), 49px calc(100% - 228px), 49px 100%, 0px 100%);} /*OLD CLIPPATH BEFORE MOVING BOTTOM TO BOTTOM with margin-top: auto || clip-path: polygon(0 0, 49px 0px, 49px 24%, 97px 29%, 97px 61%, 49px 66%, 49px 100%, 0px 100%);*/
-    /*@media only screen and (max-width: 600px) {
-        body {
-          background-color: lightblue;
+@media only screen and (max-width: 600px) {
+    .sidebar_mobile{background-color: red;}
+}
+    
+@media only screen and (min-width: 600px) {
+    .sidebar{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 97px;
+        transition: transform var(--anim-nav-duration) ease;
+        background-color: var(--black);
+        background-color: red;
+        /*clip-path: polygon(0 0, 49px 0px, 49px 228px, 97px 264px, 97px calc(100% - 264px), 49px calc(100% - 228px), 49px 100%, 0px 100%);*/} /*OLD CLIPPATH BEFORE MOVING BOTTOM TO BOTTOM with margin-top: auto || clip-path: polygon(0 0, 49px 0px, 49px 24%, 97px 29%, 97px 61%, 49px 66%, 49px 100%, 0px 100%);*/
+        /*@media only screen and (max-width: 600px) {
+            body {
+                background-color: lightblue;
+            }
+            }*/
+        .sidebar-container-top{
+            flex: 1;
+            height: 192px;
+            background-image: url('../assets/sidebar-line-top.svg');
         }
-      }*/
-    .sidebar-container-top{
-    }
-    .sidebar-container-center{
-        height: 100%;
-        background-image: url('../assets/Vector.svg');
-    }
-    .sidebar-container-bottom{
-        margin-top: auto;
-    }
-    .sidebar.open{
-        transform: translateX(100vw);
-        transition: transform 0.3s ease;}
+        .sidebar-container-curve{
+            flex: 1;
+            min-height: 144px;
+            max-height: 144px;
+            background-repeat: no-repeat;
+            background-image: url('../assets/sidebar-cline-top.svg');
+        }
+        .sidebar-container-center{
+            flex: 1 2 auto; /*This property may be edited, as it's just a mess*/
+            background-image: url('../assets/sidebar-line-center.svg');
+        }
+        .sidebar-container-bottom{
+            flex: 1;
+            margin-top: auto;
+        }
+        .sidebar.open{
+            transform: translateX(100vw);
+            transition: transform 0.3s ease;}
+}
+
 
 .line{
     stroke: var(--white);
