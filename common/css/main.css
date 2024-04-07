@@ -59,7 +59,16 @@ body{
     }
     
 @media only screen and (max-width: 600px) {
-    .sidebar_mobile{background-color: red;}
+    .sidebar{
+        clip-path: polygon(0 0, 49px 0px, 49px 33px, 33px 49px, 0px 49px);
+    }
+    .sidebar_mobile{
+        height: 49px;
+        width: 49px;
+        background-color: var(--black);
+        background-image: url('../assets/MobileNav2.svg');
+        background-repeat: no-repeat;
+    }
 }
     
 @media only screen and (min-width: 600px) {
