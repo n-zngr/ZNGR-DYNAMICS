@@ -60,15 +60,27 @@ body{
     
 @media only screen and (max-width: 600px) {
     .sidebar{
+        display: flex;
+        flex-direction: column;
         clip-path: polygon(0 0, 49px 0px, 49px 33px, 33px 49px, 0px 49px);
     }
     .sidebar_mobile{
+        display: flex;
+        position: relative;
         height: 49px;
         width: 49px;
         background-color: var(--black);
         background-image: url('../assets/MobileNav2.svg');
         background-repeat: no-repeat;
     }
+        .sidebar_mobile-icon{
+            height: 100%;
+            width: 100%;
+            background-image: url('../assets/MobileNavIcon.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            translate: -2px -2px;
+        }
 }
     
 @media only screen and (min-width: 600px) {
