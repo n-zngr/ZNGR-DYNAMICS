@@ -39,12 +39,9 @@ body{
     background-color: var(--black);
     overflow-y: auto;}
     .nav-header-button{
-        background-position: center;
-        background-repeat: no-repeat;
         background-color: transparent;
         border: none;
         padding: 10px;
-        /*background-image: url('../assets/CloseButtonIcon.svg');*/
     }
     @media only screen and (max-width: 600px) {
         .nav-header{
