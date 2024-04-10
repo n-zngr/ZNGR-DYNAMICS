@@ -38,20 +38,26 @@ body{
     height: 100vh;
     background-color: var(--black);
     overflow-y: auto;}
-    .nav-header{
-        display: flex;
-        width: 100%;
-        background-image: url('../assets/nav-line.svg');
-        height: 49px;
+    .nav-header-button{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+        /*background-image: url('../assets/CloseButtonIcon.svg');*/
     }
-        .nav-header-logo{
-
-        }
-        .nav-header-button{
-            margin-left: auto;
-            margin-right: 32px;
-        }
-
+    @media only screen and (max-width: 600px) {
+        .nav-header{
+            display: flex;
+            width: 100%;
+            background-image: url('../assets/nav-line.svg');
+            height: 49px;}
+    }
+        @media only screen and (min-width: 600px) {
+            .nav-header{
+                display: flex;
+                width: 100%;
+                height: 49px;}}
     .nav-list{
         display: flex;
         flex-direction: column;
