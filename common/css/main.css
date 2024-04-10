@@ -9,15 +9,6 @@ body{
     font-style: normal;
 }
 
-/*Test*/
-.testsquare {
-    display: inline-block; /* Ensures the icon behaves like an inline element */
-    width: 24px; /* Adjust the width and height as needed */
-    height: 24px;;
-    background-image: url('/common/assets/TestSquare.png'); /* Path to your icon file */
-    background-size: contain; /* Ensures the icon fills the container */}
-
-
 .container-container{
     position: fixed;
     top: 0;
