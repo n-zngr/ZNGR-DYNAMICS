@@ -12,7 +12,14 @@
     <nav class="container-container">
         <!-- DO NOT DELETE, RE-FACTOR FOR MOBILE <button class="open-nav">MENU</button>-->
         <div class="nav">
-            <button class="close-nav" href="">Close</button>
+            <div class="nav-header">
+                <div class="nav-header-logo"></div>
+                <button class="nav-header-button close-nav">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M26 2L2 26M26 26L2 2" stroke="#F9FBFD" stroke-width="4"/>
+                    </svg>
+                </button>
+            </div>
             <div class="nav-list">
                 <a class="nav-list-item" href="/zngr">ZNGR DYNAMICS</a>
                 <a class="nav-list-subitem" href="/zngr">The Corporation</a>
@@ -27,26 +34,14 @@
             </div>
         </div>
         <div class="sidebar">
-            <div class="sidebar-container-top">
-                <svg class="svg line"width="100%" height="192px" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 48,0 48,192"/>
-                </svg>
-                <svg class="svg line" width="100%" height="144px" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M48 0V41.3726C48 45.616 49.6857 49.6857 52.6863 52.6863L91.3137 91.3137C94.3143 94.3143 96 98.384 96 102.627V144" stroke="white"/>
-                </svg>
+            <div class="sidebar_mobile">
+                <span class="sidebar_mobile-icon"></span>
             </div>
-            <!--<svg class="svg line middle-line" width="100%" viewBox="0 0 97 192" xmlns="http://www.w3.org/2000/svg">
-                <path d="M 96,0 96,192"/>
-            </svg>-->
-            <div class="sidebar-container-center"></div>
-            <div class="sidebar-container-bottom">
-                <svg class="svg line" width="97" height="144" viewBox="0 0 97 144" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M48 144V102.627C48 98.384 49.6857 94.3143 52.6863 91.3137L91.3137 52.6863C94.3143 49.6857 96 45.616 96 41.3726V0" stroke="white"/>
-                </svg>
-                <svg class="svg line" width="100%" height="192" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 48,0 48,192"/>
-                </svg>
-            </div>
+            <span class="sidebar-container-top"></span>
+            <span class="sidebar-container-curve"></span>
+            <span class="sidebar-container-center"></span>
+            <span class="sidebar-container-curve2"></span>
+            <span class="sidebar-container-bottom"></span>
         </div>
     </nav>
     
