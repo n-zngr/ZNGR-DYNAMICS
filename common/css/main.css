@@ -9,14 +9,17 @@ body{
     font-style: normal;
 }
 
-/*Test*/
-.testsquare {
-    display: inline-block; /* Ensures the icon behaves like an inline element */
-    width: 24px; /* Adjust the width and height as needed */
-    height: 24px;;
-    background-image: url('/common/assets/TestSquare.png'); /* Path to your icon file */
-    background-size: contain; /* Ensures the icon fills the container */}
-
+.container-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 97px;
+    height: 100%;
+    display: flex;
+    transition: transform var(--anim-nav-duration) ease;
+    z-index: 1;}
+    .container-container.open{
+        transform: translateX(100vw);}
 
 .nav{
     position: fixed;
@@ -24,39 +27,136 @@ body{
     left: -100vw;
     width: 100vw;
     height: 100vh;
-    background-color: var(--black3);
-    transition: transform 0.3s ease;
-    overflow-y: auto;
-    z-index: 1;
-}
+    background-color: var(--black);
+    overflow-y: auto;}
+    .nav-header-button{
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+    }
+    @media only screen and (max-width: 600px) {
+        .nav-header{
+            display: flex;
+            width: 100%;
+            background-image: url('../assets/nav-line.svg');
+            height: 49px;}
+    }
+        @media only screen and (min-width: 600px) {
+            .nav-header{
+                display: flex;
+                width: 100%;
+                height: 49px;}}
     .nav-list{
         display: flex;
         flex-direction: column;
         padding: 16px;}
-    .nav-list-item{
-        font-weight: 900;
-        font-size: 36px;
-        color: var(--white);
-        text-decoration: none;}
-    .nav-list-subitem{
-        padding-left: 16px;
-        font-weight: 500;
-        font-size: 24px;
-        color: var(--white2);
-        text-decoration: none;}
-
-.nav.open{
-    transform: translateX(100%);
+        .nav-list-item{
+            font-weight: 900;
+            font-size: 36px;
+            color: var(--white);
+            text-decoration: none;}
+        .nav-list-subitem{
+            padding-left: 16px;
+            font-weight: 500;
+            font-size: 24px;
+            color: var(--white2);
+            text-decoration: none;}
+    .nav.open{
+        transform: translateX(100%);
+    }
+    
+@media only screen and (max-width: 600px) {
+    .sidebar{
+        display: flex;
+        flex-direction: column;
+        clip-path: polygon(0 0, 49px 0px, 49px 33px, 33px 49px, 0px 49px);
+    }
+    .sidebar_mobile{
+        display: flex;
+        position: relative;
+        height: 49px;
+        width: 49px;
+        background-color: var(--black);
+        background-image: url('../assets/MobileNav2.svg');
+        background-repeat: no-repeat;
+    }
+        .sidebar_mobile-icon{
+            height: 100%;
+            width: 100%;
+            background-image: url('../assets/MobileNavIcon.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            translate: -2px -2px;
+        }
+}
+    
+@media only screen and (min-width: 600px) {
+    .sidebar{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 97px;
+        transition: transform var(--anim-nav-duration) ease;
+        background-color: var(--black);
+        clip-path: polygon(0 0, 49px 0px, 49px 228px, 97px 264px, 97px calc(100% - 264px), 49px calc(100% - 228px), 49px 100%, 0px 100%);} /*OLD CLIPPATH BEFORE MOVING BOTTOM TO BOTTOM with margin-top: auto || clip-path: polygon(0 0, 49px 0px, 49px 24%, 97px 29%, 97px 61%, 49px 66%, 49px 100%, 0px 100%);*/
+        /*@media only screen and (max-width: 600px) {
+            body {
+                background-color: lightblue;
+            }
+            }*/
+        .sidebar-container-top{
+            height: 192px;
+            background-image: url('../assets/sidebar-line-top.svg');
+        }
+        .sidebar-container-curve{
+            flex: 1;
+            min-height: 144px;
+            max-height: 144px;
+            background-repeat: no-repeat;
+            background-image: url('../assets/sidebar-cline-top.svg');
+        }
+        .sidebar-container-center{
+            flex: 1 2 auto; /*This property may be edited, as it's just a mess*/
+            background-image: url('../assets/sidebar-line-center.svg');
+        }
+        .sidebar-container-curve2{
+            flex: 1;
+            min-height: 144px;
+            max-height: 144px;
+            background-repeat: no-repeat;
+            background-image: url('../assets/sidebar-cline-bottom.svg');
+        }
+        .sidebar-container-bottom{
+            height: 192px;
+            background-image: url('../assets/sidebar-line-top.svg');
+        }
+        .sidebar.open{
+            transform: translateX(100vw);
+            transition: transform var(--anim-nav-duration) ease;}
 }
 
 
-.open-nav{
-    padding: 16px;
-    background-image: url(/common/assets/TestSquare.png);
-    background-color: transparent;
-    background-size: auto;
-    background-repeat: no-repeat;
-    border: none;}
+.line{
+    stroke: var(--white);
+    stroke-width: 1px;
+}
+
+.middle-line{
+    height: calc(100%);
+}
+
+.svg{display: block;}
+
+/*BOXSHADOW .sidebar:hover{
+    box-shadow: 0 0 10px 5px var(--white3);
+    transition: box-shadow 0.3s ease;
+}*/
+
+
+
+.content{
+    margin-left: 96px;}
+
 
 
 .header{
@@ -107,7 +207,7 @@ body{
                     bottom: 0px;
                     right: 0px;
                     transform: skew(-45deg);
-                    z-index: 1;}
+                    /* DEBUGGING z-index: 1;*/}
             .solutioncard-header{
                 display: flex;
                 flex-direction: column;
@@ -161,7 +261,7 @@ body{
                     bottom: 0px;
                     right: 0px;
                     transform: skew(-45deg);
-                    z-index: 1;}
+                    /* DEBUGGING z-index: 1;*/}
                 .projectcard-header{
                     display: flex;
                     flex-direction: column;
@@ -196,4 +296,6 @@ body{
     --black: #020406;
     --black2: #1B1D1F;
     --black3: #0F1112;
+
+    --anim-nav-duration: 0.3s;
 }

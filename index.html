@@ -5,13 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZNGR DYNAMICS</title>
     <link rel="stylesheet" href="/common/css/main.css">
-    <script defer src="/common/js/navigationHandler.js"></script>
+    <!--<script defer src="/common/js/navigationHandler.js"></script>-->
+    <script defer src="/common/js/sidebar.js"></script>
 </head>
 <body>
-    <nav>
-        <button class="open-nav">MENU</button>
+    <nav class="container-container">
+        <!-- DO NOT DELETE, RE-FACTOR FOR MOBILE <button class="open-nav">MENU</button>-->
         <div class="nav">
-            <button class="close-nav" href="">Close</button>
+            <div class="nav-header">
+                <div class="nav-header-logo"></div>
+                <button class="nav-header-button close-nav">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M26 2L2 26M26 26L2 2" stroke="#F9FBFD" stroke-width="4"/>
+                    </svg>
+                </button>
+            </div>
             <div class="nav-list">
                 <a class="nav-list-item" href="/zngr">ZNGR DYNAMICS</a>
                 <a class="nav-list-subitem" href="/zngr">The Corporation</a>
@@ -25,54 +33,67 @@
                 <a class="nav-list-item" href="/zngr">Test</a>
             </div>
         </div>
+        <div class="sidebar">
+            <div class="sidebar_mobile">
+                <span class="sidebar_mobile-icon"></span>
+            </div>
+            <span class="sidebar-container-top"></span>
+            <span class="sidebar-container-curve"></span>
+            <span class="sidebar-container-center"></span>
+            <span class="sidebar-container-curve2"></span>
+            <span class="sidebar-container-bottom"></span>
+        </div>
     </nav>
-    <section class="header">
-        <div class="header-title">Creating stunning web experiences.</div>
-        <div class="header-description">Take the web to the future, or right in the moment. ZNGR makes it possible.</div>
-        <div class="header-date">2924</div>
-    </section>
-    <section class="main">
-        <div class="main-solutions">
-            <div class="main-solutions-header">
-                <h1>This is a title</h1>
-                <p>This is a description.</p>
+    
+    <div class="content">
+        <section class="header">
+            <div class="header-title">Creating stunning web experiences.</div>
+            <div class="header-description">Take the web to the future, or right in the moment. ZNGR makes it possible.</div>
+            <div class="header-date">2924</div>
+        </section>
+        <section class="main">
+            <div class="main-solutions">
+                <div class="main-solutions-header">
+                    <h1>This is a title</h1>
+                    <p>This is a description.</p>
+                </div>
+                <ul class="main-solutions-main">
+                    <li class="solutioncard">
+                        <div class="solutioncard-header">
+                            <i class="testsquare"></i>
+                            <h2 class="solutioncard-header-title">Item</h2>
+                        </div>
+                        <div class="solutioncard-main">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At saepe soluta enim pariatur ipsum veritatis voluptas, officia voluptatibus laboriosam labore.</div>
+                        <div class="solutioncard-footer">
+                            <i class="testsquare"></i>
+                            <a class="solutioncard-footer-text" href="">Read More</a>
+                        </div>
+                    </li>
+                    <li class="solutioncard">This is an Item</li>
+                    <li class="solutioncard">This is an Item</li>
+                    <li class="solutioncard">This is an Item</li>
+                </ul>
             </div>
-            <ul class="main-solutions-main">
-                <li class="solutioncard">
-                    <div class="solutioncard-header">
-                        <i class="testsquare"></i>
-                        <h2 class="solutioncard-header-title">Item</h2>
-                    </div>
-                    <div class="solutioncard-main">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At saepe soluta enim pariatur ipsum veritatis voluptas, officia voluptatibus laboriosam labore.</div>
-                    <div class="solutioncard-footer">
-                        <i class="testsquare"></i>
-                        <a class="solutioncard-footer-text" href="">Read More</a>
-                    </div>
-                </li>
-                <li class="solutioncard">This is an Item</li>
-                <li class="solutioncard">This is an Item</li>
-                <li class="solutioncard">This is an Item</li>
-            </ul>
-        </div>
-        <div class="main-projects">
-            <div class="main-projects-header">
-                <h1 class="main-projects-header-title">This is a title</h1>
-                <p class="main-projects-header-description">This is a description.</p>
+            <div class="main-projects">
+                <div class="main-projects-header">
+                    <h1 class="main-projects-header-title">This is a title</h1>
+                    <p class="main-projects-header-description">This is a description.</p>
+                </div>
+                <ul class="main-projects-main">
+                    <li class="projectcard">
+                        <div class="projectcard-header">
+                            <img src="" alt="">
+                            <h2 class="projectcard-header-title">Item</h2>
+                        </div>
+                        <div class="projectcard-main">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At saepe soluta enim pariatur ipsum veritatis voluptas, officia voluptatibus laboriosam labore.</div>
+                        <div class="projectcard-footer">
+                            <i class="testsquare"></i>
+                            <a class="projectcard-footer-text" href="">Read More</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <ul class="main-projects-main">
-                <li class="projectcard">
-                    <div class="projectcard-header">
-                        <img src="" alt="">
-                        <h2 class="projectcard-header-title">Item</h2>
-                    </div>
-                    <div class="projectcard-main">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At saepe soluta enim pariatur ipsum veritatis voluptas, officia voluptatibus laboriosam labore.</div>
-                    <div class="projectcard-footer">
-                        <i class="testsquare"></i>
-                        <a class="projectcard-footer-text" href="">Read More</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
+        </section>
+    </div>
 </body>
 </html>
