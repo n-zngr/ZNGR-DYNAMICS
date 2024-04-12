@@ -40,7 +40,7 @@ body{
             .nav-header{
                 display: flex;
                 width: 100%;
-                background-image: url('../assets/nav-line.svg');
+                background-image: url('../assets/line-mobile-nav.svg');
                 height: 49px;}
         }
         @media only screen and (min-width: 600px) /*Tablet+*/ {
@@ -82,12 +82,12 @@ body{
             height: 49px;
             width: 49px;
             background-color: var(--black);
-            background-image: url('../assets/MobileNav2.svg');
+            background-image: url('../assets/line-mobile-sidebar.svg');
             background-repeat: no-repeat;}
             .sidebar_mobile-icon{
                 height: 100%;
                 width: 100%;
-                background-image: url('../assets/MobileNavIcon.svg');
+                background-image: url('../assets/icons/icon-mobile-nav.svg');
                 background-position: center;
                 background-repeat: no-repeat;
                 translate: -2px -2px;}
@@ -103,25 +103,25 @@ body{
         clip-path: polygon(0 0, 49px 0px, 49px 228px, 97px 264px, 97px calc(100% - 264px), 49px calc(100% - 228px), 49px 100%, 0px 100%);} /*OLD CLIPPATH BEFORE MOVING BOTTOM TO BOTTOM with margin-top: auto || clip-path: polygon(0 0, 49px 0px, 49px 24%, 97px 29%, 97px 61%, 49px 66%, 49px 100%, 0px 100%);*/
             .sidebar-top{
                 height: 192px;
-                background-image: url('../assets/sidebar-line-top.svg');}
-            .sidebar-curve{
+                background-image: var(--line-sidebar-vertical);}
+            .sidebar-top_curve{
                 flex: 1;
                 min-height: 144px;
                 max-height: 144px;
-                background-image: url('../assets/sidebar-cline-top.svg');
+                background-image: var(--line-sidebar-top_curve);
                 background-repeat: no-repeat;}
             .sidebar-center{
-                flex: 1 2 auto; /*This property may be edited, as it's just a mess*/
-                background-image: url('../assets/sidebar-line-center.svg');}
-            .sidebar-curve2{
+                flex: 1 2 auto; /*This property should be edited, as it's just a mess*/
+                background-image: var(--line-sidebar-center);}
+            .sidebar-bottom_curve{
                 flex: 1;
                 min-height: 144px;
                 max-height: 144px;
-                background-image: url('../assets/sidebar-cline-bottom.svg');
+                background-image: var(--line-sidebar-bottom_curve);
                 background-repeat: no-repeat;}
             .sidebar-bottom{
                 height: 192px;
-                background-image: url('../assets/sidebar-line-top.svg');}
+                background-image: var(--line-sidebar-bottom);}
         .sidebar.open{
             transform: translateX(100vw);
             transition: transform var(--anim-nav-duration) ease;}
@@ -270,4 +270,10 @@ body{
     --black3: #0F1112;
 
     --anim-nav-duration: 0.3s;
+
+    --line-sidebar-vertical: url('/common/assets/line-sidebar-vertical.svg');
+    --line-sidebar-top_curve: url('/common/assets/line-sidebar-topcurve.svg');
+    --line-sidebar-center: url('/common/assets/line-sidebar-center.svg');
+    --line-sidebar-bottom_curve: url('/common/assets/line-sidebar-bottomcurve.svg');
+    --line-sidebar-bottom: url('/common/assets/line-sidebar-vertical.svg');
 }
