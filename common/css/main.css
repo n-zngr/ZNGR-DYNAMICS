@@ -160,31 +160,31 @@ body{
             flex-direction: row;
             gap: 16px;}
             .solutioncard{
-                position: relative;
                 display: flex;
                 flex-direction: column;
+                position: relative;
                 height: 240px;
                 width: 240px;
                 min-width: 240px;
-                font-size: 12px;
                 background-color: var(--black3);
-                border-radius: 4px;
+                font-size: 12px;
                 border: solid 1px var(--black2);
+                border-radius: 4px;
                 clip-path: polygon(100% 0%,100% 224px,224px 100%,0% 100%,0% 0%);}
                 .solutioncard::before{
                     content: '';
                     position: absolute;
+                    bottom: 0;
+                    right: 0;
                     width: 2px;
                     height: 32px;
                     background: var(--black2);
                     /*box-shadow: 14px 2px 50px 4px rgba(0,112,202,.79), 2px 2px 12px 1px rgba(0,112,202,.5);*/
-                    bottom: 0;
-                    right: 0;
                     transform: skew(-45deg);}
             .solutioncard-header{
                 display: flex;
                 flex-direction: column;
-                padding: 0px 16px 0px 16px;
+                padding: 0 16px 0 16px;
             }
                 .solutioncard-header-icon{
 
@@ -196,16 +196,16 @@ body{
                 padding: 0 16px 0 16px;
             }
             .solutioncard-footer{
-                padding: 16px 0 16px 16px;
                 margin-top: auto;
+                padding: 16px 0 16px 16px;
             }
             .solutioncard-footer-text{
             }
 
     .main-projects{}
         .main-projects-header{
-            text-align: center;
-            margin-block: 32px;}
+            margin-block: 32px;
+            text-align: center;}
             .main-projects-header-title{}
             .main-projects-header-description{}
         .main-projects-main{
@@ -220,10 +220,10 @@ body{
                 height: 360px;
                 width: 240px;
                 min-width: 240px;
-                font-size: 12px;
                 background-color: var(--black3);
-                border-radius: 4px;
+                font-size: 12px;
                 border: solid 1px var(--black2);
+                border-radius: 4px;
                 clip-path: polygon(100% 0%,100% 328px,208px 100%,0% 100%,0% 0%);}
                 .projectcard::before{
                     content: '';
@@ -233,8 +233,7 @@ body{
                     height: 64px;
                     width: 2px;
                     background: var(--black2);
-                    transform: skew(-45deg);
-                    /* DEBUGGING z-index: 1;*/}
+                    transform: skew(-45deg);}
                 .projectcard-header{
                     display: flex;
                     flex-direction: column;
@@ -242,8 +241,8 @@ body{
                 .projectcard-main{
                     padding: 0 16px 0 16px;}
                 .projectcard-footer{
-                    padding: 16px 0 16px 16px;
-                    margin-top: auto;}
+                    margin-top: auto;
+                    padding: 16px 0 16px 16px;}
         
 
 
