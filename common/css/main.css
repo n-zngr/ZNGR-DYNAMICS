@@ -1,13 +1,13 @@
 /*Created by ZNGR DYNAMICS*/
 /*main.css main stylesheet for ZNGR*/
 
+@import url('typography.css');
+
 body{
     padding: 0px;
     margin: 0px;
     background-color: var(--black);
     color: var(--white);
-    font-family: ethnocentric, sans-serif;
-    font-style: normal;
     font-family: termina, sans-serif;
     font-style: normal;}
 
