@@ -100,7 +100,6 @@ body{
                 background-color: var(--test-yellow);
                 /*border: 1px solid gray;*/
                 height: calc(50vw / 2);
-                padding-bottom: calc((1080 / 1440) * 50%); /* Maintain 1440:1080 aspect ratio */
                 overflow: hidden; /* Ensure image doesn't overflow its container */
             }
             .main-projects-list-item:hover{
