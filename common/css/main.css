@@ -95,30 +95,31 @@ body{
             padding: 0 32px;
             margin: 0;
         }
-        .gasthaus{
-            background-image: url('/common/assets/GasthausThumbnailEdited.png') !important;
-        }
             .main-projects-list-item{
-                min-width: calc(50% - (var(--border-size) * 2)); 
+                flex-basis: calc(50%);
                 background-color: var(--test-yellow);
-                border: var(--border-size) solid gray;
-                background-image: url('/common/assets/Test.svg');
-                background-size: 100%;
-                background-repeat: no-repeat;
-                background-position: center;
+                /*border: 1px solid gray;*/
                 height: calc(50vw / 2);
+                padding-bottom: calc((1080 / 1440) * 50%); /* Maintain 1440:1080 aspect ratio */
+                overflow: hidden; /* Ensure image doesn't overflow its container */
             }
             .main-projects-list-item:hover{
                 background-size: 100%;
             }
 
-            @media (max-width: 600px){
+            .main-projects-list-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+
+            @media (max-width: 768px){
                 .main-projects-list{
-                    padding: 0 8px;
+                    padding: 0;
                 }
                 .main-projects-list-item{
-                    flex: 1;
-                    min-width: 100%;
+                    flex-basis: 100%; /* Adjusted to take full width on smaller screens */
                     height: calc(100vw * 2 / 3);
                 }
             }
