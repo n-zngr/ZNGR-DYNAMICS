@@ -97,13 +97,9 @@ body{
         }
             .main-projects-list-item{
                 flex-basis: calc(50%);
-                background-color: var(--test-yellow);
                 /*border: 1px solid gray;*/
                 height: calc(50vw / 2);
                 overflow: hidden; /* Ensure image doesn't overflow its container */
-            }
-            .main-projects-list-item:hover{
-                background-size: 100%;
             }
 
             .main-projects-list-item img {
