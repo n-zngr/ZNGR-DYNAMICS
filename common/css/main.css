@@ -92,22 +92,34 @@ body{
         .main-projects-list{
             display: flex;
             flex-wrap: wrap;
-            padding: 0 64px;
+            padding: 0 32px;
+            margin: 0;
+        }
+        .gasthaus{
+            background-image: url('/common/assets/GasthausThumbnailEdited.png') !important;
         }
             .main-projects-list-item{
-                flex: 1;
-                min-width: 50%; 
-                background-image: url('/common/assets/Test.png');
-                background-size: cover;
+                min-width: calc(50% - (var(--border-size) * 2)); 
+                background-color: var(--test-yellow);
+                border: var(--border-size) solid gray;
+                background-image: url('/common/assets/Test.svg');
+                background-size: 100%;
                 background-repeat: no-repeat;
                 background-position: center;
-                height: calc(50vw * 2 / 4);
+                height: calc(50vw / 2);
+            }
+            .main-projects-list-item:hover{
+                background-size: 100%;
             }
 
             @media (max-width: 600px){
+                .main-projects-list{
+                    padding: 0 8px;
+                }
                 .main-projects-list-item{
+                    flex: 1;
                     min-width: 100%;
-                    height: calc(100vw * 2 / 4);
+                    height: calc(100vw * 2 / 3);
                 }
             }
 
@@ -175,4 +187,7 @@ body{
     --test-image: url(/common/assets/TestSquare.png); 
     /*ANIMATIONS*/
     --animation: 0.3s;
+    --test-yellow: #ffd000;
+
+    --border-size: 1px;
 }
