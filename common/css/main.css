@@ -74,6 +74,17 @@ body{
 
 
 
+.projects-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+    .projects-list-item{
+        flex-basis: calc(50% - 2px - 16px - 32px);
+        background-color: gray;
+        margin: 8px;
+        padding: 16px;
+        border: 1px solid red;
+    }
 
 
 
@@ -86,11 +97,8 @@ body{
 
 
 
-    
 
 
-
-    
 
 
 
@@ -152,5 +160,7 @@ body{
     --animation: 0.3s;
     --test-yellow: #ffd000;
 
-    --border-size: 1px;
+    --test-border: 1px;
+    --test-padding: 8px;
+    --test-margin: 8px;
 }
