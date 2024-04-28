@@ -106,8 +106,8 @@ body{
 
             .projects-list-item-title-end{
                 height: auto;
-                width: 53px;
-                content: '';
+                width: 48px;
+                margin-right: 10px;
                 background-image: url(/common/assets/Title.svg); 
                 background-size: contain; 
                 background-repeat: no-repeat; 
