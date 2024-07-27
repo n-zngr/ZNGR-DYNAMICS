@@ -13,11 +13,35 @@
 
 
 .nav{
+    padding-block: 16px;
     color: white;
     display: flex;
+    position: relative;
+    align-items: center;
     & .nav-button{
-        color: inherit;
-        
+        color: white;
+        font-weight: 800;
+        font-size: var(--font-size_large);
+        border: none;
+        &:hover{color: blue;}
+        &:active{color: green;}}
+        & .nav-container{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+}
+
+.zngr-menu{
+    background-color: red;
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: -100vw;
+    height: 100%;
+    width: 100%;
+    &.open{
+        transform: translateX(100vw);
     }
 }
 
@@ -30,7 +54,9 @@
 
 
 
-
 :root{
     --black: #020406;
+
+    --font-size_small: 12px;
+    --font-size_large: 24px;
 }
