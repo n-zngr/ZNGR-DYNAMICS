@@ -1,0 +1,36 @@
+@import url("/src/fonts/font-termina.css");
+
+*{
+    box-sizing: border-box;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    background-color: var(--black);
+    font-family: Termina, 'Source Sans Pro', sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;}
+
+
+
+
+
+.nav{
+    color: white;
+    display: flex;
+    & .nav-button{
+        color: inherit;
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+:root{
+    --black: #020406;
+}
