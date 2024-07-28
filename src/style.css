@@ -33,9 +33,9 @@
 }
 
 .zngr-menu{
-    background-color: red;
     position: fixed;
     display: flex;
+    flex-direction: column;
     top: 0;
     left: -100vw;
     height: 100%;
@@ -43,10 +43,89 @@
     &.open{
         transform: translateX(100vw);
     }
+    & .menu-close{
+        border: none;
+        display: block;
+    }
+    & .menu-list{
+        display: flex;
+        flex-direction: column;
+        padding-inline: 32px;
+        & .menu-list-item{
+            text-decoration: none;
+            color:white;
+            font-weight: var(--font-weight_bold);
+            font-size: var(--font-size_large);
+        }
+        & .menu-list-subitem{
+            text-decoration: none;
+            color: white;
+            padding-left: 8px;
+            font-weight: var(--font-weight_light);
+            font-size: var(--font-size_big);
+        }
+    }
+    & .menu-contact{
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 32px;
+        & .menu-contact-copyright{
+            font-size: var(--font-size_small);}
+        & .menu-contact-logo{
+            font-family: Ethnocentric;
+            display: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        & .menu-contact-button{
+            border: none;
+            color: white;
+            &:hover{color:red;}
+        }
+    }
 }
 
+header{
+    height: 50vh;
+}
 
+.zngr-projects{
+    display: flex;
+    flex-wrap: wrap;
+    padding-inline: 32px;
+    gap: 16px;
+    & .project-card{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        aspect-ratio: 656 / 480;
+        background-color: red;
+        padding: 16px;
+        border: none;
+        justify-content: flex-end;
+        & .project-card-container{
+            position: absolute;
+            display: flex;
+            width: 100%;
+        }
 
+        & .project-card-title{
+            width: 100%;
+            background-color: transparent;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            & h2{
+                background-color: transparent;
+                color: white;
+            }
+            & .button{
+                border-radius: 128px;
+            }
+        }
+    }
+}
 
 
 
@@ -57,6 +136,23 @@
 :root{
     --black: #020406;
 
-    --font-size_small: 12px;
-    --font-size_large: 24px;
+    --spacing-small: 8px;
+    --spacing-regular: 16px;
+    --spacing-big: 32px;
+    --spacing-large: 64px;
+
+    --font_size-small: 12px;
+    --font_size-regular: 16px;
+    --font_size-big: 20px;
+    --font_size-large: 24px;
+
+    --font_weight-thin: 100;
+    --font_weight-extra-light: 200;
+    --font_weight-light: 300;
+    --font_weight-regular: 400;
+    --font_weight-medium: 500;
+    --font_weight-demi: 600;
+    --font_weight-bold: 700;
+    --font_weight-heavy: 800;
+    --font_weight-black: 900;
 }
