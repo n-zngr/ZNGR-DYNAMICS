@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('/src/script/projects.json')
     .then(response => response.json())
     .then(data => {
-        const projectCards = document.querySelectorAll('.project-card');
+        const projectCards = document.querySelectorAll('.project-card, .project-card-big');
         const modal = document.getElementById('modal');
         const modalTitle = document.getElementById('modal-title');
         const modalDescription = document.getElementById('modal-description');
@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (project) {
                     modalTitle.textContent = project.title;
                     modalDescription.textContent = project.description;
+                    modal.removeAttribute('style');
                     modal.classList.add('open');
                 }
             });
@@ -23,11 +24,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         closeBtn.addEventListener('click', () => {
             modal.classList.remove('open');
+            modal.style.visibility = 'hidden';
         });
 
         window.addEventListener('click', (event) => {
             if (event.target === modal) {
                 modal.classList.remove('open');
+                modal.style.visibility = 'hidden';
             }
         });
     });

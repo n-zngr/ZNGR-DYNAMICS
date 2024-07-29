@@ -9,6 +9,11 @@
             "id": "2",
             "title": "Project 2",
             "description": "This is the description for Project 2."
+        },
+        {
+            "id": "3",
+            "title": "Project 3",
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa vero aperiam at deserunt impedit recusandae voluptatem ex! Optio ut aspernatur maiores perferendis illum vel! Minima sit vero, ab similique repellat voluptas dolore hic autem nobis. Veritatis natus aspernatur illum quia! Quos accusamus dolores adipisci temporibus optio! Incidunt ipsam tempora quisquam."
         }
     ]
 }

@@ -93,14 +93,13 @@ header{
 
 .zngr-projects{
     background: linear-gradient(180deg, var(--black) 0%, var(--black5) 100%);
-    display: flex;
-    flex-wrap: wrap;
-    padding-inline: 32px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    & .project-card{
+    padding-inline: 32px;
+    & .project-card, .project-card-big{
         display: flex;
         flex-direction: column;
-        flex: 1;
         aspect-ratio: 656 / 480;
         background-color: var(--black);
         padding: 16px;
@@ -112,6 +111,9 @@ header{
         &:hover{
             background-color: var(--black2);
         }
+    &.project-card-big{
+        grid-column: span 2;
+    }
         & .project-card-container{
             position: absolute;
             display: flex;
@@ -146,38 +148,50 @@ header{
                     transform: scale(.97);
                     background-color: var(--gray3);
                 }
-                
-                & *{
+                & .button-icon{
                     background-color: transparent;
+                    fill: var(--gray5);
+                }
+                &:hover .button-icon{
+                    fill: #BCBEC0;
                 }
             }
         }
     }
-}
-
-.button .button-icon {
-    fill: red;
-}
+}/*
+.button:hover .button-icon{
+    fill: green;
+}*/
 
 .modal {
-    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
-    top: 100%;
+    bottom: 0;
     width: 100%;
+    margin-top: 128px;
     height: 100%;
     overflow: hidden;
     background-color: red;
+    transform: translateY(100%);
+    transition: var(--anim_duration-slow);
     &.open{
-        display: block;
-        transform: translateY(-100%);
+        transition: var(--anim_duration-slow);
+        transform: translateY(0%);
     }
 }
 
-.modal-content {
-    background-color: #fefefe;
-    border: 1px solid #888;
+.modal-container {
+    padding-inline: 32px;
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    & .modal-header{
+        background-color: white;
+    }
+    & .modal-main{
+        display: flex;
+    }
 }
 
 .close {
@@ -244,5 +258,6 @@ header{
     --font_weight-heavy: 800;
     --font_weight-black: 900;
 
-    --anim-duration: 0.2s;
+    --anim_duration: .2s;
+    --anim_duration-slow: .8s;
 }
