@@ -9,9 +9,6 @@
     font-family: Termina, 'Source Sans Pro', sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;}
 
 
-
-
-
 .nav{
     padding-block: 16px;
     color: white;
@@ -90,7 +87,12 @@ header{
     height: 50vh;
 }
 
+.button{
+    background-color: transparent;
+}
+
 .zngr-projects{
+    background: linear-gradient(180deg, var(--black) 0%, var(--black5) 100%);
     display: flex;
     flex-wrap: wrap;
     padding-inline: 32px;
@@ -100,30 +102,99 @@ header{
         flex-direction: column;
         flex: 1;
         aspect-ratio: 656 / 480;
-        background-color: red;
+        background-color: var(--black);
         padding: 16px;
         border: none;
         justify-content: flex-end;
+        transition: var(--anim-duration);
+        border-radius: 16px;
+        cursor: pointer;
+        &:hover{
+            background-color: var(--black2);
+        }
         & .project-card-container{
             position: absolute;
             display: flex;
-            width: 100%;
-        }
-
-        & .project-card-title{
+            width: 100%;}
+        & .project-card-info{
             width: 100%;
             background-color: transparent;
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
             & h2{
+                font-size: var(--font_size-regular);
+                font-weight: var(--font_weight-demi);
                 background-color: transparent;
                 color: white;
             }
             & .button{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: var(--gray) 2px solid;
+                width: 32px;
+                height: 32px;
                 border-radius: 128px;
+                white-space: nowrap;
+                transition: var(--anim-duration);
+                background-color: transparent;
+                &:hover{
+                    background-color: var(--gray);
+                }
+                &:active{
+                    transform: scale(.97);
+                    background-color: var(--gray3);
+                }
+                
+                & *{
+                    background-color: transparent;
+                }
             }
         }
+    }
+}
+
+.button .button-icon {
+    fill: red;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: red;
+    &.open{
+        display: block;
+        transform: translateY(-100%);
+    }
+}
+
+.modal-content {
+    background-color: #fefefe;
+    border: 1px solid #888;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover{
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    &:focus{
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
     }
 }
 
@@ -132,9 +203,26 @@ header{
 
 
 
-
 :root{
     --black: #020406;
+    --black-10: #0204061A;
+    --black2: #0A0C0E;
+    --black3: #121416;
+    --black4: #1A1C1E;
+    --black5: #222426;
+
+    --gray: #6E7072;
+    --gray2: #76787A;
+    --gray3: #7E8082;
+    --gray4: #86888A;
+    --gray5: #8E9092;
+
+    --white: #F9FBFD;
+    --white2: #F1F3F5;
+    --white3: #E9EBED;
+    --white4: #E1E3E5;
+    --white5: #D9DBDD;
+    --white-1: #F9FBFD0D;
 
     --spacing-small: 8px;
     --spacing-regular: 16px;
@@ -155,4 +243,6 @@ header{
     --font_weight-bold: 700;
     --font_weight-heavy: 800;
     --font_weight-black: 900;
+
+    --anim-duration: 0.2s;
 }
