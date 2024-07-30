@@ -143,6 +143,7 @@ header{
                 background-color: transparent;
                 &:hover{
                     background-color: var(--gray);
+                    transition: var(--anim_duration);
                 }
                 &:active{
                     transform: scale(.97);
@@ -191,6 +192,12 @@ header{
     }
     & .modal-main{
         display: flex;
+        & .modal-main-info{
+            background-color: blue;
+        }
+        & .modal-main-showcase{
+
+        }
     }
 }
 
