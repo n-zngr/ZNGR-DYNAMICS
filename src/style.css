@@ -105,15 +105,17 @@ header{
         padding: 16px;
         border: none;
         justify-content: flex-end;
-        transition: var(--anim-duration);
+        transition: var(--anim_duration);
         border-radius: 16px;
         cursor: pointer;
         &:hover{
             background-color: var(--black2);
         }
-    &.project-card-big{
-        grid-column: span 2;
-    }
+
+        &.project-card-big{
+            grid-column: span 2;
+        }
+
         & .project-card-container{
             position: absolute;
             display: flex;
@@ -139,7 +141,7 @@ header{
                 height: 32px;
                 border-radius: 128px;
                 white-space: nowrap;
-                transition: var(--anim-duration);
+                transition: var(--anim_duration);
                 background-color: transparent;
                 &:hover{
                     background-color: var(--gray);
@@ -148,6 +150,7 @@ header{
                 &:active{
                     transform: scale(.97);
                     background-color: var(--gray3);
+                    transition: var(--anim_duration);
                 }
                 & .button-icon{
                     background-color: transparent;
@@ -164,41 +167,135 @@ header{
     fill: green;
 }*/
 
+footer{
+    height: 50vh;
+}
+
+body.modal-open{
+    overflow: hidden;
+}
+
 .modal {
+    visibility: hidden;
     position: fixed;
+    display: flex;
     z-index: 1;
     left: 0;
     bottom: 0;
     width: 100%;
-    margin-top: 128px;
     height: 100%;
+    background-color: transparent;
     overflow: hidden;
-    background-color: red;
+    align-items: flex-end;
     transform: translateY(100%);
     transition: var(--anim_duration-slow);
     &.open{
+        visibility: visible;
         transition: var(--anim_duration-slow);
         transform: translateY(0%);
     }
 }
 
 .modal-container {
-    padding-inline: 32px;
+    height: 100%;
+    width: 100%;
+    max-height: calc(100% - 128px);
+    /*padding-inline: 32px;*/
     display: flex;
     flex-direction: column;
     background-color: red;
+    overflow-y: auto;
+    transition: max-height var(--anim_duration) ease;
     & .modal-header{
-        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+        & .button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: var(--gray) 2px solid;
+            width: 32px;
+            height: 32px;
+            border-radius: 128px;
+            white-space: nowrap;
+            transition: var(--anim_duration);
+            background-color: transparent;
+            &:hover{
+                background-color: var(--gray);
+                transition: var(--anim_duration);
+            }
+            &:active{
+                transform: scale(.97);
+                background-color: var(--gray3);
+                transition: var(--anim_duration);
+            }
+            & .button-icon{
+                background-color: transparent;
+                fill: var(--gray5);
+            }
+            &:hover .button-icon{
+                fill: #BCBEC0;
+            }
+        }
     }
     & .modal-main{
         display: flex;
-        & .modal-main-info{
-            background-color: blue;
+        flex-direction: row;
+        gap: 32px;
+        padding: 16px 16px 0 16px;
+        & .modal-main-about{
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            & .modal-main-about-description{
+
+            }
+            & .modal-main-about-list{
+                display: flex;
+                flex-direction: column;
+                padding-top: 16px;
+                & .modal-main-about-list-item{
+                    color: white;
+                    list-style: none;
+                    padding-bottom: 8px;
+                }
+            }
         }
         & .modal-main-showcase{
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            gap: 32px;
 
+            & .modal-card{
+                position: relative;
+                width: 100%;
+                padding-bottom: calc(480 / 656 * 100%);
+                border: none;
+                border-radius: 16px;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                & img {
+                    position: absolute;
+                    border-radius: 16px;
+                    top: 50%;
+                    left: 50%;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transform: translate(-50%, -50%);
+                }
+            }
         }
     }
+}
+
+#modal-description{color: white;}
+#modal-title{
+    color: white;
 }
 
 .close {

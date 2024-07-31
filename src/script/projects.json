@@ -3,17 +3,20 @@
         {
             "id": "1",
             "title": "Project 1",
-            "description": "This is the description for Project 1."
+            "description": "This is the description for Project 1.",
+            "list": ["item 1", "item 2", "item 3"]
         },
         {
             "id": "2",
             "title": "Project 2",
-            "description": "This is the description for Project 2."
+            "description": "This is the description for Project 2.",
+            "list": ["item 1", "item 2", "item 3"]
         },
         {
             "id": "3",
             "title": "Project 3",
-            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa vero aperiam at deserunt impedit recusandae voluptatem ex! Optio ut aspernatur maiores perferendis illum vel! Minima sit vero, ab similique repellat voluptas dolore hic autem nobis. Veritatis natus aspernatur illum quia! Quos accusamus dolores adipisci temporibus optio! Incidunt ipsam tempora quisquam."
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores esse quasi assumenda a itaque cum. Dignissimos totam rerum nulla tempore mollitia ipsam sed odit optio, fuga deserunt ad vitae blanditiis quas id ducimus doloremque repudiandae aspernatur aperiam provident accusamus reprehenderit. Porro sint dolorem sit deleniti, temporibus a cupiditate molestias distinctio dolore similique neque impedit quidem, quam ullam ea cumque odit, sed incidunt atque quae corrupti nostrum ad mollitia. Unde dignissimos, eius atque quidem quis totam molestiae error facilis mollitia reiciendis maxime aut veritatis at minus ratione, voluptatibus, quisquam autem? Expedita aspernatur a pariatur explicabo enim laborum aliquam similique vel corrupti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores esse quasi assumenda a itaque cum. Dignissimos totam rerum nulla tempore mollitia ipsam sed odit optio, fuga deserunt ad vitae blanditiis quas id ducimus doloremque repudiandae aspernatur aperiam provident accusamus reprehenderit. Porro sint dolorem sit deleniti, temporibus a cupiditate molestias distinctio dolore similique neque impedit quidem, quam ullam ea cumque odit, sed incidunt atque quae corrupti nostrum ad mollitia. Unde dignissimos, eius atque quidem quis totam molestiae error facilis mollitia reiciendis maxime aut veritatis at minus ratione, voluptatibus, quisquam autem? Expedita aspernatur a pariatur explicabo enim laborum aliquam similique vel corrupti.",
+            "list": ["item 1", "item 2", "item 3", "item 4"]
         }
     ]
 }
