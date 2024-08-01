@@ -4,10 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(data => {
         const projectCards = document.querySelectorAll('.project-card, .project-card-big');
         const modal = document.getElementById('modal');
+        const modalContainer = document.querySelector('.modal-container');
         const modalTitle = document.getElementById('modal-title');
         const modalDescription = document.getElementById('modal-description');
         const modalListContainer = document.querySelector('.modal-main-about-list');
         const closeBtn = document.querySelector('.close');
+
+        const animationDurationSlow = '800';
 
         projectCards.forEach(card => {
             card.addEventListener('click', () => {
@@ -18,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     modalTitle.textContent = project.title;
                     modalDescription.textContent = project.description;
                     
-                    //Clearing initial list items
                     modalListContainer.innerHTML = '';
 
                     project.list.forEach(item => {
@@ -28,22 +30,37 @@ document.addEventListener('DOMContentLoaded', function() {
                         modalListContainer.appendChild(listItem);
                     });
                     
-                    document.body.classList.add('modal-open'); //Disables body scrolling
                     modal.removeAttribute('style');
-                    modal.classList.add('open');
+                    document.body.classList.add('body-modal-open');
+                    modalContainer.classList.add('modal-open');
+                    modal.classList.add('modal-open');
                 }
             });
         });
 
+        // Close modal through button
         closeBtn.addEventListener('click', () => {
-            modal.classList.remove('open');
-            document.body.classList.remove('modal-open'); //Allows body scrolling
+            modalContainer.classList.remove('modal-open');
+            modal.style.overflow = 'hidden';
+            document.body.classList.remove('body-modal-open');
+            setTimeout(function () {
+                modal.classList.remove('modal-open');
+                modal.removeAttribute('style');
+                modalContainer.classList.remove('modal-open');
+            }, animationDurationSlow);
         });
 
+        // Close modal through clicking outside of container
         window.addEventListener('click', (event) => {
             if (event.target === modal) {
-                modal.classList.remove('open');
-                document.body.classList.remove('modal-open'); //Allows body scrolling
+                modalContainer.classList.remove('modal-open');
+                modal.style.overflow = 'hidden';
+                document.body.classList.remove('body-modal-open');
+                setTimeout(function () {
+                    modal.classList.remove('modal-open');
+                    modal.removeAttribute('style');
+                    modalContainer.classList.remove('modal-open');
+                }, animationDurationSlow);
             }
         });
     });
