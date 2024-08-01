@@ -146,7 +146,6 @@ footer{
     height: 50vh;
 }
 
-body{}
 body.body-modal-open{
     overflow: hidden;
     margin-right: 17px; /*TEMP SCROLLBAR MARGIN*/
