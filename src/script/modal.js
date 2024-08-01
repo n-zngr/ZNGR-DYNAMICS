@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const closeBtn = document.querySelector('.close');
 
         const animationDurationSlow = '800';
-        const animationDurationShort = '400';
         let canCloseModal = false;
         let canOpenModal = true;
 
@@ -45,9 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             canCloseModal = true;
                         }, animationDurationSlow);
 
-                        /*setTimeout(() => {
+                        setTimeout(() => {
                             canOpenModal = true;
-                        }, animationDurationSlow);*/
+                        }, animationDurationSlow);
                     }
                 }              
             });
@@ -62,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     modal.classList.remove('modal-open');
                     modal.removeAttribute('style');
                     modalContainer.classList.remove('modal-open');
+                    document.body.classList.remove('body-modal-open');
                     canCloseModal = false;
                     canOpenModal = true;
                 }, animationDurationSlow);
