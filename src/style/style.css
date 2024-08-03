@@ -234,13 +234,13 @@ header{
         }
     }
     & .zngr-competence-container{
-        background-color: transparent;
         display: flex;
         flex-direction: column;
         & .zngr-competence-container-main{
             display: flex;
             flex-direction: row;
-            gap: 16px;
+            gap: 8px;
+            overflow-x: hidden;
             & .competence-card{
                 display: flex;
                 flex-direction: column;
