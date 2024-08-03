@@ -5,11 +5,12 @@
     background-color: transparent;
     padding: 0;
     margin: 0;
-    background-color: var(--black);
     font-family: Termina, 'Source Sans Pro', sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;}
     
+body{background-color: var(--black);}
+
 .nav{
-    padding-block: 16px;
+    padding: 16px;
     color: white;
     display: flex;
     position: relative;
@@ -38,6 +39,7 @@
     width: 100%;
     transition: transform var(--anim_duration-slow);
     z-index: 99;
+    background-color: var(--black);
     &.open{
         transform: translateX(100vw);
     }
@@ -206,10 +208,122 @@ header{
             
         }
     }
-}/*
-.button:hover .button-icon{
-    fill: green;
-}*/
+}
+
+.zngr-competence{
+    display: flex;
+    flex-direction: column;
+    padding-inline: 128px;
+    padding-top: 128px;
+    background: linear-gradient(180deg, var(--black5) 0%, var(--black) 100%);
+    & .zngr-competence-header{
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        & .zngr-competence-header-title{
+            color: var(--white);
+            font-size: var(--font_size-very-large);
+            font-weight: var(--font_weight-bold);
+            flex: 1;
+        }
+        & .zngr-competence-header-description{
+            font-size: var(--font_size-regular);
+            color: var(--gray);
+            flex: 1;
+            text-align: right;
+        }
+    }
+    & .zngr-competence-container{
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        & .zngr-competence-container-main{
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            & .competence-card{
+                display: flex;
+                flex-direction: column;
+                border: none;
+                background-color: var(--black);
+                aspect-ratio: 400 / 480;
+                height: 360px;
+                cursor: pointer;
+                padding: 16px;
+                border-radius: 16px;
+                transition: background-color var(--anim_duration-slow);
+                &:hover{
+                    background-color: var(--black5);
+                    transition: background-color var(--anim_duration);
+                }
+                & .competence-card-thumbnail{
+                    filter: saturate(.1);
+                    mask-image: linear-gradient(180deg, var(--black) 0%, transparent 90%);
+                    mask-size: 100% 100%;
+                    transition: mask-size var(--anim_duration-slow);
+                    & img{
+                        position: relative;
+                        border-radius: 16px;
+                        top: 50%;
+                        left: 50%;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+                &:hover .competence-card-thumbnail{
+                    mask-size: 100% 200%;
+                    transition: mask-size var(--anim_duration-slow);
+                }
+
+                & .competence-card-text{
+                    display: flex;
+                    flex-direction: row;
+                    background-color: transparent;
+                    & .competence-card-text-container{
+                        & .competence-card-text-container-description{
+                            color: var(--gray);
+                            font-size: var(--font_size-medium);
+                            font-weight: var(--font_weight-regular);
+                            text-align: left;
+                            padding-bottom: 8px;
+                        }
+                        & .competence-card-text-container-title{
+                            text-align: left;
+                            color: var(--white);
+                            font-size: var(--font_size-regular);
+                            font-weight: var(--font_weight-bold);
+                        }
+                    }
+                    & .competence-card-text-button{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: end;
+                    }
+                }
+            }
+        }
+        & .zngr-competence-container-footer{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 8px;
+            padding-block: 64px;
+            & .button-small{
+                display: flex;
+                & .button-icon{
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+
+
+
 
 footer{
     height: 50vh;
@@ -247,6 +361,7 @@ body.body-modal-open{
     display: flex;
     flex-direction: column;
     transform: translateY(100%);
+    background-color: var(--black);
     transition: max-height var(--anim_duration-slow) ease-in-out, transform var(--anim_duration-slow) ease-in-out;
     &.modal-open{
         transform: translateY(0%);
@@ -418,9 +533,11 @@ body.body-modal-open{
     --font_size-tiny: 8px;
     --font_size-smaller: 10px;
     --font_size-small: 12px;
+    --font_size-medium: 14px;
     --font_size-regular: 16px;
     --font_size-big: 20px;
     --font_size-large: 24px;
+    --font_size-very-large: 32px;
 
     --font_weight-thin: 100;
     --font_weight-extra-light: 200;
