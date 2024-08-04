@@ -325,9 +325,49 @@ header{
 
 
 
-footer{
+.zngr-footer{
     height: 50vh;
+    background-color: var(--black);
+    & .footer-container{
+        position: relative;
+        display: flex;
+        padding: 64px;
+        flex-direction: column;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1.1px;
+            background: linear-gradient(90deg, var(--gray) 0%, var(--gray) 100%);
+        }
+        & .footer-container-privacy{
+            & .privacy{
+                text-decoration: none;
+                color: var(--white);
+            }
+        }
+        & .footer-container-copyright{
+            padding-top: 16px;
+            & .copyright{
+                color: var(--white);
+            }
+        }
+    }
+    & .footer-logo{
+        display: flex;
+        padding: 64px;
+        & .footer-logo-item{
+            font-family: Ethnocentric;
+            font-size: 96px;
+            color: var(--black5);
+        }
+    }
 }
+
+
+
 
 body.body-modal-open{
     overflow: hidden;
