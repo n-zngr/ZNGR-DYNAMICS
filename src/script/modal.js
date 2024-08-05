@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => response.json())
     .then(data => {
         const projectsContainer = document.querySelector('.zngr-projects');
-        const projectCards = document.querySelectorAll('.project-card, .project-card-big');
         const competenceContainer = document.querySelector('.zngr-competence-container-main');
         const modal = document.getElementById('modal');
         const modalContainer = document.querySelector('.modal-container');
