@@ -8,11 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById('modal');
         const modalContainer = document.querySelector('.modal-container');
         const modalTitle = document.getElementById('modal-title');
-        const modalInfoContainer = document.querySelector('modal-main-about-info');
+        const modalInfoContainer = document.querySelector('.modal-main-about-info');
         const modalDescription = document.getElementById('modal-description');
         const modalListContainer = document.querySelector('.modal-main-about-list');
         const closeBtn = document.querySelector('.close');
         const modalImageContainer = document.querySelector('.modal-main-showcase');
+
 
         const animationDurationSlow = '800';
         let canCloseModal = false;
@@ -21,11 +22,26 @@ document.addEventListener('DOMContentLoaded', function() {
         function openModal(content) {
             if (content) {
                 modalTitle.textContent = content.title;
-                modalDescription.textContent = content.description; 
+                modalDescription.textContent = content.description;
 
-                modalInfoContainer.innerHTML = '';
                 modalListContainer.innerHTML = '';
                 modalImageContainer.innerHTML = '';
+                modalInfoContainer.innerHTML = '';
+
+                if (content.link) {
+                    const linkItem = document.createElement('a');
+                    linkItem.className = 'modal-main-about-info-link';
+                    linkItem.href = content.link;
+                    linkItem.textContent = 'Visit';
+                    modalInfoContainer.appendChild(linkItem);
+                }
+
+                if (content.business) {
+                    const businessItem = document.createElement('p');
+                    businessItem.className = 'modal-main-about-info-business';
+                    businessItem.textContent = content.business;
+                    modalInfoContainer.appendChild(businessItem);
+                }
 
                 if (content.images) {
                     content.images.forEach(image => {
@@ -83,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        document.querySelector('.zngr-projects').addEventListener('click', function(event) {
+        projectsContainer.addEventListener('click', function(event) {
             if (event.target.closest('.project-card, .project-card-big')) {
                 const projectCard = event.target.closest('.project-card, .project-card-big');
                 if (canOpenModal) {
@@ -96,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        document.querySelector('.zngr-competence-container-main').addEventListener('click', function(event) {
+        competenceContainer.addEventListener('click', function(event) {
             if (event.target.closest('.competence-card')) {
                 const competenceCard = event.target.closest('.competence-card');
                 if (canOpenModal) {

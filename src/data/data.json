@@ -2,9 +2,9 @@
     "projects": [
         {
             "id": "1",
-            "title": "Project 1",
-            "link": "https://gasthaus-rossberg.ch",
-            "business": "",
+            "title": "Gasthaus Rossberg",
+            "link": "https://gasthaus-rossberg.ch/",
+            "business": "Business 1",
             "description": "This is the description for Project 1.",
             "list": ["item 1", "item 2", "item 3"],
             "thumbnail": "/src/img/TestImage.jpg",
@@ -16,8 +16,8 @@
         {
             "id": "2",
             "title": "Connect",
-            "link": "https://gasthaus-rossberg.ch",
-            "business": "",
+            "link": "https://connect.deltagamez.ch/",
+            "business": "Online Service",
             "description": "This is the description for Project 2.",
             "list": ["item 1", "item 2", "item 3"],
             "thumbnail": "/src/img/ProjectConnect.png",
