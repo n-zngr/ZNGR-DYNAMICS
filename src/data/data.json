@@ -3,6 +3,8 @@
         {
             "id": "1",
             "title": "Project 1",
+            "link": "https://gasthaus-rossberg.ch",
+            "business": "",
             "description": "This is the description for Project 1.",
             "list": ["item 1", "item 2", "item 3"],
             "thumbnail": "/src/img/TestImage.jpg",
@@ -14,6 +16,8 @@
         {
             "id": "2",
             "title": "Connect",
+            "link": "https://gasthaus-rossberg.ch",
+            "business": "",
             "description": "This is the description for Project 2.",
             "list": ["item 1", "item 2", "item 3"],
             "thumbnail": "/src/img/ProjectConnect.png",
@@ -27,6 +31,8 @@
         {
             "id": "3",
             "title": "Project 3",
+            "link": "https://gasthaus-rossberg.ch",
+            "business": "",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores esse quasi assumenda a itaque cum. Dignissimos totam rerum nulla tempore mollitia ipsam sed odit optio, fuga deserunt ad vitae blanditiis quas id ducimus doloremque repudiandae aspernatur aperiam provident accusamus reprehenderit. Porro sint dolorem sit deleniti, temporibus a cupiditate molestias distinctio dolore similique neque impedit quidem, quam ullam ea cumque odit, sed incidunt atque quae corrupti nostrum ad mollitia. Unde dignissimos, eius atque quidem quis totam molestiae error facilis mollitia reiciendis maxime aut veritatis at minus ratione, voluptatibus, quisquam autem? Expedita aspernatur a pariatur explicabo enim laborum aliquam similique vel corrupti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores esse quasi assumenda a itaque cum. Dignissimos totam rerum nulla tempore mollitia ipsam sed odit optio, fuga deserunt ad vitae blanditiis quas id ducimus doloremque repudiandae aspernatur aperiam provident accusamus reprehenderit. Porro sint dolorem sit deleniti, temporibus a cupiditate molestias distinctio dolore similique neque impedit quidem, quam ullam ea cumque odit, sed incidunt atque quae corrupti nostrum ad mollitia. Unde dignissimos, eius atque quidem quis totam molestiae error facilis mollitia reiciendis maxime aut veritatis at minus ratione, voluptatibus, quisquam autem? Expedita aspernatur a pariatur explicabo enim laborum aliquam similique vel corrupti.",
             "list": ["item 1", "item 2", "item 3", "item 4"],
             "thumbnail": "/src/img/TestImage.jpg",
@@ -37,11 +43,36 @@
             ]
         }
     ], 
-    "comptence": [
+    "competences": [
         {
             "id": "1",
-            "title": "title1",
-            "description": "description1"
+            "title": "This is a long title",
+            "description": "description1",
+            "thumbnail": "/src/img/TestImage.jpg"
+        }, 
+        {
+            "id": "2",
+            "title": "title2",
+            "description": "description2",
+            "thumbnail": "/src/img/TestImage.jpg"
+        }, 
+        {
+            "id": "3",
+            "title": "title3",
+            "description": "description3",
+            "thumbnail": "/src/img/TestImage.jpg"
+        }, 
+        {
+            "id": "4",
+            "title": "title4",
+            "description": "description4",
+            "thumbnail": "/src/img/TestImage.jpg"
+        }, 
+        {
+            "id": "5",
+            "title": "title5",
+            "description": "description5",
+            "thumbnail": "/src/img/TestImage.jpg"
         }
     ]
 }

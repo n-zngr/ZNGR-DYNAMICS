@@ -15,19 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
         let canCloseModal = false;
         let canOpenModal = true;
 
-        data.competence.forEach((competence) => {
+        data.competences.forEach((competence) => {
             const competenceCard = document.createElement('button');
             competenceCard.className = 'competence-card';
             competenceCard.setAttribute('data-competence-id', competence.id);
 
             competenceCard.innerHTML = `
                 <div class="competence-card-thumbnail">
-                    <img src="src/img/TestImage.jpg" alt="">
+                    <img src="${competence.thumbnail}" alt="">
                 </div>
                 <div class="competence-card-text">
                     <div class="competence-card-text-container">
-                        <p class="competence-card-text-container-description">Lorem, ipsum dolor.</p>
-                        <h3 class="competence-card-text-container-title">Lorem ipsum dolor sit amet.</h3>
+                        <p class="competence-card-text-container-description">${competence.description}</p>
+                        <h3 class="competence-card-text-container-title">${competence.title}</h3>
                     </div>
                     <div class="competence-card-text-button">
                         <div class="button-small">
@@ -39,72 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
 
-            competenceCard.addEventListener('click', () => {
-                if (canOpenModal) {
-                    canOpenModal = false;
-                    canCloseModal = false;
-                    const competenceId = competenceCard.getAttribute('data-competence-id');
-                    const competence = data.competence.find(c => c.id === competenceId);
-
-                    if (competence) {
-                        modalTitle.textContent = competence.title;
-                        modalDescription.textContent = competence.description;
-
-                        modalListContainer.innerHTML = '';
-                        modalImageContainer.innerHTML = '';
-
-                        competence.images.forEach(image => {
-                            const imageItem = document.createElement('div');
-                            imageItem.className = 'modal-main-showcase-card';
-
-                            const imgElement = document.createElement('img');
-                            imgElement.src = image.src;
-                            imgElement.alt = image.alt;
-
-                            imageItem.appendChild(imgElement);
-                        });
-
-                        modal.removeAttribute('style');
-                        document.body.classList.add('body-modal-open');
-                        modalContainer.classList.add('modal-open');
-                        modal.classList.add('modal-open');
-
-                        setTimeout(() => {
-                            canCloseModal = true;
-                        }, animationDurationSlow);
-
-                        setTimeout(() => {
-                            canOpenModal = true;
-                        }, animationDurationSlow);
-                    }
-                }
-            });
-
             competenceContainer.appendChild(competenceCard);
         });
-
-        const closeModal = () => {
-            if (canCloseModal) {
-                modalContainer.classList.remove('modal-open');
-                modal.style.overflow = 'hidden';
-                document.body.classList.remove('body-modal-open');
-                setTimeout(function () {
-                    modal.classList.remove('modal-open');
-                    modal.removeAttribute('style');
-                    modalContainer.classList.remove('modal-open');
-                    document.body.classList.remove('body-modal-open');
-                    canCloseModal = false;
-                    canOpenModal = true;
-                }, animationDurationSlow);
-            }
-        }
-        
-        closeBtn.addEventListener('click', closeModal);
-
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                closeModal();
-            }
-        });
-    });
+    })
 });

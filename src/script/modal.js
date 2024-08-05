@@ -4,9 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(data => {
         const projectsContainer = document.querySelector('.zngr-projects');
         const projectCards = document.querySelectorAll('.project-card, .project-card-big');
+        const competenceContainer = document.querySelector('.zngr-competence-container-main');
         const modal = document.getElementById('modal');
         const modalContainer = document.querySelector('.modal-container');
         const modalTitle = document.getElementById('modal-title');
+        const modalInfoContainer = document.querySelector('modal-main-about-info');
         const modalDescription = document.getElementById('modal-description');
         const modalListContainer = document.querySelector('.modal-main-about-list');
         const closeBtn = document.querySelector('.close');
@@ -16,81 +18,54 @@ document.addEventListener('DOMContentLoaded', function() {
         let canCloseModal = false;
         let canOpenModal = true;
 
+        function openModal(content) {
+            if (content) {
+                modalTitle.textContent = content.title;
+                modalDescription.textContent = content.description; 
 
-        data.projects.forEach((project, index) => {
-            const projectCard = document.createElement('button');
-            projectCard.className = index % 3 === 2 ? 'project-card-big' : 'project-card';
-            projectCard.setAttribute('data-project-id', project.id);
+                modalInfoContainer.innerHTML = '';
+                modalListContainer.innerHTML = '';
+                modalImageContainer.innerHTML = '';
 
-            // <img src="${project.thumbnail}" alt="${project.title}">
+                if (content.images) {
+                    content.images.forEach(image => {
+                        const imageItem = document.createElement('div');
+                        imageItem.className = 'modal-main-showcase-card';
 
-            projectCard.innerHTML = `
-                <div class="project-card-container">
-                    <img src="${project.thumbnail}" alt="${project.title}">
-                </div>
-                <div class="project-card-info">
-                    <h2>${project.title}</h2>
-                    <div class="button-small">
-                        <svg class="button-icon" width="10" height="10" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13 19V29C13 30.6569 14.3431 32 16 32C17.6569 32 19 30.6569 19 29V19H29C30.6569 19 32 17.6569 32 16C32 14.3431 30.6569 13 29 13H19V3C19 1.34315 17.6569 0 16 0C14.3431 0 13 1.34315 13 3V13H3C1.34315 13 0 14.3431 0 16C0 17.6569 1.34315 19 3 19H13Z"/>
-                        </svg>
-                    </div>
-                </div>
-            `;
+                        const imgElement = document.createElement('img');
+                        imgElement.src = image.src;
+                        imgElement.alt = image.alt;
 
-            projectCard.addEventListener('click', () => {
-                if (canOpenModal) {
-                    canOpenModal = false;
-                    canCloseModal = false;
-                    const projectId = projectCard.getAttribute('data-project-id');
-                    const project = data.projects.find(p => p.id === projectId);
-                    
-                    if (project) {
-                        modalTitle.textContent = project.title;
-                        modalDescription.textContent = project.description;
-                        
-                        modalListContainer.innerHTML = '';
-                        modalImageContainer.innerHTML = '';
-
-                        project.images.forEach(image => {
-                            const imageItem = document.createElement('div')
-                            imageItem.className = 'modal-main-showcase-card';
-                            
-                            const imgElement = document.createElement('img');
-                            imgElement.src = image.src;
-                            imgElement.alt = image.alt;
-
-                            imageItem.appendChild(imgElement);
-                            modalImageContainer.appendChild(imageItem);
-                        });
-
-                        project.list.forEach(item => {
-                            const listItem = document.createElement('li');
-                            listItem.className = 'modal-main-about-list-item';
-                            listItem.textContent = item;
-
-
-                            modalListContainer.appendChild(listItem);
-                        });
-                        
-                        modal.removeAttribute('style');
-                        document.body.classList.add('body-modal-open');
-                        modalContainer.classList.add('modal-open');
-                        modal.classList.add('modal-open');
-                        
-                        setTimeout(() => {
-                            canCloseModal = true;
-                        }, animationDurationSlow);
-
-                        setTimeout(() => {
-                            canOpenModal = true;
-                        }, animationDurationSlow);
-                    }
+                        imageItem.appendChild(imgElement);
+                        modalImageContainer.appendChild(imageItem);
+                    });
                 }
-            });
+                
+                if (content.list) {
+                    content.list.forEach(item => {
+                        const listItem = document.createElement('li');
+                        listItem.className = 'modal-main-about-list-item';
+                        listItem.textContent = item;
 
-            projectsContainer.appendChild(projectCard);
-        });
+                        modalListContainer.appendChild(listItem);
+                    })
+                    
+                }
+                
+                modal.removeAttribute('style');
+                document.body.classList.add('body-modal-open');
+                modalContainer.classList.add('modal-open');
+                modal.classList.add('modal-open');
+                
+                setTimeout(() => {
+                    canCloseModal = true;
+                }, animationDurationSlow);
+
+                setTimeout(() => {
+                    canOpenModal = true;
+                }, animationDurationSlow);
+            }
+        }
 
         const closeModal = () => {
             if (canCloseModal) {
@@ -108,6 +83,32 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
+        document.querySelector('.zngr-projects').addEventListener('click', function(event) {
+            if (event.target.closest('.project-card, .project-card-big')) {
+                const projectCard = event.target.closest('.project-card, .project-card-big');
+                if (canOpenModal) {
+                    canOpenModal = false;
+                    canCloseModal = false;
+                    const projectId = projectCard.getAttribute('data-project-id');
+                    const project = data.projects.find(p => p.id === projectId);
+                    openModal(project);
+                }
+            }
+        });
+
+        document.querySelector('.zngr-competence-container-main').addEventListener('click', function(event) {
+            if (event.target.closest('.competence-card')) {
+                const competenceCard = event.target.closest('.competence-card');
+                if (canOpenModal) {
+                    canOpenModal = false;
+                    canCloseModal = false;
+                    const competenceId = competenceCard.getAttribute('data-competence-id');
+                    const competence = data.competences.find(c => c.id === competenceId);
+                    openModal(competence);
+                }
+            }
+        })
+
         // Close modal through button
         closeBtn.addEventListener('click', closeModal);
 
@@ -117,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 closeModal();
             }
         });
-    });
+    })
+    .catch(error => console.error('Error loading projects:', error));
 });
 

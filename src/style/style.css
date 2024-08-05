@@ -281,6 +281,8 @@ header{
                     display: flex;
                     flex-direction: row;
                     background-color: transparent;
+                    width: 100%;
+                    justify-content: space-between;
                     & .competence-card-text-container{
                         & .competence-card-text-container-description{
                             color: var(--gray);
@@ -299,7 +301,7 @@ header{
                     & .competence-card-text-button{
                         display: flex;
                         flex-direction: column;
-                        justify-content: end;
+                        align-self: flex-end;
                     }
                 }
             }
@@ -422,6 +424,21 @@ body.body-modal-open{
             display: flex;
             flex: 1;
             flex-direction: column;
+            & .modal-main-about-info{
+                display: flex;
+                flex-direction: row;
+                & .modal-main-about-info-link{
+                    border: none;
+                    background-color: var(--gray);
+                    padding: 8px;
+                    color: var(--white);
+                }
+                & .modal-main-about-info-business{
+                    justify-self: center;
+                    padding-left: 64px;
+                    color: var(--white);
+                }
+            }
             & .modal-main-about-description{
 
             }
