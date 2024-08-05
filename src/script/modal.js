@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('/src/script/projects.json')
+    fetch('/src/script/data.json')
     .then(response => response.json())
     .then(data => {
         const projectsContainer = document.querySelector('.zngr-projects');
