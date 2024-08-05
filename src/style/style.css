@@ -176,7 +176,7 @@ header{
                 height: 32px;
                 border-radius: 128px;
                 white-space: nowrap;
-                transition: var(--anim_duration-slow);
+                transition: var(--anim_duration);
                 background-color: transparent;
                 cursor: pointer;
                 &:hover{
@@ -191,7 +191,7 @@ header{
                 & .button-icon{
                     background-color: transparent;
                     fill: var(--gray5);
-                    transition: fill var(--anim_duration-slow);
+                    transition: fill var(--anim_duration);
                 }
                 &:hover .button-icon{
                     fill: var(--white);
@@ -203,7 +203,7 @@ header{
             border: var(--white5) 2px solid;
             & .button-icon{
                 fill: var(--white);
-                transition: fill var(--anim_duration-slow);
+                transition: fill var(--anim_duration);
             }
             
         }

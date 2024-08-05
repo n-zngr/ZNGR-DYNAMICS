@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('/src/script/data.json')
+    fetch('/src/data/data.json')
     .then(response => response.json())
     .then(data => {
         const competenceContainer = document.querySelector('.zngr-competence-container-main');
