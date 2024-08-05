@@ -417,6 +417,7 @@ body.body-modal-open{
         flex-direction: row;
         gap: 32px;
         padding: 16px 16px 0 16px;
+        background-color: var(--black);
         & .modal-main-about{
             display: flex;
             flex: 1;
