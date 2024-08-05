@@ -1,9 +1,8 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     fetch('/src/script/data.json')
     .then(response => response.json())
     .then(data => {
-        const projectsContainer = document.querySelector('.zngr-projects');
-        const projectCards = document.querySelectorAll('.project-card, .project-card-big');
+        const competenceContainer = document.querySelector('.zngr-competence-container-main');
         const modal = document.getElementById('modal');
         const modalContainer = document.querySelector('.modal-container');
         const modalTitle = document.getElementById('modal-title');
@@ -12,72 +11,64 @@ document.addEventListener('DOMContentLoaded', function() {
         const closeBtn = document.querySelector('.close');
         const modalImageContainer = document.querySelector('.modal-main-showcase');
 
-        const animationDurationSlow = '800';
+        const animationDurationSlow = 800;
         let canCloseModal = false;
         let canOpenModal = true;
 
+        data.competence.forEach((competence) => {
+            const competenceCard = document.createElement('button');
+            competenceCard.className = 'competence-card';
+            competenceCard.setAttribute('data-competence-id', competence.id);
 
-        data.projects.forEach((project, index) => {
-            const projectCard = document.createElement('button');
-            projectCard.className = index % 3 === 2 ? 'project-card-big' : 'project-card';
-            projectCard.setAttribute('data-project-id', project.id);
-
-            // <img src="${project.thumbnail}" alt="${project.title}">
-
-            projectCard.innerHTML = `
-                <div class="project-card-container">
-                    <img src="${project.thumbnail}" alt="${project.title}">
+            competenceCard.innerHTML = `
+                <div class="competence-card-thumbnail">
+                    <img src="src/img/TestImage.jpg" alt="">
                 </div>
-                <div class="project-card-info">
-                    <h2>${project.title}</h2>
-                    <div class="button-small">
-                        <svg class="button-icon" width="10" height="10" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13 19V29C13 30.6569 14.3431 32 16 32C17.6569 32 19 30.6569 19 29V19H29C30.6569 19 32 17.6569 32 16C32 14.3431 30.6569 13 29 13H19V3C19 1.34315 17.6569 0 16 0C14.3431 0 13 1.34315 13 3V13H3C1.34315 13 0 14.3431 0 16C0 17.6569 1.34315 19 3 19H13Z"/>
-                        </svg>
+                <div class="competence-card-text">
+                    <div class="competence-card-text-container">
+                        <p class="competence-card-text-container-description">Lorem, ipsum dolor.</p>
+                        <h3 class="competence-card-text-container-title">Lorem ipsum dolor sit amet.</h3>
+                    </div>
+                    <div class="competence-card-text-button">
+                        <div class="button-small">
+                            <svg class="button-icon" width="10" height="10" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 19V29C13 30.6569 14.3431 32 16 32C17.6569 32 19 30.6569 19 29V19H29C30.6569 19 32 17.6569 32 16C32 14.3431 30.6569 13 29 13H19V3C19 1.34315 17.6569 0 16 0C14.3431 0 13 1.34315 13 3V13H3C1.34315 13 0 14.3431 0 16C0 17.6569 1.34315 19 3 19H13Z"/>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             `;
 
-            projectCard.addEventListener('click', () => {
+            competenceCard.addEventListener('click', () => {
                 if (canOpenModal) {
                     canOpenModal = false;
                     canCloseModal = false;
-                    const projectId = projectCard.getAttribute('data-project-id');
-                    const project = data.projects.find(p => p.id === projectId);
-                    
-                    if (project) {
-                        modalTitle.textContent = project.title;
-                        modalDescription.textContent = project.description;
-                        
+                    const competenceId = competenceCard.getAttribute('data-competence-id');
+                    const competence = data.competence.find(c => c.id === competenceId);
+
+                    if (competence) {
+                        modalTitle.textContent = competence.title;
+                        modalDescription.textContent = competence.description;
+
                         modalListContainer.innerHTML = '';
                         modalImageContainer.innerHTML = '';
 
-                        project.images.forEach(image => {
-                            const imageItem = document.createElement('div')
+                        competence.images.forEach(image => {
+                            const imageItem = document.createElement('div');
                             imageItem.className = 'modal-main-showcase-card';
-                            
+
                             const imgElement = document.createElement('img');
                             imgElement.src = image.src;
                             imgElement.alt = image.alt;
 
                             imageItem.appendChild(imgElement);
-                            modalImageContainer.appendChild(imageItem);
                         });
 
-                        project.list.forEach(item => {
-                            const listItem = document.createElement('li');
-                            listItem.className = 'modal-main-about-list-item';
-                            listItem.textContent = item;
-
-
-                            modalListContainer.appendChild(listItem);
-                        });
-                        
                         modal.removeAttribute('style');
                         document.body.classList.add('body-modal-open');
                         modalContainer.classList.add('modal-open');
                         modal.classList.add('modal-open');
-                        
+
                         setTimeout(() => {
                             canCloseModal = true;
                         }, animationDurationSlow);
@@ -89,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            projectsContainer.appendChild(projectCard);
+            competenceContainer.appendChild(competenceCard);
         });
 
         const closeModal = () => {
@@ -107,11 +98,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, animationDurationSlow);
             }
         }
-
-        // Close modal through button
+        
         closeBtn.addEventListener('click', closeModal);
 
-        // Close modal through clicking outside of container
         window.addEventListener('click', (event) => {
             if (event.target === modal) {
                 closeModal();
@@ -119,4 +108,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
