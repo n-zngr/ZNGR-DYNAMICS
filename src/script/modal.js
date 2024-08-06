@@ -18,6 +18,42 @@ document.addEventListener('DOMContentLoaded', function() {
         let canCloseModal = false;
         let canOpenModal = true;
 
+        const svgFiles = ['IconListDot.svg', 'IconCross.svg', 'IconListArrow.svg', 'IconPlus.svg'];
+        const svgElements = [];
+        const arrowIcon = 'IconRight.svg';
+
+        svgFiles.forEach(file => {
+            fetch(`/src/svg/${file}`)
+            .then(response => response.text())
+            .then(svgContent => {
+                const parser = new DOMParser();
+                const svgDoc = parser.parseFromString(svgContent, 'image/svg+xml');
+                const svgElement = svgDoc.querySelector('svg');
+
+                svgElement.setAttribute('width', '10');
+                svgElement.setAttribute('height', '10');
+                svgElement.querySelectorAll('path').forEach(path => {
+                    path.removeAttribute('fill');
+                })
+
+                svgElements.push(svgElement);
+            })
+        })
+
+        fetch(`/src/svg/${arrowIcon}`)
+        .then(response => response.text())
+        .then(svgContent => {
+            const parser = new DOMParser();
+            const svgDoc = parser.parseFromString(svgContent, 'image/svg+xml');
+            const svgElement = svgDoc.querySelector('svg');
+
+            svgElement.setAttribute('width', '10');
+            svgElement.setAttribute('height', '10');
+            svgElement.querySelectorAll('path').forEach(path => {
+                path.removeAttribute('fill');
+            })
+        })
+
         function openModal(content) {
             if (content) {
                 modalTitle.textContent = content.title;
@@ -57,14 +93,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 if (content.list) {
-                    content.list.forEach(item => {
+                    content.list.forEach((item, index) => {
                         const listItem = document.createElement('li');
                         listItem.className = 'modal-main-about-list-item';
-                        listItem.textContent = item;
 
+                        const text = document.createElement('p');
+                        text.textContent = item;
+                        text.className = 'modal-main-about-list-item-text';
+                        
+                        const icon = svgElements[index % svgElements.length].cloneNode(true);
+                        icon.classList.add('modal-main-about-list-item-svg');
+
+                        listItem.appendChild(icon);
+                        listItem.appendChild(text);
                         modalListContainer.appendChild(listItem);
-                    })
-                    
+                    });
                 }
                 
                 modal.removeAttribute('style');
@@ -81,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, animationDurationSlow);
             }
         }
-
+    
         const closeModal = () => {
             if (canCloseModal) {
                 modalContainer.classList.remove('modal-open');
@@ -124,16 +167,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
 
-        // Close modal through button
         closeBtn.addEventListener('click', closeModal);
 
-        // Close modal through clicking outside of container
         window.addEventListener('click', (event) => {
             if (event.target === modal) {
                 closeModal();
             }
         });
-    })
-    .catch(error => console.error('Error loading projects:', error));
+    });
 });
 

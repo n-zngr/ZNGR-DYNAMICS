@@ -161,7 +161,7 @@ header{
             justify-content: space-between;
             padding: 16px;
             z-index: 1;
-            & h2{
+            & .project-card-info-title{
                 font-size: var(--font_size-big);
                 font-weight: var(--font_weight-demi);
                 background-color: transparent;
@@ -412,13 +412,13 @@ body.body-modal-open{
     & .modal-header{
         display: flex;
         justify-content: space-between;
-        padding: 16px;
+        padding: 16px 16px 0px 16px;
     }
     & .modal-main{
         display: flex;
         flex-direction: row;
         gap: 32px;
-        padding: 16px 16px 0 16px;
+        padding: 16px;
         background-color: var(--black);
         & .modal-main-about{
             display: flex;
@@ -438,6 +438,9 @@ body.body-modal-open{
                     &:hover{
                         background-color: var(--gray5);
                     }
+                    & .modal-main-about-info-link-svg{
+                        fill: var(--white);
+                    }
                 }
                 & .modal-main-about-info-business{
                     display: flex;
@@ -454,9 +457,18 @@ body.body-modal-open{
                 flex-direction: column;
                 padding-top: 16px;
                 & .modal-main-about-list-item{
-                    color: white;
+                    color: var(--white3);
+                    font-weight: var(--font_weight-regular);
                     list-style: none;
                     padding-bottom: 8px;
+                    display: flex;
+                    align-items: first baseline;
+                    & .modal-main-about-list-item-text{
+                        padding-left: 8px;
+                    }
+                    & .modal-main-about-list-item-svg{
+                        fill: var(--white5);
+                    }
                 }
             }
         }
@@ -548,26 +560,24 @@ body.body-modal-open{
 @media only screen and (max-width: 1280px){
     .zngr-projects{
         padding-inline: 64px;
-    }
-}
+    }}
 @media only screen and (min-width: 1280px) {
     .zngr-projects{
         & .project-card-big{
             aspect-ratio: inherit;
             min-height: 100vh;
         }    
-    }
-    
-}
+    }}
 @media only screen and (max-width: 768px){
     .zngr-projects{
         padding-inline: 32px;}}
 @media only screen and (max-width: 500px){
-    .zngr-projects{padding-inline: 16px;}
+    .zngr-projects{padding-inline: 16px;}}
+
+
+.icon{
+    fill: var(--white);
 }
-
-
-
 
 :root{
     --black: #020406;

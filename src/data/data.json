@@ -4,9 +4,9 @@
             "id": "1",
             "title": "Gasthaus Rossberg",
             "link": "https://gasthaus-rossberg.ch/",
-            "business": "Business 1",
-            "description": "This is the description for Project 1.",
-            "list": ["item 1", "item 2", "item 3"],
+            "business": "Restaurant",
+            "description": "Gasthaus Rossberg ",
+            "list": ["Content Management System", "UX Design", "Hosting", "Continous Maintenance"],
             "thumbnail": "/src/img/TestImage.jpg",
             "images": [
                 { "alt": "First Image", "src": "/src/img/TestImage.jpg" },
@@ -18,8 +18,8 @@
             "title": "Connect",
             "link": "https://connect.deltagamez.ch/",
             "business": "Online Service",
-            "description": "This is the description for Project 2.",
-            "list": ["item 1", "item 2", "item 3"],
+            "description": "Connect is an online platform dedicated to communities on the chatting-app Discord. Through the Connect Discord App (aka Discord bot), communities advertise their Discord community on a modern web-page. Servers on Discord are often invisible",
+            "list": ["Branding", "UI & UX Design", "Discord Integration"],
             "thumbnail": "/src/img/ProjectConnect.png",
             "images": [
                 { "alt": "First Image", "src": "/src/img/TestImage.jpg" },
@@ -30,11 +30,11 @@
         },
         {
             "id": "3",
-            "title": "Project 3",
-            "link": "https://gasthaus-rossberg.ch",
-            "business": "",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores esse quasi assumenda a itaque cum. Dignissimos totam rerum nulla tempore mollitia ipsam sed odit optio, fuga deserunt ad vitae blanditiis quas id ducimus doloremque repudiandae aspernatur aperiam provident accusamus reprehenderit. Porro sint dolorem sit deleniti, temporibus a cupiditate molestias distinctio dolore similique neque impedit quidem, quam ullam ea cumque odit, sed incidunt atque quae corrupti nostrum ad mollitia. Unde dignissimos, eius atque quidem quis totam molestiae error facilis mollitia reiciendis maxime aut veritatis at minus ratione, voluptatibus, quisquam autem? Expedita aspernatur a pariatur explicabo enim laborum aliquam similique vel corrupti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores esse quasi assumenda a itaque cum. Dignissimos totam rerum nulla tempore mollitia ipsam sed odit optio, fuga deserunt ad vitae blanditiis quas id ducimus doloremque repudiandae aspernatur aperiam provident accusamus reprehenderit. Porro sint dolorem sit deleniti, temporibus a cupiditate molestias distinctio dolore similique neque impedit quidem, quam ullam ea cumque odit, sed incidunt atque quae corrupti nostrum ad mollitia. Unde dignissimos, eius atque quidem quis totam molestiae error facilis mollitia reiciendis maxime aut veritatis at minus ratione, voluptatibus, quisquam autem? Expedita aspernatur a pariatur explicabo enim laborum aliquam similique vel corrupti.",
-            "list": ["item 1", "item 2", "item 3", "item 4"],
+            "title": "ZNGR DYNAMICS",
+            "link": "https://zngr-dynamics.ch",
+            "business": "Portfolio",
+            "description": "ZNGR DYNAMICS is my personal site used to show off my skills and strengths in a corporate style.",
+            "list": ["UI & UX Design"],
             "thumbnail": "/src/img/TestImage.jpg",
             "images": [
                 { "alt": "First Image", "src": "/src/img/TestImage.jpg" },
@@ -73,6 +73,17 @@
             "title": "title5",
             "description": "description5",
             "thumbnail": "/src/img/TestImage.jpg"
+        }, 
+        {
+            "id": "5",
+            "title": "title5",
+            "description": "description5",
+            "thumbnail": "/src/img/TestImage.jpg"
         }
-    ]
+    ], 
+    "business-types": {
+        "finance": "Finance",
+        "restaurant": "Restaurant",
+        "lodging": "Lodging" 
+    }
 }
