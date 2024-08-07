@@ -15,17 +15,31 @@ body{background-color: var(--black);}
     position: relative;
     align-items: center;
     & .nav-button{
-        color: white;
+        color: var(--white5);
         font-weight: 800;
-        font-size: var(--font-size_large);
+        font-size: var(--font_size-bigger);
         border: none;
-        &:hover{color: blue;}
-        &:active{color: green;}}
-        & .nav-container{
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+        cursor: pointer;
+        transition: var(--anim_duration);
+        &:hover{
+            color: var(--white);
+            text-shadow: 0px 0px 2px var(--white5);
         }
+        &:active{
+            transform: scale(.97);
+        }
+    }
+    & .nav-container{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        & .nav-container-logo{
+            font-family: Ethnocentric;
+            font-size: var(--font_size-large);
+            color: var(--white5);
+            cursor: default;
+        }
+    }
 }
 
 .zngr-menu{
@@ -582,39 +596,20 @@ body.body-modal-open{
     }
 }
 
-.button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: var(--gray) 2px solid;
-    border-radius: 128px;
-    background-color: var(--white5);
-    &:hover{
-        background-color: var(--white);
-    }
-}
+
 
 @media only screen and (max-width: 1280px){
-    .zngr-projects{
-        padding-inline: 64px;
-    }}
+    .zngr-projects{padding-inline: 64px;}
+    .zngr-competence{padding-inline: 64px;}}
 @media only screen and (min-width: 1280px) {
     .zngr-projects{
-        & .project-card-big{
-            aspect-ratio: inherit;
-            min-height: 100vh;
-        }    
-    }}
+        & .project-card-big{aspect-ratio: inherit; min-height: 100vh;}}}
 @media only screen and (max-width: 768px){
-    .zngr-projects{
-        padding-inline: 32px;}}
+    .zngr-projects{padding-inline: 32px;}
+    .zngr-competence{padding-inline: 32px;}}
 @media only screen and (max-width: 500px){
-    .zngr-projects{padding-inline: 16px;}}
-
-
-.icon{
-    fill: var(--white);
-}
+    .zngr-projects{padding-inline: 16px;}
+    .zngr-competence{padding-inline: 16px;}}
 
 :root{
     --black: #020406;

@@ -55,16 +55,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 modalDescription.innerHTML = '';
 
                 modalTitle.textContent = content.title.toUpperCase();
-                content.description.forEach((description, index) => {
-                    const descriptionElement = document.createElement('p');
-                    descriptionElement.textContent = description;
-                    if (index === 0) {
-                        descriptionElement.className = 'modal-main-about-description-header';
-                    } else {
-                        descriptionElement.className = 'modal-main-about-description-main';
-                    }
-                    modalDescription.appendChild(descriptionElement);
-                })
+
+                if (content.description) {
+                    content.description.forEach((description, index) => {
+                        const descriptionElement = document.createElement('p');
+                        descriptionElement.textContent = description;
+                        if (index === 0) {
+                            descriptionElement.className = 'modal-main-about-description-header';
+                        } else {
+                            descriptionElement.className = 'modal-main-about-description-main';
+                        }
+                        modalDescription.appendChild(descriptionElement);
+                    });
+                }
 
                 if (content.link) {
                     const linkDiv = document.createElement('a');
@@ -112,15 +115,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         const listItem = document.createElement('li');
                         listItem.className = 'modal-main-about-list-item';
 
-                        const text = document.createElement('p');
-                        text.textContent = item;
-                        text.className = 'modal-main-about-list-item-text';
+                        const listItemText = document.createElement('p');
+                        listItemText.textContent = item;
+                        listItemText.className = 'modal-main-about-list-item-text';
                         
-                        const icon = svgElements[svgFiles[index % svgFiles.length]].cloneNode(true);
-                        icon.classList.add('modal-main-about-list-item-svg');
+                        const listItemIcon = svgElements[svgFiles[index % svgFiles.length]].cloneNode(true);
+                        listItemIcon.classList.add('modal-main-about-list-item-svg');
 
-                        listItem.appendChild(icon);
-                        listItem.appendChild(text);
+                        listItem.appendChild(listItemIcon);
+                        listItem.appendChild(listItemText);
                         modalListContainer.appendChild(listItem);
                     });
                 }
