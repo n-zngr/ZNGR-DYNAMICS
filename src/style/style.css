@@ -1,4 +1,5 @@
 @import url("/src/fonts/font-termina.css");
+@import url("responsive.css");
 
 *{
     box-sizing: border-box;
@@ -90,10 +91,6 @@ body{background-color: var(--black);}
 
 header{
     height: 50vh;
-}
-
-.button{
-    background-color: transparent;
 }
 
 .zngr-projects{
@@ -562,22 +559,17 @@ body.body-modal-open{
     }
 }
 
-@media only screen and (max-width: 1280px){
-    .zngr-projects{
-        padding-inline: 64px;
-    }}
-@media only screen and (min-width: 1280px) {
-    .zngr-projects{
-        & .project-card-big{
-            aspect-ratio: inherit;
-            min-height: 100vh;
-        }    
-    }}
-@media only screen and (max-width: 768px){
-    .zngr-projects{
-        padding-inline: 32px;}}
-@media only screen and (max-width: 500px){
-    .zngr-projects{padding-inline: 16px;}}
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: var(--gray) 2px solid;
+    border-radius: 128px;
+    background-color: var(--white5);
+    &:hover{
+        background-color: var(--white);
+    }
+}
 
 
 .icon{
