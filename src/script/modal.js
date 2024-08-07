@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById('modal');
         const modalContainer = document.querySelector('.modal-container');
         const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.querySelector('.modal-main-about-description');
         const modalInfoContainer = document.querySelector('.modal-main-about-info');
-        const modalDescription = document.getElementById('modal-description');
         const modalListContainer = document.querySelector('.modal-main-about-list');
         const closeBtn = document.querySelector('.close');
         const modalImageContainer = document.querySelector('.modal-main-showcase');
@@ -49,12 +49,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function openModal(content, svgElements) {
             if (content) {
-                modalTitle.textContent = content.title;
-                modalDescription.textContent = content.description;
-
                 modalListContainer.innerHTML = '';
                 modalImageContainer.innerHTML = '';
                 modalInfoContainer.innerHTML = '';
+                modalDescription.innerHTML = '';
+
+                modalTitle.textContent = content.title.toUpperCase();
+                content.description.forEach((description, index) => {
+                    const descriptionElement = document.createElement('p');
+                    descriptionElement.textContent = description;
+                    if (index === 0) {
+                        descriptionElement.className = 'modal-main-about-description-header';
+                    } else {
+                        descriptionElement.className = 'modal-main-about-description-main';
+                    }
+                    modalDescription.appendChild(descriptionElement);
+                })
 
                 if (content.link) {
                     const linkDiv = document.createElement('a');

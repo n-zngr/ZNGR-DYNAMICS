@@ -5,12 +5,13 @@
             "title": "Gasthaus Rossberg",
             "link": "https://gasthaus-rossberg.ch/",
             "business": "Restaurant",
-            "description": "Gasthaus Rossberg ",
+            "description": ["Gasthaus Rossberg is a restaurant in the beautiful Swiss mountains of the Bernese Oberland.", "The Rossberg website hasn't been touched since 2016. The client requested a complete overhaul of the page, keeping the design simplistic, but continuing to allow them to make changes to the page through a CMS.", "I have decided to use the CMS Joomla to cover the needs of the client and stick to a basic design.", "The page has successfully been completed back in 2022 and is continued to be maintained. "],
             "list": ["Content Management System", "UX Design", "Hosting", "Continous Maintenance"],
-            "thumbnail": "/src/img/TestImage.jpg",
+            "thumbnail": "/src/img/rossberg/RossbergCover.png",
             "images": [
-                { "alt": "First Image", "src": "/src/img/TestImage.jpg" },
-                { "alt": "Second Image", "src": "/src/img/TestImage.jpg" }
+                { "alt": "Old Website", "src": "/src/img/rossberg/RossbergOldWeb.png" },
+                { "alt": "Updated Home-Page", "src": "/src/img/rossberg/RossbergWeb.png" },
+                { "alt": "Updated \"Grad ufem Herd\" page", "src": "/src/img/rossberg/RossbergWeb2.png" }
             ]
         },
         {
@@ -18,7 +19,7 @@
             "title": "Connect",
             "link": "https://connect.deltagamez.ch/",
             "business": "Online Service",
-            "description": "Connect is an online platform dedicated to communities on the chatting-app Discord. Through the Connect Discord App (aka Discord bot), communities advertise their Discord community on a modern web-page. Servers on Discord are often invisible",
+            "description": ["Connect is an online platform dedicated to communities on the chatting-app Discord.", "What if we allowed for Discord communities to easily become more visible gaining more members and an audience faster? From Branding, to overseeing development and creating UI & UX, this project has been built from the ground up.", "The platform is made of two components, the Connect Discord App (bot) and its website. An API ties the two together. Users can interact with the Connect App directly on Discord sending the information to the API which the website uses to display the corresponding communities.", "With the idea in our heads, we wanted to create a modern, bold, provocative brand, which lead to the slogan \"Connect your community\". The logo depicts a paperclip, made of the \"C\" and \"O\" letters, standing for connecting one thing to another. "],
             "list": ["Branding", "UI & UX Design", "Discord Integration"],
             "thumbnail": "/src/img/ProjectConnect.png",
             "images": [
@@ -33,7 +34,7 @@
             "title": "ZNGR DYNAMICS",
             "link": "https://zngr-dynamics.ch",
             "business": "Portfolio",
-            "description": "ZNGR DYNAMICS is my personal site used to show off my skills and strengths in a corporate style.",
+            "description": ["ZNGR DYNAMICS is my personal site used to show off my skills and strengths in a corporate style.", "description 2", "description 3"],
             "list": ["UI & UX Design"],
             "thumbnail": "/src/img/TestImage.jpg",
             "images": [

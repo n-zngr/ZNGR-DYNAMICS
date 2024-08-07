@@ -419,14 +419,18 @@ body.body-modal-open{
         gap: 32px;
         padding: 32px;
         background-color: var(--black);
+        position: relative;
         & .modal-main-about{
+            position: sticky;
+            max-height: 100vh;
+            top: -35px;
             display: flex;
-            flex: 1;
+            overflow: hidden;
+            flex: 2;
             flex-direction: column;
             & .modal-main-about-info{
                 display: flex;
                 flex-direction: row;
-                vertical-align: center;
                 & .modal-main-about-info-link{
                     display: flex;
                     align-items: center;
@@ -435,7 +439,7 @@ body.body-modal-open{
                     padding: 8px 16px 8px 16px;
                     color: var(--black);
                     text-decoration: none;
-                    transition: background-color var(--anim_duration-slow);
+                    transition: background-color var(--anim_duration);
                     &:hover{
                         background-color: var(--white);
                         transition: background-color var(--anim_duration);
@@ -444,12 +448,13 @@ body.body-modal-open{
                         padding-right: 8px;
                     }
                     & .modal-main-about-info-link-svg{
-                        transition: transform var(--anim_duration-slow) ease;
+                        transition: transform var(--anim_duration-slow);
                         fill: var(--black);
                     }
 
                     &:hover .modal-main-about-info-link-svg{
                         transform: translateX(4px);
+                        transition: transform var(--anim_duration);
                     }
                 }
                 & .modal-main-about-info-business{
@@ -461,18 +466,29 @@ body.body-modal-open{
             }
             & .modal-main-about-description{
                 padding-top: 32px;
+                & .modal-main-about-description-header{
+                    padding-bottom: 8px;
+                    color: var(--white);
+                    font-weight: var(--font_weight-medium);
+                    font-size: var(--font_size-big);
+                }
+                & .modal-main-about-description-main{
+                    padding-top: 16px;
+                    color: var(--white5);
+                    font-weight: var(--font_weight-regular);
+                }
             }
             & .modal-main-about-list{
                 display: flex;
                 flex-direction: column;
-                padding-top: 16px;
+                padding-top: 24px;
                 & .modal-main-about-list-item{
                     color: var(--white3);
                     font-weight: var(--font_weight-regular);
                     list-style: none;
                     padding-bottom: 8px;
                     display: flex;
-                    align-items: first baseline;
+                    align-items:center;
                     & .modal-main-about-list-item-text{
                         padding-left: 8px;
                     }
@@ -484,10 +500,9 @@ body.body-modal-open{
         }
         & .modal-main-showcase{
             display: flex;
-            flex: 1;
+            flex: 3;
             flex-direction: column;
             gap: 32px;
-
             & .modal-main-showcase-card{
                 position: relative;
                 width: 100%;
@@ -634,7 +649,8 @@ body.body-modal-open{
     --font_size-small: 12px;
     --font_size-medium: 14px;
     --font_size-regular: 16px;
-    --font_size-big: 20px;
+    --font_size-big: 18px;
+    --font_size-bigger: 20px;
     --font_size-large: 24px;
     --font_size-very-large: 32px;
 
