@@ -1,3 +1,5 @@
+import { loadSvgFiles } from "./loadSvg.js";
+
 document.addEventListener('DOMContentLoaded', function() {
     fetch('/src/data/data.json')
     .then(response => response.json())
@@ -13,48 +15,39 @@ document.addEventListener('DOMContentLoaded', function() {
         const closeBtn = document.querySelector('.close');
         const modalImageContainer = document.querySelector('.modal-main-showcase');
 
-
         const animationDurationSlow = '800';
         let canCloseModal = false;
         let canOpenModal = true;
 
-        const svgFiles = ['IconListDot.svg', 'IconCross.svg', 'IconListArrow.svg', 'IconPlus.svg'];
-        const svgElements = [];
-        const arrowIcon = 'IconRight.svg';
+        loadSvgFiles(svgElements => {
+            projectsContainer.addEventListener('click', function(event) {
+                if (event.target.closest('.project-card, .project-card-big')) {
+                    const projectCard = event.target.closest('.project-card, .project-card-big');
+                    if (canOpenModal) {
+                        canOpenModal = false;
+                        canCloseModal = false;
+                        const projectId = projectCard.getAttribute('data-project-id');
+                        const project = data.projects.find(p => p.id === projectId);
+                        openModal(project, svgElements);
+                    }
+                }
+            });
+    
+            competenceContainer.addEventListener('click', function(event) {
+                if (event.target.closest('.competence-card')) {
+                    const competenceCard = event.target.closest('.competence-card');
+                    if (canOpenModal) {
+                        canOpenModal = false;
+                        canCloseModal = false;
+                        const competenceId = competenceCard.getAttribute('data-competence-id');
+                        const competence = data.competences.find(c => c.id === competenceId);
+                        openModal(competence, svgElements);
+                    }
+                }
+            });
+        });
 
-        svgFiles.forEach(file => {
-            fetch(`/src/svg/${file}`)
-            .then(response => response.text())
-            .then(svgContent => {
-                const parser = new DOMParser();
-                const svgDoc = parser.parseFromString(svgContent, 'image/svg+xml');
-                const svgElement = svgDoc.querySelector('svg');
-
-                svgElement.setAttribute('width', '10');
-                svgElement.setAttribute('height', '10');
-                svgElement.querySelectorAll('path').forEach(path => {
-                    path.removeAttribute('fill');
-                })
-
-                svgElements.push(svgElement);
-            })
-        })
-
-        fetch(`/src/svg/${arrowIcon}`)
-        .then(response => response.text())
-        .then(svgContent => {
-            const parser = new DOMParser();
-            const svgDoc = parser.parseFromString(svgContent, 'image/svg+xml');
-            const svgElement = svgDoc.querySelector('svg');
-
-            svgElement.setAttribute('width', '10');
-            svgElement.setAttribute('height', '10');
-            svgElement.querySelectorAll('path').forEach(path => {
-                path.removeAttribute('fill');
-            })
-        })
-
-        function openModal(content) {
+        function openModal(content, svgElements) {
             if (content) {
                 modalTitle.textContent = content.title;
                 modalDescription.textContent = content.description;
@@ -64,18 +57,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 modalInfoContainer.innerHTML = '';
 
                 if (content.link) {
-                    const linkItem = document.createElement('a');
-                    linkItem.className = 'modal-main-about-info-link';
-                    linkItem.href = content.link;
+                    const linkDiv = document.createElement('a');
+                    linkDiv.className = 'modal-main-about-info-link';
+                    linkDiv.href = content.link;
+
+                    const linkItem = document.createElement('p');
+                    linkItem.className = 'modal-main-about-info-link-text';
                     linkItem.textContent = 'Visit';
-                    modalInfoContainer.appendChild(linkItem);
+
+                    const linkSvg = svgElements['IconRight.svg'].cloneNode(true);
+                    linkSvg.classList.add('icon');
+
+                    linkDiv.appendChild(linkItem);
+                    linkDiv.appendChild(linkSvg);
+                    modalInfoContainer.appendChild(linkDiv);
                 }
 
                 if (content.business) {
-                    const businessItem = document.createElement('p');
-                    businessItem.className = 'modal-main-about-info-business';
-                    businessItem.textContent = content.business;
-                    modalInfoContainer.appendChild(businessItem);
+                    const businessDiv = document.createElement('div');
+                    businessDiv.className = 'modal-main-about-info-business';
+                    businessDiv.textContent = content.business;
+
+                    modalInfoContainer.appendChild(businessDiv);
                 }
 
                 if (content.images) {
@@ -92,6 +95,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 }
                 
+                const svgFiles = ['IconListDot.svg', 'IconCross.svg', 'IconListArrow.svg', 'IconPlus.svg'];
+
                 if (content.list) {
                     content.list.forEach((item, index) => {
                         const listItem = document.createElement('li');
@@ -101,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         text.textContent = item;
                         text.className = 'modal-main-about-list-item-text';
                         
-                        const icon = svgElements[index % svgElements.length].cloneNode(true);
+                        const icon = svgElements[svgFiles[index % svgFiles.length]].cloneNode(true);
                         icon.classList.add('modal-main-about-list-item-svg');
 
                         listItem.appendChild(icon);
@@ -125,12 +130,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     
-        const closeModal = () => {
+        function closeModal() {
             if (canCloseModal) {
                 modalContainer.classList.remove('modal-open');
                 modal.style.overflow = 'hidden';
                 document.body.classList.remove('body-modal-open');
-                setTimeout(function () {
+                setTimeout(() => {
                     modal.classList.remove('modal-open');
                     modal.removeAttribute('style');
                     modalContainer.classList.remove('modal-open');
@@ -140,32 +145,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, animationDurationSlow);
             }
         }
-
-        projectsContainer.addEventListener('click', function(event) {
-            if (event.target.closest('.project-card, .project-card-big')) {
-                const projectCard = event.target.closest('.project-card, .project-card-big');
-                if (canOpenModal) {
-                    canOpenModal = false;
-                    canCloseModal = false;
-                    const projectId = projectCard.getAttribute('data-project-id');
-                    const project = data.projects.find(p => p.id === projectId);
-                    openModal(project);
-                }
-            }
-        });
-
-        competenceContainer.addEventListener('click', function(event) {
-            if (event.target.closest('.competence-card')) {
-                const competenceCard = event.target.closest('.competence-card');
-                if (canOpenModal) {
-                    canOpenModal = false;
-                    canCloseModal = false;
-                    const competenceId = competenceCard.getAttribute('data-competence-id');
-                    const competence = data.competences.find(c => c.id === competenceId);
-                    openModal(competence);
-                }
-            }
-        })
 
         closeBtn.addEventListener('click', closeModal);
 

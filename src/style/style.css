@@ -429,6 +429,8 @@ body.body-modal-open{
                 flex-direction: row;
                 vertical-align: center;
                 & .modal-main-about-info-link{
+                    display: flex;
+                    align-items: center;
                     border: none;
                     border-radius: 16px;
                     background-color: var(--gray);
@@ -437,6 +439,9 @@ body.body-modal-open{
                     text-decoration: none;
                     &:hover{
                         background-color: var(--gray5);
+                    }
+                    & .modal-main-about-info-link-text{
+                        padding-right: 8px;
                     }
                     & .modal-main-about-info-link-svg{
                         fill: var(--white);
