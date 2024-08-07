@@ -1,6 +1,4 @@
 @import url("/src/fonts/font-termina.css");
-@import url("responsive.css");
-
 *{
     box-sizing: border-box;
     background-color: transparent;
@@ -98,7 +96,7 @@ header{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    padding-inline: 128px;
+    padding-inline: 100%;
     & .project-card, .project-card-big{
         display: flex;
         position: relative;
@@ -409,13 +407,17 @@ body.body-modal-open{
     & .modal-header{
         display: flex;
         justify-content: space-between;
-        padding: 16px 16px 0px 16px;
+        padding: 32px 32px 0px 32px;
+        & .modal-header-title{
+            font-size: var(--font_size-very-large);
+            font-weight: var(--font_weight-black);
+        }
     }
     & .modal-main{
         display: flex;
         flex-direction: row;
         gap: 32px;
-        padding: 16px;
+        padding: 32px;
         background-color: var(--black);
         & .modal-main-about{
             display: flex;
@@ -428,20 +430,26 @@ body.body-modal-open{
                 & .modal-main-about-info-link{
                     display: flex;
                     align-items: center;
-                    border: none;
-                    border-radius: 16px;
-                    background-color: var(--gray);
+                    border-radius: var(--border_radius-full);
+                    background-color: var(--white5);
                     padding: 8px 16px 8px 16px;
-                    color: var(--white);
+                    color: var(--black);
                     text-decoration: none;
+                    transition: background-color var(--anim_duration-slow);
                     &:hover{
-                        background-color: var(--gray5);
+                        background-color: var(--white);
+                        transition: background-color var(--anim_duration);
                     }
                     & .modal-main-about-info-link-text{
                         padding-right: 8px;
                     }
                     & .modal-main-about-info-link-svg{
-                        fill: var(--white);
+                        transition: transform var(--anim_duration-slow) ease;
+                        fill: var(--black);
+                    }
+
+                    &:hover .modal-main-about-info-link-svg{
+                        transform: translateX(4px);
                     }
                 }
                 & .modal-main-about-info-business{
@@ -505,9 +513,9 @@ body.body-modal-open{
     }
 }
 
-#modal-description{color: white;}
+#modal-description{color: var(--white);}
 #modal-title{
-    color: white;
+    color: var(--white);
 }
 
 .close {
@@ -618,6 +626,8 @@ body.body-modal-open{
     --spacing-regular: 16px;
     --spacing-big: 32px;
     --spacing-large: 64px;
+
+    --border_radius-full: 128px;
 
     --font_size-tiny: 8px;
     --font_size-smaller: 10px;

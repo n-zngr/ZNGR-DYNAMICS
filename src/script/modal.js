@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     linkItem.textContent = 'Visit';
 
                     const linkSvg = svgElements['IconRight.svg'].cloneNode(true);
-                    linkSvg.classList.add('icon');
+                    linkSvg.classList.add('modal-main-about-info-link-svg');
 
                     linkDiv.appendChild(linkItem);
                     linkDiv.appendChild(linkSvg);
