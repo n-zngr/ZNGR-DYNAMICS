@@ -96,7 +96,7 @@ header{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    padding-inline: 100%;
+    padding-inline: 128px;
     & .project-card, .project-card-big{
         display: flex;
         position: relative;
