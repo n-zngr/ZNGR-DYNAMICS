@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const body = document.querySelector('body');
+    const body = document.body;
     document.querySelectorAll('.nav-button').forEach(function(button) {
         button.addEventListener('click', function() {
             document.querySelector('.zngr-menu').classList.add('open');

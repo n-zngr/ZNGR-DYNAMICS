@@ -1,4 +1,7 @@
 @import url("/src/fonts/font-termina.css");
+
+html{scroll-behavior: smooth;}
+
 *{
     box-sizing: border-box;
     background-color: transparent;
@@ -17,6 +20,7 @@ body{background-color: var(--black);}
     align-items: center;
     background-color: var(--black-75);
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     z-index: 99;
     & .nav-button{
         color: var(--white5);
@@ -54,7 +58,8 @@ body{background-color: var(--black);}
     left: -100vw;
     height: 100vh;
     width: 100%;
-    transition: transform var(--anim_duration-slow);
+    /*transition: transform var(--anim_duration-slow);*/
+    transition: transform 1.3s cubic-bezier(0.785,0.135,0.15,1.0);
     background-color: var(--black);
     &.open{
         transform: translateX(100vw);
@@ -116,24 +121,36 @@ body{background-color: var(--black);}
 .zngr-header{
     display: flex;
     align-items: center;
+    cursor: default;
     & .zngr-header-background{
         flex: 1;
         .zngr-header-background-item{
             font-family: Ethnocentric;
             font-size: 540px;
-            color: white;
+            color: var(--black3);
         }
     }
     & .zngr-header-container{
         flex: 1;
-        & .zngr-header-container-title{
-            /*color: white;*/
+        & .zngr-header-container-title {
             max-width: 400px;
+            position: relative;
             font-size: var(--font_size-very-large);
-            background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 50%);
+            background: radial-gradient(circle, var(--white) 0%, var(--white5) 100%);
+            text-shadow: 0px 0px 1px var(--white-1);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            &::before{
+                content: '';
+                top: -20%;
+                left: 40%;
+                height: 16px;
+                width: 16px;
+                background-size: 16px 16px;
+                position: absolute;
+                background-image: url('/src/svg/Icon_Star.svg');
+            }
         }
         & .zngr-header-container-description{
             padding-top: 32px;
@@ -142,7 +159,18 @@ body{background-color: var(--black);}
             font-size: var(--font_size-large);
         }
     }
-    
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(/src/svg/Noise2.svg);
+        opacity: 0.1;
+        pointer-events: none;
+        z-index: -1;
+    }
 }
 
 .zngr-projects{
@@ -428,7 +456,7 @@ body.body-modal-open{
 .modal {
     position: fixed;
     display: flex;
-    z-index: 1;
+    z-index: 100;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -477,7 +505,7 @@ body.body-modal-open{
         & .modal-main-about{
             position: sticky;
             max-height: 100vh;
-            top: -35px;
+            top: -39px;
             display: flex;
             overflow: hidden;
             flex: 2;
@@ -487,35 +515,55 @@ body.body-modal-open{
                 flex-direction: row;
                 & .modal-main-about-info-link{
                     display: flex;
+                    position: relative;
                     align-items: center;
+                    border: var(--white5) 2px solid;
                     border-radius: var(--border_radius-full);
-                    background-color: var(--white5);
+                    background-color: transparent;
                     padding: 8px 16px 8px 16px;
-                    color: var(--black);
+                    font-weight: var(--font_weight-demi);
+                    color: var(--white5);
                     text-decoration: none;
+                    overflow: hidden;
                     transition: background-color var(--anim_duration);
                     &:hover{
-                        background-color: var(--white);
+                        background-color: transparent;
                         transition: background-color var(--anim_duration);
                     }
                     & .modal-main-about-info-link-text{
                         padding-right: 8px;
                     }
                     & .modal-main-about-info-link-svg{
-                        transition: transform var(--anim_duration-slow);
-                        fill: var(--black);
+                        transition: all var(--anim_duration-slow);
+                        fill: var(--white5);
                     }
 
                     &:hover .modal-main-about-info-link-svg{
                         transform: translateX(4px);
-                        transition: transform var(--anim_duration);
+                        fill: var(--white);
+                        transition: all var(--anim_duration);
                     }
+                    &::before{
+                        opacity: 0;
+                        content: '';
+                        position: absolute;
+                        background: linear-gradient(120deg, var(--highlight-effect));
+                        inset: 0;
+                        border-radius: var(--corner-radius);
+                        transform: translateX(-100%);
+                        z-index: 1;
+                    }
+                    &.hover::before{
+                        opacity: 1;
+                        transform: translateX(100%);
+                        transition: transform 0.5s linear;}
                 }
                 & .modal-main-about-info-business{
                     display: flex;
                     align-items: center;
                     padding-left: 64px;
-                    color: var(--white);
+                    color: var(--white3);
+                    font-weight: var(--font_weight-medium);
                 }
             }
             & .modal-main-about-description{
@@ -675,6 +723,12 @@ body.body-modal-open{
     --white4: #E1E3E5;
     --white5: #D9DBDD;
     --white-1: #F9FBFD0D;
+    --white-10: #F9FBFD1A;
+    --white-25: #F9FBFD40;
+    --white-50: #F9FBFD80;
+    --white-75: #F9FBFDBF;
+
+    --highlight-effect: transparent 25%, var(--white-10) 25%, var(--white-10) 41%, var(--white-25) 41%, var(--white-25) 50%, var(--white-25) 59%, var(--white-10) 59%, var(--white-10) 75%, transparent 75%;
 
     --spacing-small: 8px;
     --spacing-regular: 16px;

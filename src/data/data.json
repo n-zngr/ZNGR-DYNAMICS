@@ -9,9 +9,9 @@
             "list": ["Content Management System", "UX Design", "Hosting", "Continous Maintenance"],
             "thumbnail": "/src/img/rossberg/RossbergThumbnail.png",
             "images": [
-                { "alt": "Old Website", "src": "/src/img/rossberg/RossbergOldWeb.png" },
                 { "alt": "Updated Home-Page", "src": "/src/img/rossberg/RossbergWeb.png" },
-                { "alt": "Updated \"Grad ufem Herd\" page", "src": "/src/img/rossberg/RossbergWeb2.png" }
+                { "alt": "Updated \"Grad ufem Herd\" page", "src": "/src/img/rossberg/RossbergWeb2.png" },
+                { "alt": "Old Website", "src": "/src/img/rossberg/RossbergOldWeb.png" }
             ]
         },
         {

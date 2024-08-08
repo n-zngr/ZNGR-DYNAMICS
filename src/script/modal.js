@@ -1,4 +1,5 @@
 import { loadSvgFiles } from "./loadSvg.js";
+import { highlightEffect } from "./highlightButton.js";
 
 document.addEventListener('DOMContentLoaded', function() {
     fetch('/src/data/data.json')
@@ -128,6 +129,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 }
                 
+                highlightEffect();
+
                 modal.removeAttribute('style');
                 document.body.classList.add('body-modal-open');
                 modalContainer.classList.add('modal-open');
