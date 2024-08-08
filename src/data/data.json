@@ -7,7 +7,7 @@
             "business": "Restaurant",
             "description": ["Gasthaus Rossberg is a restaurant in the beautiful Swiss mountains of the Bernese Oberland.", "The Rossberg website hasn't been touched since 2016. The client requested a complete overhaul of the page, keeping the design simplistic, but continuing to allow them to make changes to the page through a CMS.", "I have decided to use the CMS Joomla to cover the needs of the client and stick to a basic design.", "The page has successfully been completed back in 2022 and is continued to be maintained. "],
             "list": ["Content Management System", "UX Design", "Hosting", "Continous Maintenance"],
-            "thumbnail": "/src/img/rossberg/RossbergCover.png",
+            "thumbnail": "/src/img/rossberg/RossbergThumbnail.png",
             "images": [
                 { "alt": "Old Website", "src": "/src/img/rossberg/RossbergOldWeb.png" },
                 { "alt": "Updated Home-Page", "src": "/src/img/rossberg/RossbergWeb.png" },
