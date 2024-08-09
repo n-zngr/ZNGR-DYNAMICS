@@ -35,7 +35,7 @@
             "link": "https://zngr-dynamics.ch",
             "business": "Portfolio",
             "description": ["ZNGR DYNAMICS is my personal site used to show off my skills and strengths in a corporate style.", "description 2", "description 3"],
-            "list": ["UI & UX Design"],
+            "list": ["UI & UX Design", "Animation"],
             "thumbnail": "/src/img/TestImage.jpg",
             "images": [
                 { "alt": "First Image", "src": "/src/img/TestImage.jpg" },

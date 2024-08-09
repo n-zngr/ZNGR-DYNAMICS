@@ -469,8 +469,6 @@ body{background-color: var(--black);}
 }
 
 
-
-
 body.body-modal-open{
     overflow: hidden;
     margin-right: 17px; /*TEMP SCROLLBAR MARGIN*/
@@ -537,8 +535,8 @@ body.body-modal-open{
                 display: flex;
                 flex-direction: row;
                 & .modal-main-about-info-link{
-                    display: flex;
                     position: relative;
+                    display: flex;
                     align-items: center;
                     border: var(--white5) 2px solid;
                     border-radius: var(--border_radius-full);
@@ -548,19 +546,21 @@ body.body-modal-open{
                     color: var(--white5);
                     text-decoration: none;
                     overflow: hidden;
-                    transition: background-color var(--anim_duration);
-                    &:hover{
-                        background-color: transparent;
-                        transition: background-color var(--anim_duration);
-                    }
+                    transition: all var(--anim_duration-slow);
+
                     & .modal-main-about-info-link-text{
                         padding-right: 8px;
+                        transition: all var(--anim_duration-slow);
                     }
                     & .modal-main-about-info-link-svg{
                         transition: all var(--anim_duration-slow);
                         fill: var(--white5);
                     }
 
+                    &:hover .modal-main-about-info-link-text{
+                        color: var(--white);
+                        transition: color var(--anim_duration);
+                    }
                     &:hover .modal-main-about-info-link-svg{
                         transform: translateX(4px);
                         fill: var(--white);
@@ -580,6 +580,10 @@ body.body-modal-open{
                         opacity: 1;
                         transform: translateX(100%);
                         transition: transform 0.5s linear;}
+                    &:active{
+                        transform: scale(.97);
+                        transition: var(--anim_duration);
+                    }
                 }
                 & .modal-main-about-info-business{
                     display: flex;

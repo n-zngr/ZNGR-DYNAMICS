@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+export function competenceModal() {
     const modalOverlay = document.querySelector('.competence-modal');
     const modalContent = document.querySelector('.competence-modal-content');
     const competenceCards = document.querySelectorAll('.competence-card');
@@ -44,4 +44,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 500);
         }
     });
-});
+};
+

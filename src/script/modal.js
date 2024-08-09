@@ -1,5 +1,6 @@
 import { loadSvgFiles } from "./loadSvg.js";
 import { highlightEffect } from "./highlightButton.js";
+import { competenceModal } from "./competence.js";
 
 document.addEventListener('DOMContentLoaded', function() {
     fetch('/src/data/data.json')
@@ -20,6 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let canCloseModal = false;
         let canOpenModal = true;
 
+        competenceModal();
+
         loadSvgFiles(svgElements => {
             projectsContainer.addEventListener('click', function(event) {
                 if (event.target.closest('.project-card, .project-card-big')) {
@@ -33,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             });
-    
+            /*
             competenceContainer.addEventListener('click', function(event) {
                 if (event.target.closest('.competence-card')) {
                     const competenceCard = event.target.closest('.competence-card');
@@ -42,10 +45,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         canCloseModal = false;
                         const competenceId = competenceCard.getAttribute('data-competence-id');
                         const competence = data.competences.find(c => c.id === competenceId);
-                        openModal(competence, svgElements);
+                        /*openModal(competence, svgElements);
                     }
                 }
-            });
+            });*/
+            
         });
 
         function openModal(content, svgElements) {
@@ -130,6 +134,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 highlightEffect();
+
+                competenceModal();
 
                 modal.removeAttribute('style');
                 document.body.classList.add('body-modal-open');
