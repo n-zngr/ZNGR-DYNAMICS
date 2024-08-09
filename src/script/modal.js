@@ -1,12 +1,17 @@
+import { loadSvgFiles } from "./loadSvg.js";
+import { highlightEffect } from "./highlightButton.js";
+
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('/src/script/data.json')
+    fetch('/src/data/data.json')
     .then(response => response.json())
     .then(data => {
         const projectsContainer = document.querySelector('.zngr-projects');
+        const competenceContainer = document.querySelector('.zngr-competence-container-main');
         const modal = document.getElementById('modal');
         const modalContainer = document.querySelector('.modal-container');
         const modalTitle = document.getElementById('modal-title');
-        const modalDescription = document.getElementById('modal-description');
+        const modalDescription = document.querySelector('.modal-main-about-description');
+        const modalInfoContainer = document.querySelector('.modal-main-about-info');
         const modalListContainer = document.querySelector('.modal-main-about-list');
         const closeBtn = document.querySelector('.close');
         const modalImageContainer = document.querySelector('.modal-main-showcase');
@@ -15,88 +20,138 @@ document.addEventListener('DOMContentLoaded', function() {
         let canCloseModal = false;
         let canOpenModal = true;
 
-
-        data.projects.forEach((project, index) => {
-            const projectCard = document.createElement('button');
-            projectCard.className = index % 3 === 2 ? 'project-card-big' : 'project-card';
-            projectCard.setAttribute('data-project-id', project.id);
-
-            // <img src="${project.thumbnail}" alt="${project.title}">
-
-            projectCard.innerHTML = `
-                <div class="project-card-container">
-                    <img src="${project.thumbnail}" alt="${project.title}">
-                </div>
-                <div class="project-card-info">
-                    <h2>${project.title}</h2>
-                    <div class="button-small">
-                        <svg class="button-icon" width="10" height="10" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13 19V29C13 30.6569 14.3431 32 16 32C17.6569 32 19 30.6569 19 29V19H29C30.6569 19 32 17.6569 32 16C32 14.3431 30.6569 13 29 13H19V3C19 1.34315 17.6569 0 16 0C14.3431 0 13 1.34315 13 3V13H3C1.34315 13 0 14.3431 0 16C0 17.6569 1.34315 19 3 19H13Z"/>
-                        </svg>
-                    </div>
-                </div>
-            `;
-
-            projectCard.addEventListener('click', () => {
-                if (canOpenModal) {
-                    canOpenModal = false;
-                    canCloseModal = false;
-                    const projectId = projectCard.getAttribute('data-project-id');
-                    const project = data.projects.find(p => p.id === projectId);
-                    
-                    if (project) {
-                        modalTitle.textContent = project.title;
-                        modalDescription.textContent = project.description;
-                        
-                        modalListContainer.innerHTML = '';
-                        modalImageContainer.innerHTML = '';
-
-                        project.images.forEach(image => {
-                            const imageItem = document.createElement('div')
-                            imageItem.className = 'modal-main-showcase-card';
-                            
-                            const imgElement = document.createElement('img');
-                            imgElement.src = image.src;
-                            imgElement.alt = image.alt;
-
-                            imageItem.appendChild(imgElement);
-                            modalImageContainer.appendChild(imageItem);
-                        });
-
-                        project.list.forEach(item => {
-                            const listItem = document.createElement('li');
-                            listItem.className = 'modal-main-about-list-item';
-                            listItem.textContent = item;
-
-
-                            modalListContainer.appendChild(listItem);
-                        });
-                        
-                        modal.removeAttribute('style');
-                        document.body.classList.add('body-modal-open');
-                        modalContainer.classList.add('modal-open');
-                        modal.classList.add('modal-open');
-                        
-                        setTimeout(() => {
-                            canCloseModal = true;
-                        }, animationDurationSlow);
-
-                        setTimeout(() => {
-                            canOpenModal = true;
-                        }, animationDurationSlow);
+        loadSvgFiles(svgElements => {
+            projectsContainer.addEventListener('click', function(event) {
+                if (event.target.closest('.project-card, .project-card-big')) {
+                    const projectCard = event.target.closest('.project-card, .project-card-big');
+                    if (canOpenModal) {
+                        canOpenModal = false;
+                        canCloseModal = false;
+                        const projectId = projectCard.getAttribute('data-project-id');
+                        const project = data.projects.find(p => p.id === projectId);
+                        openModal(project, svgElements);
                     }
                 }
             });
-
-            projectsContainer.appendChild(projectCard);
+    
+            competenceContainer.addEventListener('click', function(event) {
+                if (event.target.closest('.competence-card')) {
+                    const competenceCard = event.target.closest('.competence-card');
+                    if (canOpenModal) {
+                        canOpenModal = false;
+                        canCloseModal = false;
+                        const competenceId = competenceCard.getAttribute('data-competence-id');
+                        const competence = data.competences.find(c => c.id === competenceId);
+                        openModal(competence, svgElements);
+                    }
+                }
+            });
         });
 
-        const closeModal = () => {
+        function openModal(content, svgElements) {
+            if (content) {
+                modalListContainer.innerHTML = '';
+                modalImageContainer.innerHTML = '';
+                modalInfoContainer.innerHTML = '';
+                modalDescription.innerHTML = '';
+
+                modalTitle.textContent = content.title.toUpperCase();
+
+                if (content.description) {
+                    content.description.forEach((description, index) => {
+                        const descriptionElement = document.createElement('p');
+                        descriptionElement.textContent = description;
+                        if (index === 0) {
+                            descriptionElement.className = 'modal-main-about-description-header';
+                        } else {
+                            descriptionElement.className = 'modal-main-about-description-main';
+                        }
+                        modalDescription.appendChild(descriptionElement);
+                    });
+                }
+
+                if (content.link) {
+                    const linkDiv = document.createElement('a');
+                    linkDiv.className = 'modal-main-about-info-link';
+                    linkDiv.href = content.link;
+
+                    const linkItem = document.createElement('p');
+                    linkItem.className = 'modal-main-about-info-link-text';
+                    linkItem.textContent = 'Visit';
+
+                    const linkSvg = svgElements['IconRight.svg'].cloneNode(true);
+                    linkSvg.classList.add('modal-main-about-info-link-svg');
+
+                    linkDiv.appendChild(linkItem);
+                    linkDiv.appendChild(linkSvg);
+                    modalInfoContainer.appendChild(linkDiv);
+                }
+
+                if (content.business) {
+                    const businessDiv = document.createElement('div');
+                    businessDiv.className = 'modal-main-about-info-business';
+                    businessDiv.textContent = content.business;
+
+                    modalInfoContainer.appendChild(businessDiv);
+                }
+
+                if (content.images) {
+                    content.images.forEach(image => {
+                        const imageItem = document.createElement('div');
+                        imageItem.className = 'modal-main-showcase-card';
+
+                        const imgElement = document.createElement('img');
+                        imgElement.src = image.src;
+                        imgElement.alt = image.alt;
+
+                        imageItem.appendChild(imgElement);
+                        modalImageContainer.appendChild(imageItem);
+                    });
+                }
+                
+                const svgFiles = ['IconListDot.svg', 'IconCross.svg', 'IconListArrow.svg', 'IconPlus.svg'];
+
+                if (content.list) {
+                    content.list.forEach((item, index) => {
+                        const listItem = document.createElement('li');
+                        listItem.className = 'modal-main-about-list-item';
+
+                        const listItemText = document.createElement('p');
+                        listItemText.textContent = item;
+                        listItemText.className = 'modal-main-about-list-item-text';
+                        
+                        const listItemIcon = svgElements[svgFiles[index % svgFiles.length]].cloneNode(true);
+                        listItemIcon.classList.add('modal-main-about-list-item-svg');
+
+                        listItem.appendChild(listItemIcon);
+                        listItem.appendChild(listItemText);
+                        modalListContainer.appendChild(listItem);
+                    });
+                }
+                
+                highlightEffect();
+
+                modal.removeAttribute('style');
+                document.body.classList.add('body-modal-open');
+                modalContainer.classList.add('modal-open');
+                modal.classList.add('modal-open');
+                
+                setTimeout(() => {
+                    canCloseModal = true;
+                }, animationDurationSlow);
+
+                setTimeout(() => {
+                    canOpenModal = true;
+                }, animationDurationSlow);
+            }
+        }
+    
+        function closeModal() {
             if (canCloseModal) {
                 modalContainer.classList.remove('modal-open');
                 modal.style.overflow = 'hidden';
                 document.body.classList.remove('body-modal-open');
-                setTimeout(function () {
+                setTimeout(() => {
                     modal.classList.remove('modal-open');
                     modal.removeAttribute('style');
                     modalContainer.classList.remove('modal-open');
@@ -107,15 +162,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // Close modal through button
         closeBtn.addEventListener('click', closeModal);
 
-        // Close modal through clicking outside of container
         window.addEventListener('click', (event) => {
             if (event.target === modal) {
                 closeModal();
             }
         });
     });
-})
+});
 
