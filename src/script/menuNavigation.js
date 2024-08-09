@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+/*document.addEventListener('DOMContentLoaded', function() {
     const body = document.body;
     document.querySelectorAll('.nav-button').forEach(function(button) {
         button.addEventListener('click', function() {
@@ -13,4 +13,4 @@ document.addEventListener('DOMContentLoaded', function() {
             body.classList.remove('body-modal-open');
         })
     })
-})
+})*/
