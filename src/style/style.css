@@ -12,11 +12,11 @@ html{scroll-behavior: smooth;}
 body{background-color: var(--black);}
 
 .nav{
-    position: sticky;
+    position: fixed;
     display: flex;
     flex-direction: column;
+    width: calc(100% - 64px);
     top: -1px;
-    /*align-items: center;*/
     margin: -1px 32px 0px 32px;
     border: var(--gray-75) 1px solid;
     border-radius: 0px 0px 16px 16px;
@@ -56,9 +56,10 @@ body{background-color: var(--black);}
                 color: var(--white5);
                 cursor: default;
             }
+        }
     }
-    }
-    & .nav-container {
+
+    & .nav-main {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         overflow: hidden;
@@ -66,51 +67,96 @@ body{background-color: var(--black);}
         height: 0px;
         padding-top: 0px;
         gap: 8px;
-        & .nav-container-item {
+
+        & .nav-main-item, .nav-main-holder-item {
             position: relative;
             background-color: transparent;
-            height: 128px;
+            height: 100%;
             opacity: 0;
             transition: opacity 0.5s ease;
             border-radius: 16px;
             cursor: pointer;
             padding: 16px;
+            text-decoration: none;
+            color: var(--white5);
             &:hover::before{
                 opacity: 1;
             }
-            & .nav-container-item-title{
-                
+            &::before{
+                background: radial-gradient(800px circle at var(--mouseX) var(--mouseY), var(--white-10), transparent 40%);
+                border-radius: 16px;
+                content: '';
+                height: 100%;
+                left: 0px;
+                top: 0px;
+                position: absolute;
+                width: 100%;
+                z-index: 2;
+                opacity: 0;
+                transition: opacity .5s;
             }
-            & .nav-container-item-description{
-                padding-top: 8px;
-                width: 50%;
+            & .nav-main-item-title{}
+            & .nav-main-item-description{
+                padding-top: 16px;
+                color: var(--gray);
+                font-weight: var(--font_weight-light);
+                width: 75%;
+            }
+        }
+
+        & .nav-main-holder-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            opacity: 1;
+            background-color: var(--black2);
+
+            & .holder-title {
+                font-weight: bold;
+                color: var(--white);
+            }
+
+            & .holder-description {
+                color: var(--white5);
+                margin-top: 8px;
+                flex-grow: 1;
+            }
+
+            & .holder-buttons {
+                display: flex;
+                justify-content: space-between;
+                margin-top: auto;
+            }
+
+            & .holder-button {
+                color: var(--white);
+                padding: 8px 16px;
+                border-radius: 8px;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                z-index: 2;
+                &:hover{
+                    background-color: var(--white);
+                }
+            }
+
+            & .holder-button:hover {
+                background-color: var(--white);
+                color: var(--black-75);
             }
         }
     }    
 }
 
-.nav.expanded .nav-container {
+.nav.expanded .nav-main {
     height: 384px;
     padding-top: 32px;
 }
 
-.nav.expanded .nav-container-item {
+.nav.expanded .nav-main-item, .nav.expanded .nav-main-holder-item {
     opacity: 1;
     background-color: var(--black2);
-}
-
-.nav-container-item::before{
-    background: radial-gradient(800px circle at var(--mouseX) var(--mouseY), var(--white-10), transparent 40%);
-    border-radius: 16px;
-    content: '';
-    height: 100%;
-    left: 0px;
-    top: 0px;
-    position: absolute;
-    width: 100%;
-    z-index: 2;
-    opacity: 0;
-    transition: opacity .5s;
 }
 
 .overlay {

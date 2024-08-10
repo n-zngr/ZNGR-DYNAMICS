@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     menuButton.addEventListener('click', () => {
         const nav = document.querySelector('.nav');
-            nav.classList.toggle('expanded');
+        nav.classList.toggle('expanded');
     })
 
     const mouseMove = e => {
@@ -13,11 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
         x = e.clientX - rect.left;
         y = e.clientY - rect.top;
 
-    target.style.setProperty("--mouseX", `${x}px`);
-    target.style.setProperty("--mouseY", `${y}px`);
+        target.style.setProperty("--mouseX", `${x}px`);
+        target.style.setProperty("--mouseY", `${y}px`);
     }
 
-    for(const navContainerItem of document.querySelectorAll('.nav-container-item')) {
-        navContainerItem.onmousemove = e => mouseMove(e);
+    for(const navItem of document.querySelectorAll('.nav-main-item, .nav-main-holder-item')) {
+        navItem.onmousemove = e => mouseMove(e);
     }
 });
