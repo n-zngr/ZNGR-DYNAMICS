@@ -93,7 +93,7 @@ body{background-color: var(--black);}
                 width: 100%;
                 z-index: 2;
                 opacity: 0;
-                transition: opacity .5s;
+                transition: opacity var(--anim_duration);
             }
             & .nav-main-item-title{}
             & .nav-main-item-description{

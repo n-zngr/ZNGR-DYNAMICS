@@ -20,4 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
     for(const navItem of document.querySelectorAll('.nav-main-item, .nav-main-holder-item')) {
         navItem.onmousemove = e => mouseMove(e);
     }
+
+    const overlay = document.querySelector('.overlay');
+
+    window.addEventListener('click', (event) => {
+        const nav = document.querySelector('.nav');
+        if (event.target === overlay) {
+            nav.classList.remove('expanded');
+        }
+    });
 });
