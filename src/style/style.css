@@ -11,6 +11,7 @@ html{scroll-behavior: smooth;}
     
 body{background-color: var(--black);}
 
+
 .nav{
     position: fixed;
     display: flex;
@@ -95,33 +96,15 @@ body{background-color: var(--black);}
                 opacity: 0;
                 transition: opacity var(--anim_duration);
             }
-            & .nav-main-item-title{}
+            & .nav-main-item-title{
+
+            }
             & .nav-main-item-description{
                 padding-top: 16px;
                 color: var(--gray);
                 font-weight: var(--font_weight-light);
                 width: 75%;
             }
-        }
-
-        & .nav-main-holder-item {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            opacity: 1;
-            background-color: var(--black2);
-
-            & .holder-title {
-                font-weight: bold;
-                color: var(--white);
-            }
-
-            & .holder-description {
-                color: var(--white5);
-                margin-top: 8px;
-                flex-grow: 1;
-            }
-
             & .holder-buttons {
                 display: flex;
                 justify-content: space-between;
@@ -148,7 +131,9 @@ body{background-color: var(--black);}
         }
     }    
 }
-
+body.body-modal-open .nav{
+    width: calc(100% - 64px - 17px);
+}
 .nav.expanded .nav-main {
     height: 384px;
     padding-top: 32px;
@@ -527,7 +512,7 @@ body{background-color: var(--black);}
         }
     }
 }
-
+/*OLD COMPETENCE*/
 .competence-modal{
     position: fixed;
     top: 0;
@@ -552,8 +537,47 @@ body{background-color: var(--black);}
     width: 80%;
     height: 80%;
 }
+/*OLD COMPETENCE END*/
 
+/*NEW COMPETENCE*/
+.competence-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
 
+.competence-modal-content {
+    position: absolute;
+    transition: all 0.5s ease;
+}
+
+/* Initial state of the modal before transition */
+.initial-modal-state {
+    /* These values will be set dynamically by the script */
+}
+
+/* Expanded state of the modal */
+.expanded-modal-state {
+    top: 128px;
+    left: 32px;
+    width: calc(100% - 64px);
+    height: calc(100% - 128px);
+}
+
+/* Closing state of the modal */
+.closing-modal-state {
+    /* These values will be set dynamically by the script */
+}
+/*NEW COMPETENCE END*/
 
 .zngr-footer{
     height: 50vh;
