@@ -168,69 +168,6 @@ body.body-modal-open .nav{
     pointer-events: auto;
 }
 
-/*
-.zngr-menu{
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    top: 0;
-    left: -100vw;
-    height: 100vh;
-    width: 100%;
-    /*transition: transform var(--anim_duration-slow);
-    transition: transform 1.3s cubic-bezier(0.785,0.135,0.15,1.0);
-    background-color: var(--black);
-    z-index: 99;
-    &.open{
-        transform: translateX(100vw);
-    }
-    & .menu-close{
-        display: block;
-    }
-    & .menu-header{
-        padding: 16px;
-    }
-    & .menu-list{
-        display: flex;
-        flex-direction: column;
-        padding-inline: 64px;
-        & .menu-list-item{
-            text-decoration: none;
-            color: var(--white5);
-            font-weight: var(--font_weight-heavy);
-            font-size: var(--font_size-very-large);
-            transition: var(--anim_duration);
-            &:hover{
-                color: var(--white);
-                text-shadow: 0px 0px 2px var(--white5);
-            }
-        }
-        & .menu-list-subitem{
-            text-decoration: none;
-            color: var(--white5);
-            padding-left: 16px;
-            font-weight: var(--font_weight-medium);
-            font-size: var(--font_size-very-large);
-            transition: var(--anim_duration);
-            &:hover{
-                color: var(--white);
-                text-shadow: 0px 0px 2px var(--white5);
-            }
-        }
-    }
-    & .menu-contact{
-        margin-top: auto;
-        display: flex;
-        justify-content: space-between;
-        padding: 32px;
-        & .menu-contact-button{
-            border: none;
-            color: var(--white);
-            &:hover{color:red;}
-        }
-    }
-}*/
-
 .zngr-header{
     display: flex;
     align-items: center;
@@ -512,7 +449,7 @@ body.body-modal-open .nav{
         }
     }
 }
-/*OLD COMPETENCE*/
+
 .competence-modal{
     position: fixed;
     top: 0;
@@ -523,61 +460,51 @@ body.body-modal-open .nav{
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    overflow-y: scroll;
+    /*background-color: var(--black-75);*/
 }
 
 .competence-modal-content{
-    background: white;
+    width: 50%;
+    background-color: var(--black-75);
     border-radius: 16px;
-    transition: all 0.5s ease;
-    overflow: hidden;
-    max-height: calc(100% - 128px);
-}
-.competence-modal-content.expanded{
-    max-height: calc(100% - 128px);
-    width: 80%;
-    height: 80%;
-}
-/*OLD COMPETENCE END*/
-
-/*NEW COMPETENCE*/
-.competence-modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 100;
-    justify-content: center;
-    align-items: center;
-}
-
-.competence-modal-content {
-    position: absolute;
-    transition: all 0.5s ease;
-}
-
-/* Initial state of the modal before transition */
-.initial-modal-state {
-    /* These values will be set dynamically by the script */
-}
-
-/* Expanded state of the modal */
-.expanded-modal-state {
-    top: 128px;
-    left: 32px;
-    width: calc(100% - 64px);
-    height: calc(100% - 128px);
+    transition: all var(--anim_duration-slow);
+    & .competence-modal-header{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 16px;
+        transition: all var(--anim_duration-slow);
+        max-width: calc(300px);
+        margin-inline: auto;
+        & .competence-modal-header-image{
+            border-radius: 16px;
+            filter: saturate(.1);
+            mask-image: linear-gradient(180deg, var(--black) 0%, var(--black) 100%);
+            mask-size: 100% 100%;
+            transition: mask-size var(--anim_duration-slow), width var(--anim_duration-slow), height var(--anim_duration-slow);
+            & img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        & .competence-modal-description{
+            color: var(--gray);
+            font-size: var(--font_size-medium);
+            font-weight: var(--font_weight-regular);
+            text-align: left;
+            padding-bottom: 8px;
+        }
+        & .competence-modal-title{
+            text-align: left;
+            color: var(--white);
+            font-size: var(--font_size-regular);
+            font-weight: var(--font_weight-bold);
+        }
+    }
 }
 
-/* Closing state of the modal */
-.closing-modal-state {
-    /* These values will be set dynamically by the script */
-}
-/*NEW COMPETENCE END*/
+
 
 .zngr-footer{
     height: 50vh;

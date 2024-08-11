@@ -2,46 +2,60 @@ export function competenceModal() {
     const modalOverlay = document.querySelector('.competence-modal');
     const modalContent = document.querySelector('.competence-modal-content');
     const competenceCards = document.querySelectorAll('.competence-card');
+    const overlay = document.querySelector('.overlay');
+
+    let originalRect = null;
 
     competenceCards.forEach(card => {
         card.addEventListener('click', () => {
-            const cardRect = card.getBoundingClientRect();
+            originalRect = card.getBoundingClientRect();
+
+            overlay.style.opacity = '1';
+
             modalContent.style.position = 'absolute';
-            modalContent.style.top = `${cardRect.top}px`;
-            modalContent.style.left = `${cardRect.left}px`;
-            modalContent.style.width = `${cardRect.width}px`;
-            modalContent.style.height = `${cardRect.height}px`;
+            modalContent.style.top = `${originalRect.top}px`;
+            modalContent.style.left = `${originalRect.left}px`;
+            modalContent.style.width = `${originalRect.width}px`;
+            modalContent.style.height = `${originalRect.height}px`;
 
             modalOverlay.style.display = 'flex';
-            
+
+            document.body.classList.add('body-modal-open');
+
             modalContent.getBoundingClientRect();
 
             requestAnimationFrame(() => {
-                modalContent.style.transition = 'all 0.5s ease';
-                modalContent.style.top = '128px';
-                modalContent.style.left = '32px';
-                modalContent.style.width = 'calc(100% - 64px)';
-                modalContent.style.height = 'calc(100% - 128px)';
+                modalContent.style.transition = 'all 0.8s';
+                modalContent.style.top = '96px';
+                modalContent.style.left = '25%';
+                modalContent.style.width = '50%';
+                modalContent.style.height = 'calc(100% - 192px)'; // Adjusted for top and bottom spacing
             });
         });
     });
 
     modalOverlay.addEventListener('click', (event) => {
         if (event.target === modalOverlay) {
-            modalContent.style.transition = 'all 0.5s ease';
-            const expandedRect = modalContent.getBoundingClientRect();
-            modalContent.style.top = `${expandedRect.top}px`;
-            modalContent.style.left = `${expandedRect.left}px`;
-            modalContent.style.width = `${expandedRect.width}px`;
-            modalContent.style.height = `${expandedRect.height}px`;
+
+            overlay.removeAttribute('style');
+            
+            modalContent.style.top = `${originalRect.top}px`;
+            modalContent.style.left = `${originalRect.left}px`;
+            modalContent.style.width = `${originalRect.width}px`;
+            modalContent.style.height = `${originalRect.height}px`;
+
+
             setTimeout(() => {
                 modalOverlay.style.display = 'none';
                 modalContent.style.transition = '';
+                modalContent.style.position = '';
                 modalContent.style.top = '';
                 modalContent.style.left = '';
                 modalContent.style.width = '';
                 modalContent.style.height = '';
-            }, 500);
+
+                document.body.classList.remove('body-modal-open');
+            }, 800); // Duration matches the CSS transition
         }
     });
 };
