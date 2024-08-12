@@ -4,6 +4,13 @@ export function competenceModal() {
     const competenceCards = document.querySelectorAll('.competence-card');
     const overlay = document.querySelector('.overlay');
 
+    const competenceModalTop = document.querySelector('.competence-modal-top');
+    const competenceMain = document.querySelector('.competence-modal-main');
+    const competenceHeaderImage = document.querySelector('.competence-modal-header-image');
+    const competenceModalTitle = document.querySelector('.competence-modal-title');
+
+    const close = document.querySelector('.close');
+
     let originalRect = null;
 
     competenceCards.forEach(card => {
@@ -18,6 +25,7 @@ export function competenceModal() {
             modalContent.style.width = `${originalRect.width}px`;
             modalContent.style.height = `${originalRect.height}px`;
 
+            competenceModalTop.style.opacity = '1';
             modalOverlay.style.display = 'flex';
 
             document.body.classList.add('body-modal-open');
@@ -25,17 +33,22 @@ export function competenceModal() {
             modalContent.getBoundingClientRect();
 
             requestAnimationFrame(() => {
-                modalContent.style.transition = 'all 0.8s';
                 modalContent.style.top = '96px';
                 modalContent.style.left = '25%';
                 modalContent.style.width = '50%';
-                modalContent.style.height = 'calc(100% - 192px)'; // Adjusted for top and bottom spacing
+                modalContent.style.height = 'calc(100% - 96px)';
+
+                modalContent.style.overflowY = 'scroll';
+                competenceModalTop.opacity = '1';
+                competenceMain.style.opacity = '1';
+                competenceModalTitle.style.fontSize = '36px';
             });
         });
     });
 
     modalOverlay.addEventListener('click', (event) => {
-        if (event.target === modalOverlay) {
+        if (event.target === modalOverlay || event.target === close) {
+            modalContent.scrollTo(0, 0);
 
             overlay.removeAttribute('style');
             
@@ -44,6 +57,14 @@ export function competenceModal() {
             modalContent.style.width = `${originalRect.width}px`;
             modalContent.style.height = `${originalRect.height}px`;
 
+            modalContent.style.overflowY = 'hidden';
+            competenceModalTop.removeAttribute('style');
+            competenceMain.removeAttribute('style');
+            competenceModalTitle.removeAttribute('style');
+
+            /*Mask Image Functionality*/
+            competenceHeaderImage.style.maskSize = '100% 100%';
+            competenceHeaderImage.style.maskImage = 'linear-gradient(180deg, var(--black) 0%, transparent 90%)';
 
             setTimeout(() => {
                 modalOverlay.style.display = 'none';
@@ -54,8 +75,11 @@ export function competenceModal() {
                 modalContent.style.width = '';
                 modalContent.style.height = '';
 
+                competenceHeaderImage.style.maskSize = '100% 100%';
+                competenceHeaderImage.removeAttribute('style');
+
                 document.body.classList.remove('body-modal-open');
-            }, 800); // Duration matches the CSS transition
+            }, 800);
         }
     });
 };
