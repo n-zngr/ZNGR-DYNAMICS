@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="competence-card-text">
                     <div class="competence-card-text-container">
-                        <p class="competence-card-text-container-description">${competence.description}</p>
+                        <p class="competence-card-text-container-subtitle">${competence.subtitle}</p>
                         <h3 class="competence-card-text-container-title">${competence.title}</h3>
                     </div>
                     <div class="competence-card-text-button">

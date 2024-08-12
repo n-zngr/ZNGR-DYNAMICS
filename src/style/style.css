@@ -411,7 +411,7 @@ body.body-modal-open .nav{
                     width: 100%;
                     justify-content: space-between;
                     & .competence-card-text-container{
-                        & .competence-card-text-container-description{
+                        & .competence-card-text-container-subtitle{
                             color: var(--gray);
                             font-size: var(--font_size-medium);
                             font-weight: var(--font_weight-regular);

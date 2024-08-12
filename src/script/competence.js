@@ -1,86 +1,54 @@
-export function competenceModal() {
-    const modalOverlay = document.querySelector('.competence-modal');
+export async function loadCompetenceData() {
+    try {
+        const response = await fetch('/src/data/data.json');
+        const data = await response.json();
+        return data.competence;
+    } catch (error) {
+        console.error('Error loading competence data:', error);
+        return [];
+    }
+}
+
+export function createCompetenceModal(competence) {
     const modalContent = document.querySelector('.competence-modal-content');
-    const competenceCards = document.querySelectorAll('.competence-card');
-    const overlay = document.querySelector('.overlay');
 
-    const competenceModalTop = document.querySelector('.competence-modal-top');
-    const competenceMain = document.querySelector('.competence-modal-main');
-    const competenceHeaderImage = document.querySelector('.competence-modal-header-image');
-    const competenceModalTitle = document.querySelector('.competence-modal-title');
+    modalContent.innerHTML = '';
 
-    const close = document.querySelector('.close');
+    const modalTop = document.createElement('div');
+    modalTop.classList.add('competence-modal-top');
+    modalTop.innerHTML = `
+        <span class="button-small close">
+            <svg class="button-icon" width="10" height="10" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6274 16.8701L19.6985 23.9411C20.8701 25.1127 22.7696 25.1127 23.9411 23.9411C25.1127 22.7695 25.1127 20.8701 23.9411 19.6985L16.8701 12.6274L23.9411 5.55634C25.1127 4.38477 25.1127 2.48528 23.9411 1.3137C22.7696 0.142129 20.8701 0.142129 19.6985 1.3137L12.6274 8.38477L5.55635 1.3137C4.38478 0.14213 2.48528 0.142129 1.31371 1.3137C0.142135 2.48528 0.142135 4.38477 1.31371 5.55634L8.38478 12.6274L1.31371 19.6985C0.142135 20.8701 0.142135 22.7695 1.31371 23.9411C2.48528 25.1127 4.38478 25.1127 5.55635 23.9411L12.6274 16.8701Z"/>
+            </svg>
+        </span>
+    `;
 
-    let originalRect = null;
+    const modalContainer = document.createElement('div');
+    modalContainer.classList.add('competence-modal-container');
 
-    competenceCards.forEach(card => {
-        card.addEventListener('click', () => {
-            originalRect = card.getBoundingClientRect();
+    const modalHeader = document.createElement('div');
+    modalHeader.classList.add('competence-modal-header');
+    modalHeader.innerHTML = `
+        <div class="competence-modal-header-image">
+            <img src="src/img/TestImage.jpg" alt="">
+        </div>
+        <p class="competence-modal-subtitle" id="competence-modal-subtitle">${competence.subtitle}</p>
+        <h3 class="competence-modal-title" id="competence-modal-title">${competence.title}</h3>
+    `;
 
-            overlay.style.opacity = '1';
-
-            modalContent.style.position = 'absolute';
-            modalContent.style.top = `${originalRect.top}px`;
-            modalContent.style.left = `${originalRect.left}px`;
-            modalContent.style.width = `${originalRect.width}px`;
-            modalContent.style.height = `${originalRect.height}px`;
-
-            competenceModalTop.style.opacity = '1';
-            modalOverlay.style.display = 'flex';
-
-            document.body.classList.add('body-modal-open');
-
-            modalContent.getBoundingClientRect();
-
-            requestAnimationFrame(() => {
-                modalContent.style.top = '96px';
-                modalContent.style.left = '25%';
-                modalContent.style.width = '50%';
-                modalContent.style.height = 'calc(100% - 96px)';
-
-                modalContent.style.overflowY = 'scroll';
-                competenceModalTop.opacity = '1';
-                competenceMain.style.opacity = '1';
-                competenceModalTitle.style.fontSize = '36px';
-            });
-        });
+    const modalMain = document.createElement('div');
+    modalMain.classList.add('competence-modal-main');
+    competence.description.forEach(description => {
+        const descriptionElement = document.createElement('p');
+        descriptionElement.add('competence-modal-main-description');
+        descriptionElement.textContent = description;
+        modalMain.appendChild(descriptionElement);
     });
 
-    modalOverlay.addEventListener('click', (event) => {
-        if (event.target === modalOverlay || event.target === close) {
-            modalContent.scrollTo(0, 0);
+    modalContainer.appendChild(modalHeader);
+    modalContainer.appendChild(modalMain);
 
-            overlay.removeAttribute('style');
-            
-            modalContent.style.top = `${originalRect.top}px`;
-            modalContent.style.left = `${originalRect.left}px`;
-            modalContent.style.width = `${originalRect.width}px`;
-            modalContent.style.height = `${originalRect.height}px`;
-
-            modalContent.style.overflowY = 'hidden';
-            competenceModalTop.removeAttribute('style');
-            competenceMain.removeAttribute('style');
-            competenceModalTitle.removeAttribute('style');
-
-            /*Mask Image Functionality*/
-            competenceHeaderImage.style.maskSize = '100% 100%';
-            competenceHeaderImage.style.maskImage = 'linear-gradient(180deg, var(--black) 0%, transparent 90%)';
-
-            setTimeout(() => {
-                modalOverlay.style.display = 'none';
-                modalContent.style.transition = '';
-                modalContent.style.position = '';
-                modalContent.style.top = '';
-                modalContent.style.left = '';
-                modalContent.style.width = '';
-                modalContent.style.height = '';
-
-                competenceHeaderImage.style.maskSize = '100% 100%';
-                competenceHeaderImage.removeAttribute('style');
-
-                document.body.classList.remove('body-modal-open');
-            }, 800);
-        }
-    });
-};
-
+    modalContent.appendChild(modalTop);
+    modalContent.appendChild(modalContainer);
+}
