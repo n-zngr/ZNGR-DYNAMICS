@@ -1,7 +1,7 @@
 import { loadCompetenceData, createCompetenceModal } from '/src/script/competence.js';
 
 export function competenceModal() {
-    const competenceModal = document.querySelector('.competence-modal');
+    const modalOverlay = document.querySelector('.competence-modal');
     const modalContent = document.querySelector('.competence-modal-content');
     const competenceCards = document.querySelectorAll('.competence-card');
     const overlay = document.querySelector('.overlay');
@@ -35,7 +35,6 @@ export function competenceModal() {
         const cardRect = competence.getBoundingClientRect();
         initialRect = cardRect;
 
-        competence.style.opacity = '0';
         overlay.style.opacity = '1';
         competenceModalTop.style.opacity = '1';
 
@@ -115,7 +114,7 @@ export function competenceModal() {
             card.style.opacity = '0';
 
             competenceModalTop.style.opacity = '1';
-            competenceModal.style.display = 'flex';
+            modalOverlay.style.display = 'flex';
 
             document.body.classList.add('body-modal-open');
 
@@ -135,8 +134,8 @@ export function competenceModal() {
         });
     });
 
-    competenceModal.addEventListener('click', (event) => {
-        if (event.target === competenceModal || event.target === close) {
+    modalOverlay.addEventListener('click', (event) => {
+        if (event.target === modalOverlay || event.target === close) {
             modalContent.scrollTo(0, 0);
 
             overlay.removeAttribute('style');
@@ -158,7 +157,7 @@ export function competenceModal() {
             competenceHeaderImage.style.maskImage = 'linear-gradient(180deg, var(--black) 0%, transparent 90%)';
 
             setTimeout(() => {
-                competenceModal.style.display = 'none';
+                modalOverlay.style.display = 'none';
                 modalContent.style.transition = '';
                 modalContent.style.position = '';
                 modalContent.style.top = '';
