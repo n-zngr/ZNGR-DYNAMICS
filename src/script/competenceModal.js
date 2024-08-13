@@ -1,7 +1,7 @@
 import { loadCompetenceData, createCompetenceModal } from '/src/script/competence.js';
 
 export function competenceModal() {
-    const modalOverlay = document.querySelector('.competence-modal');
+    const competenceModal = document.querySelector('.competence-modal');
     const modalContent = document.querySelector('.competence-modal-content');
     const competenceCards = document.querySelectorAll('.competence-card');
     const overlay = document.querySelector('.overlay');
@@ -24,18 +24,21 @@ export function competenceModal() {
                 const competence = competenceCardId;
                 if (competence) {
                     createCompetenceModal(competence);
-                    openModal(card);
+                    openModal(competence);
                 }
             })
         })
     })
 
 
-    function openModal(card) {
-        const cardRect = card.getBoundingClientRect();
+    function openModal(competence) {
+        const cardRect = competence.getBoundingClientRect();
         initialRect = cardRect;
 
-        const modalContent = document.querySelector('.competence-modal-content');
+        competence.style.opacity = '0';
+        overlay.style.opacity = '1';
+        competenceModalTop.style.opacity = '1';
+
         modalContent.style.position = 'absolute';
         modalContent.style.top = `${cardRect.top}px`;
         modalContent.style.left = `${cardRect.left}px`;
@@ -51,22 +54,26 @@ export function competenceModal() {
             modalContent.style.left = '32px';
             modalContent.style.width = 'calc(100% - 64px)';
             modalContent.style.height = 'calc(100% - 128px)';
+            
+            modalContent.style.overflowY = 'scroll';
+            competenceModalTop.opacity = '1';
+            competenceMain.style.opacity = '1';
+            competenceModalTitle.style.fontSize = '36px';
         });
     }
 
     modalOverlay.addEventListener('click', (event) => {
-        if (event.target === modalOverlay && initialRect) {
-            const modalContent = document.querySelector('.competence-modal-content');
+        if (event.target === modalOverlay || event.target === close) {  //(event.target === modalOverlay && initialRect)
 
             modalContent.style.top = `${initialRect.top}px`;
             modalContent.style.left = `${initialRect.left}px`;
             modalContent.style.width = `${initialRect.width}px`;
             modalContent.style.height = `${initialRect.height}px`;
 
-            modalContent.style.overflowY = 'scroll';
-            competenceModalTop.opacity = '1';
-            competenceMain.style.opacity = '1';
-            competenceModalTitle.style.fontSize = '36px';
+            modalContent.style.overflowY = 'hidden';
+            competenceModalTop.removeAttribute('style');
+            competenceMain.removeAttribute('style');
+            competenceModalTitle.removeAttribute('style');
 
             requestAnimationFrame(() => {
                 setTimeout(() => {
@@ -107,9 +114,8 @@ export function competenceModal() {
 
             card.style.opacity = '0';
 
-
             competenceModalTop.style.opacity = '1';
-            modalOverlay.style.display = 'flex';
+            competenceModal.style.display = 'flex';
 
             document.body.classList.add('body-modal-open');
 
@@ -129,8 +135,8 @@ export function competenceModal() {
         });
     });
 
-    modalOverlay.addEventListener('click', (event) => {
-        if (event.target === modalOverlay || event.target === close) {
+    competenceModal.addEventListener('click', (event) => {
+        if (event.target === competenceModal || event.target === close) {
             modalContent.scrollTo(0, 0);
 
             overlay.removeAttribute('style');
@@ -152,7 +158,7 @@ export function competenceModal() {
             competenceHeaderImage.style.maskImage = 'linear-gradient(180deg, var(--black) 0%, transparent 90%)';
 
             setTimeout(() => {
-                modalOverlay.style.display = 'none';
+                competenceModal.style.display = 'none';
                 modalContent.style.transition = '';
                 modalContent.style.position = '';
                 modalContent.style.top = '';
