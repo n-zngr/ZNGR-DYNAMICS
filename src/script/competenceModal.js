@@ -99,10 +99,6 @@ export function competenceModal() {
         }
     })
 
-
-
-
-
     /*OLD BELOW*/
     /*
     competenceCards.forEach(card => {
