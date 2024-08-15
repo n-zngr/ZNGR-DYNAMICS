@@ -20,19 +20,18 @@ export function competenceModal() {
             competenceCard.addEventListener('click', () => {
                 const competenceCardId = competenceCard.getAttribute('data-competence-id');
                 console.log(competenceCardId);
-                /*const competence = competences.find(c => c.id === competenceCardId);*/
-                const competence = competenceCardId;
+                const competence = competences.find(c => c.id === competenceCardId);
                 if (competence) {
                     createCompetenceModal(competence);
-                    openModal(competence);
+                    openCompetenceModal(competenceCard);
                 }
             })
         })
-    })
+    });
 
 
-    function openModal(competence) {
-        const cardRect = competence.getBoundingClientRect();
+    function openCompetenceModal(competenceCard) {
+        const cardRect = competenceCard.getBoundingClientRect();
         initialRect = cardRect;
 
         overlay.style.opacity = '1';
@@ -97,7 +96,7 @@ export function competenceModal() {
 
             
         }
-    })
+    });
 
     /*OLD BELOW*/
     /*

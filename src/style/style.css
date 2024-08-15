@@ -74,7 +74,8 @@ body{background-color: var(--black);}
             background-color: transparent;
             height: 100%;
             opacity: 0;
-            transition: opacity 0.5s ease;
+            border: var(--gray-75) 1px solid;
+            transition: opacity 0.5s ease, transform var(--anim_duration);
             border-radius: 16px;
             cursor: pointer;
             padding: 16px;
@@ -95,6 +96,9 @@ body{background-color: var(--black);}
                 z-index: 2;
                 opacity: 0;
                 transition: opacity var(--anim_duration);
+            }
+            &:active{
+                transform: scale(.99);
             }
             & .nav-main-item-title{
 
@@ -117,8 +121,8 @@ body{background-color: var(--black);}
                 border-radius: 8px;
                 border: none;
                 cursor: pointer;
-                transition: background-color 0.3s ease;
-                z-index: 2;
+                transition: background-color var(--anim_duration);
+                z-index: 100;
                 &:hover{
                     background-color: var(--white);
                 }
@@ -136,7 +140,7 @@ body.body-modal-open .nav{
 }
 .nav.expanded .nav-main {
     height: 384px;
-    padding-top: 32px;
+    padding: 32px 0px 16px 0px;
 }
 
 .nav.expanded .nav-main-item, .nav.expanded .nav-main-holder-item {

@@ -2,7 +2,7 @@ export async function loadCompetenceData() {
     try {
         const response = await fetch('/src/data/data.json');
         const data = await response.json();
-        return data.competence;
+        return data.competences;
     } catch (error) {
         console.error('Error loading competence data:', error);
         return [];
@@ -41,7 +41,7 @@ export function createCompetenceModal(competence) {
     modalMain.classList.add('competence-modal-main');
     competence.description.forEach(description => {
         const descriptionElement = document.createElement('p');
-        descriptionElement.add('competence-modal-main-description');
+        descriptionElement.classList.add('competence-modal-main-description');
         descriptionElement.textContent = description;
         modalMain.appendChild(descriptionElement);
     });
