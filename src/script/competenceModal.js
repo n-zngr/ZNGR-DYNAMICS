@@ -45,22 +45,11 @@ export function competenceModal() {
 
         if (competenceModalTop) {
             competenceModalTop.style.opacity = '1';
-        }/* else {
-            console.error('competenceModalTop is null');
-        }*/
-
-
-        /*competenceModalTop.style.opacity = '1';*/
+        }
         competenceMain.style.opacity = '1';
         
-        //Attempt fixing competenceHeaderImage selection
         const competenceHeaderImage = document.querySelector('.competence-modal-header-image');
-        if (competenceHeaderImage) {
-            console.log('Opening modal, setting mask-size to 100% 200%');
-            competenceHeaderImage.style.maskSize = '100% 200%';
-        } else {
-            console.error('competenceHeaderImage not found');
-        }
+        
         competenceHeaderImage.style.maskSize = '100% 200%';
 
         modalContent.style.position = 'absolute';
@@ -87,17 +76,11 @@ export function competenceModal() {
     }
 
     modalOverlay.addEventListener('click', (event) => {
-        if (event.target === modalOverlay || event.target === close) {  //(event.target === modalOverlay && initialRect)
+        if (event.target === modalOverlay || event.target === close) {
             const competenceHeaderImage = document.querySelector('.competence-modal-header-image');
             const competenceModalTop = document.querySelector('.competence-modal-top');
             const competenceMain = document.querySelector('.competence-modal-main');
             const competenceModalTitle = document.querySelector('.competence-modal-title');
-            
-            console.log('Closing modal, setting mask-size to 100% 100%');
-            console.log('Element:', competenceHeaderImage); 
-            competenceHeaderImage.style.maskSize = '100% 100%';
-
-            /*competenceHeaderImage.style.maskSize = '100% 100%';*/
 
             modalContent.scrollTo(0, 0);
             overlay.removeAttribute('style');
