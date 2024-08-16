@@ -45,44 +45,44 @@
     "competences": [
         {
             "id": "1",
-            "title": "This is a long title",
+            "title": "Websites & Content Management Systems",
             "subtitle": "Web Development",
             "description": [ "Lorem Ipsum 1", "Lorem Ipsum 2"],
             "thumbnail": "/src/img/TestImage.jpg"
         }, 
         {
             "id": "2",
-            "title": "title2",
+            "title": "User interfaces, and user experiences",
             "subtitle": "Creative Design",
             "description": [ "Lorem Ipsum 1", "Lorem Ipsum 2"],
             "thumbnail": "/src/img/TestImage.jpg"
         }, 
         {
             "id": "3",
-            "title": "title3",
-            "subtitle": "Sub Title 3",
-            "description": [ "Lorem Ipsum 1", "Lorem Ipsum 2"],
+            "title": "Logos, colors and typography",
+            "subtitle": "Branding",
+            "description": [ "", "Lorem Ipsum 2"],
             "thumbnail": "/src/img/TestImage.jpg"
         }, 
         {
             "id": "4",
-            "title": "title4",
-            "subtitle": "Sub Title 4",
-            "description": [ "Lorem Ipsum 1", "Lorem Ipsum 2"],
+            "title": "Networking",
+            "subtitle": "Networking & Infrastructure",
+            "description": [ "", "Lorem Ipsum 2"],
             "thumbnail": "/src/img/TestImage.jpg"
         }, 
         {
             "id": "5",
-            "title": "title5",
-            "subtitle": "Sub Title 5",
+            "title": "",
+            "subtitle": "Data",
             "description": [ "Lorem Ipsum 1", "Lorem Ipsum 2"],
             "thumbnail": "/src/img/TestImage.jpg"
         }, 
         {
             "id": "6",
-            "title": "title6",
+            "title": "Software Development",
             "subtitle": "Sub Title 6",
-            "description": [ "Lorem Ipsum 1", "Lorem Ipsum 2", "Lorem Ipsum 3"],
+            "description": [ "Experience through ", "Lorem Ipsum 2", "Lorem Ipsum 3"],
             "thumbnail": "/src/img/TestImage.jpg"
         }
     ], 

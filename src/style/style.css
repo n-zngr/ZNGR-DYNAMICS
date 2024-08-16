@@ -426,7 +426,7 @@ body.body-modal-open .nav{
                             text-align: left;
                             color: var(--white);
                             font-size: var(--font_size-regular);
-                            font-weight: var(--font_weight-bold);
+                            font-weight: var(--font_weight-medium);
                         }
                     }
                     & .competence-card-text-button{
