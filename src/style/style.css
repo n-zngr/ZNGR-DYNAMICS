@@ -382,7 +382,7 @@ body.body-modal-open .nav{
                 cursor: pointer;
                 padding: 16px;
                 border-radius: 16px;
-                transition: background-color var(--anim_duration-slow);
+                transition: background-color var(--anim_duration-slow), opacity var(--anim_duration);
                 &:hover{
                     background-color: var(--black5);
                     transition: background-color var(--anim_duration);
@@ -499,8 +499,8 @@ body.body-modal-open .nav{
             border-radius: 16px;
             filter: saturate(.1);
             mask-image: linear-gradient(180deg, var(--black) 0%, transparent 90%);
-            mask-size: 100% 200%;
-            transition: mask-size var(--anim_duration-slow), width var(--anim_duration-slow), height var(--anim_duration-slow);
+            /*mask-size: 100% 100%;*/
+            transition: /*mask-size var(--anim_duration-slow),*/ width var(--anim_duration-slow), height var(--anim_duration-slow);
             & img{
                 width: 100%;
                 height: 100%;

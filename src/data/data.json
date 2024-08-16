@@ -82,7 +82,7 @@
             "id": "6",
             "title": "title6",
             "subtitle": "Sub Title 6",
-            "description": [ "Lorem Ipsum 1", "Lorem Ipsum 2"],
+            "description": [ "Lorem Ipsum 1", "Lorem Ipsum 2", "Lorem Ipsum 3"],
             "thumbnail": "/src/img/TestImage.jpg"
         }
     ], 

@@ -6,10 +6,10 @@ export function competenceModal() {
     const competenceCards = document.querySelectorAll('.competence-card');
     const overlay = document.querySelector('.overlay');
 
-    const competenceModalTop = document.querySelector('.competence-modal-top');
-    const competenceMain = document.querySelector('.competence-modal-main');
+    /*const competenceModalTop = document.querySelector('.competence-modal-top');*/
+    /*const competenceMain = document.querySelector('.competence-modal-main');*/
     const competenceHeaderImage = document.querySelector('.competence-modal-header-image');
-    const competenceModalTitle = document.querySelector('.competence-modal-title');
+    /*const competenceModalTitle = document.querySelector('.competence-modal-title');*/
 
     const close = document.querySelector('.close');
 
@@ -17,12 +17,12 @@ export function competenceModal() {
 
     loadCompetenceData().then(competences => {
         competenceCards.forEach(competenceCard => {
-            competenceCard.addEventListener('click', () => {
+            competenceCard.addEventListener('click', async () => {
                 const competenceCardId = competenceCard.getAttribute('data-competence-id');
                 console.log(competenceCardId);
                 const competence = competences.find(c => c.id === competenceCardId);
                 if (competence) {
-                    createCompetenceModal(competence);
+                    await createCompetenceModal(competence);
                     openCompetenceModal(competenceCard);
                 }
             })
@@ -34,8 +34,34 @@ export function competenceModal() {
         const cardRect = competenceCard.getBoundingClientRect();
         initialRect = cardRect;
 
+        const competenceMain = document.querySelector('.competence-modal-main');
+        const competenceModalTop = document.querySelector('.competence-modal-top');
+        const competenceModalTitle = document.querySelector('.competence-modal-title');
+
+        document.body.classList.add('body-modal-open');
+
         overlay.style.opacity = '1';
-        competenceModalTop.style.opacity = '1';
+        competenceCard.style.opacity = '0';
+
+        if (competenceModalTop) {
+            competenceModalTop.style.opacity = '1';
+        }/* else {
+            console.error('competenceModalTop is null');
+        }*/
+
+
+        /*competenceModalTop.style.opacity = '1';*/
+        competenceMain.style.opacity = '1';
+        
+        //Attempt fixing competenceHeaderImage selection
+        const competenceHeaderImage = document.querySelector('.competence-modal-header-image');
+        if (competenceHeaderImage) {
+            console.log('Opening modal, setting mask-size to 100% 200%');
+            competenceHeaderImage.style.maskSize = '100% 200%';
+        } else {
+            console.error('competenceHeaderImage not found');
+        }
+        competenceHeaderImage.style.maskSize = '100% 200%';
 
         modalContent.style.position = 'absolute';
         modalContent.style.top = `${cardRect.top}px`;
@@ -49,8 +75,8 @@ export function competenceModal() {
 
         requestAnimationFrame(() => {
             modalContent.style.top = '128px';
-            modalContent.style.left = '32px';
-            modalContent.style.width = 'calc(100% - 64px)';
+            modalContent.style.left = '25%';
+            modalContent.style.width = '50%';
             modalContent.style.height = 'calc(100% - 128px)';
             
             modalContent.style.overflowY = 'scroll';
@@ -62,6 +88,19 @@ export function competenceModal() {
 
     modalOverlay.addEventListener('click', (event) => {
         if (event.target === modalOverlay || event.target === close) {  //(event.target === modalOverlay && initialRect)
+            const competenceHeaderImage = document.querySelector('.competence-modal-header-image');
+            const competenceModalTop = document.querySelector('.competence-modal-top');
+            const competenceMain = document.querySelector('.competence-modal-main');
+            const competenceModalTitle = document.querySelector('.competence-modal-title');
+            
+            console.log('Closing modal, setting mask-size to 100% 100%');
+            console.log('Element:', competenceHeaderImage); 
+            competenceHeaderImage.style.maskSize = '100% 100%';
+
+            /*competenceHeaderImage.style.maskSize = '100% 100%';*/
+
+            modalContent.scrollTo(0, 0);
+            overlay.removeAttribute('style');
 
             modalContent.style.top = `${initialRect.top}px`;
             modalContent.style.left = `${initialRect.left}px`;
@@ -72,6 +111,8 @@ export function competenceModal() {
             competenceModalTop.removeAttribute('style');
             competenceMain.removeAttribute('style');
             competenceModalTitle.removeAttribute('style');
+            
+            competenceHeaderImage.removeAttribute('style');
 
             requestAnimationFrame(() => {
                 setTimeout(() => {
@@ -82,18 +123,20 @@ export function competenceModal() {
                     modalContent.style.left = '';
                     modalContent.style.width = '';
                     modalContent.style.height = '';
+
+                    modalContent.removeAttribute('style');
     
                     competenceHeaderImage.style.maskSize = '100% 100%';
-                    competenceHeaderImage.removeAttribute('style');
-    
+                    /*competenceHeaderImage.removeAttribute('style');*/
+
                     competenceCards.forEach(card => {
                         card.style.opacity = '1';
                     });
     
                     document.body.classList.remove('body-modal-open');
+                    modalContent.innerHTML = '';
                 }, 800);
             })
-
             
         }
     });
