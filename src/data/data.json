@@ -19,7 +19,7 @@
             "title": "Connect",
             "link": "https://connect.deltagamez.ch/",
             "business": "Online Service",
-            "description": ["Connect is an online platform dedicated to communities on the chatting-app Discord.", "What if we allowed for Discord communities to easily become more visible gaining more members and an audience faster? From Branding, to overseeing development and creating UI & UX, this project has been built from the ground up.", "The platform is made of two components, the Connect Discord App (bot) and its website. An API ties the two together. Users can interact with the Connect App directly on Discord sending the information to the API which the website uses to display the corresponding communities. Working with two other developers on the project, I have also overseen the complete development process, using an agile workflow.", "With the idea in our heads, we wanted to create a modern, bold, provocative brand, which lead to the slogan \"Connect your community\". The logo depicts a paperclip, made of the \"C\" and \"O\" letters, standing for connecting one thing to another. "],
+            "description": ["Connect is an online platform dedicated to communities on the chatting-app Discord.", "What if we allowed for Discord communities to easily become more visible gaining more members and an audience faster? From Branding, to overseeing development and creating UI & UX, this project has been built from the ground up.", "The platform is made of two components, the Connect Discord App (bot) and its website. An API ties the two together. Users can interact with the Connect App directly on Discord sending the information to the API which the website uses to display the corresponding communities. Working with two other developers on the project, I have overseen the complete development process, using an agile workflow.", "With the idea in our heads, we wanted to create a modern, bold, provocative brand, which lead to the slogan \"Connect your community\". The logo depicts a paperclip, made of the \"C\" and \"O\" letters, connecting communities to a web-platform. "],
             "list": ["Branding", "UI & UX Design", "Discord Integration", "Product Management"],
             "thumbnail": "/src/img/connect/ConnectThumbnail.png",
             "images": [
@@ -45,30 +45,30 @@
     "competences": [
         {
             "id": "1",
-            "title": "Websites & Content Management Systems",
+            "title": "Websites, Web-Apps, CMS",
             "subtitle": "Web Development",
-            "description": [ "Lorem Ipsum 1", "Lorem Ipsum 2"],
+            "description": [ "Putting together ", "Lorem Ipsum 2"],
             "thumbnail": "/src/img/TestImage.jpg"
         }, 
         {
             "id": "2",
-            "title": "User interfaces, and user experiences",
+            "title": "UI, UX and Prototyping",
             "subtitle": "Creative Design",
-            "description": [ "Lorem Ipsum 1", "Lorem Ipsum 2"],
+            "description": [ "Capturing users' attention and guiding them through unique journeys, finding the balance between aestetically pleasing layouts, ease of use, and a unique design is keen to memorable designs.", "In the past, I have worked on various projects building prototypes using Figma or XD, and implementing eye-catching designs in web-experiences."],
             "thumbnail": "/src/img/TestImage.jpg"
         }, 
         {
             "id": "3",
             "title": "Logos, colors and typography",
             "subtitle": "Branding",
-            "description": [ "", "Lorem Ipsum 2"],
+            "description": [ "Good branding conveys a message. Colors and fonts express feelings.", ""],
             "thumbnail": "/src/img/TestImage.jpg"
         }, 
         {
             "id": "4",
             "title": "Networking",
-            "subtitle": "Networking & Infrastructure",
-            "description": [ "", "Lorem Ipsum 2"],
+            "subtitle": "Networking & Hosting",
+            "description": [ "Everything on the web", "Lorem Ipsum 2"],
             "thumbnail": "/src/img/TestImage.jpg"
         }, 
         {

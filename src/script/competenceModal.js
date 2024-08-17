@@ -72,6 +72,7 @@ export function competenceModal() {
             competenceModalTop.opacity = '1';
             competenceMain.style.opacity = '1';
             competenceModalTitle.style.fontSize = '36px';
+            competenceModalTitle.style.fontWeight = 'var(--font_weight-bold)';
         });
     }
 
