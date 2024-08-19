@@ -71,11 +71,13 @@ body{background-color: var(--black);}
 
         & .nav-main-item, .nav-main-holder-item {
             position: relative;
+            display: flex;
+            flex-direction: column;
             background-color: transparent;
             height: 100%;
             opacity: 0;
             border: var(--gray-75) 1px solid;
-            transition: opacity 0.5s ease, transform var(--anim_duration);
+            transition: opacity var(--anim_duration), transform var(--anim_duration);
             border-radius: 16px;
             cursor: pointer;
             padding: 16px;
@@ -99,6 +101,7 @@ body{background-color: var(--black);}
             }
             &:active{
                 transform: scale(.99);
+                background-color: var(--black-75);
             }
             & .nav-main-item-title{
 
