@@ -64,20 +64,19 @@ body{background-color: var(--black);}
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         overflow: hidden;
-        transition: height 0.5s ease, padding 0.5s ease;
+        transition: height var(--anim_duration) ease, padding var(--anim_duration) ease;
         height: 0px;
         padding-top: 0px;
         gap: 8px;
-
-        & .nav-main-item, .nav-main-holder-item {
+        & .nav-main-item{
             position: relative;
             display: flex;
             flex-direction: column;
-            background-color: transparent;
+            background-color: var(--black2);
             height: 100%;
             opacity: 0;
-            border: var(--gray-75) 1px solid;
-            transition: opacity var(--anim_duration), transform var(--anim_duration);
+            /*border: var(--gray-75) 1px solid;*/
+            transition: opacity var(--anim_duration) ease, transform var(--anim_duration) ease;
             border-radius: 16px;
             cursor: pointer;
             padding: 16px;
@@ -87,17 +86,17 @@ body{background-color: var(--black);}
                 opacity: 1;
             }
             &::before{
-                background: radial-gradient(800px circle at var(--mouseX) var(--mouseY), var(--white-10), transparent 40%);
-                border-radius: 16px;
+                position: absolute;
                 content: '';
+                background: radial-gradient(800px circle at var(--mouseX) var(--mouseY), var(--white-10), transparent 40%);
                 height: 100%;
                 left: 0px;
                 top: 0px;
-                position: absolute;
                 width: 100%;
+                border-radius: 16px;
                 z-index: 2;
                 opacity: 0;
-                transition: opacity var(--anim_duration);
+                transition: opacity var(--anim_duration) ease;
             }
             &:active{
                 transform: scale(.99);
@@ -112,25 +111,72 @@ body{background-color: var(--black);}
                 font-weight: var(--font_weight-light);
                 width: 75%;
             }
-            & .holder-buttons {
+        }
+        & .nav-main-holder-item{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background-color: transparent;
+            color: var(--white5);
+            text-decoration: none;
+            transition: opacity var(--anim_duration), transform var(--anim_duration);
+            cursor: pointer;
+            opacity: 0;
+            & .nav-main-item-title, .nav-main-item-description{
+                position: relative;
+                /*border: var(--gray-75) 1px solid;*/
+                border-radius: 16px;
+                border-radius: 16px;
+                padding: 16px;
+                background-color: var(--black2);
+                &:hover::before{
+                    opacity: 1;
+                }
+                &::before{
+                    position: absolute;
+                    content: '';
+                    top: 0px;
+                    left: 0px;
+                    height: 100%;
+                    width: 100%;
+                    background: radial-gradient(800px circle at var(--mouseX) var(--mouseY), var(--white-10), transparent 40%);
+                    border-radius: 16px;
+                    z-index: 2;
+                    opacity: 0;
+                    transition: opacity var(--anim_duration);
+                }
+                &:active{
+                    transform: scale(.99);
+                    background-color: var(--black-75);
+                }
+            }
+            & .nav-main-item-description{
+                padding-top: 16px;
+                margin-top: 8px;
+                & .nav-main-item-description-item{
+                    color: var(--gray);
+                    font-weight: var(--font_weight-demi);
+                    margin-left: -4px;
+                }
+            }
+            & .nav-main-item-button {
                 display: flex;
                 justify-content: space-between;
                 margin-top: auto;
+                background-color: var(--black2);
+                border-radius: 16px;
             }
-
-            & .holder-button {
+            & .nav-main-item-button-item {
                 color: var(--white);
                 padding: 8px 16px;
                 border-radius: 8px;
                 border: none;
                 cursor: pointer;
                 transition: background-color var(--anim_duration);
-                z-index: 100;
                 &:hover{
                     background-color: var(--white);
                 }
             }
-
             & .holder-button:hover {
                 background-color: var(--white);
                 color: var(--black-75);
@@ -138,6 +184,8 @@ body{background-color: var(--black);}
         }
     }    
 }
+
+
 body.body-modal-open .nav{
     width: calc(100% - 64px - 17px);
 }
@@ -148,7 +196,7 @@ body.body-modal-open .nav{
 
 .nav.expanded .nav-main-item, .nav.expanded .nav-main-holder-item {
     opacity: 1;
-    background-color: var(--black2);
+    /*background-color: var(--black2);*/
 }
 
 .overlay {
