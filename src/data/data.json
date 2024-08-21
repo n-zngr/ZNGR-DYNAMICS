@@ -61,14 +61,14 @@
             "id": "3",
             "title": "Logos, icons, colors and typography",
             "subtitle": "Branding",
-            "description": [ "Good branding conveys a message. Colors and fonts express feelings and create brand identity. ", "With a keen eye for colors and shapes, I have designed various logos that define a brand's purpose and meaning in one image."],
+            "description": [ "Good branding conveys a message. Colors and fonts express feelings and create brand identity. ", "With a keen eye for colors and shapes, I have designed various logos that define a brand's purpose and meaning in a single svg."],
             "thumbnail": "/src/img/TestImage.jpg"
         }, 
         {
             "id": "4",
             "title": "Networking",
             "subtitle": "Networking & Hosting",
-            "description": [ "Everything on the web", "Lorem Ipsum 2"],
+            "description": [ "Everything on the web is on phsyical servers, knowing a bit about it won't harm.", "Not only through my education have I learned how to interact with Linux/Bash but also through working on Connect. This service is hosted on AWS, and the site itself is on a regional Swiss hosting. DNS, A-Recordings, Site forwarding etc. rings a bell for me."],
             "thumbnail": "/src/img/TestImage.jpg"
         }, 
         {
