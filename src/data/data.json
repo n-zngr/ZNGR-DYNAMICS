@@ -45,9 +45,9 @@
     "competences": [
         {
             "id": "1",
-            "title": "Websites, Web-Apps, CMS",
+            "title": "Websites, Web Apps, CMS",
             "subtitle": "Web Development",
-            "description": [ "Your website is your representation online.", "Whether it is creating a website from scratch using code, or building something using a CMS, both I have worked with in the past.", ""],
+            "description": [ "Your website embodies your mission online.", "My passion lies in designing, prototyping, and developing websites that truly reflect your vision.", "Over the years, I've gained valuable experience building web applications using Node.js and Express, as well as creating websites from scratch using code like HTML, CSS, and JavaScript. Whether I'm developing a dynamic web app or crafting a seamless website experience with a CMS like WordPress, my focus is always on delivering solutions that meet your needs."],
             "thumbnail": "/src/img/TestImage.jpg"
         }, 
         {
