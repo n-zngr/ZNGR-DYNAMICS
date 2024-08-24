@@ -45,44 +45,44 @@
     "competences": [
         {
             "id": "1",
-            "title": "Websites, Web Apps, CMS",
+            "title": "Websites, Web Apps,<br>CMS",
             "subtitle": "Web Development",
             "description": [ "Your website embodies your mission online.", "My passion lies in designing, prototyping, and developing websites that truly reflect your vision.", "Over the years, I've gained valuable experience building web applications using Node.js and Express, as well as creating websites from scratch using code like HTML, CSS, and JavaScript. Whether I'm developing a dynamic web app or crafting a seamless website experience with a CMS like WordPress, my focus is always on delivering solutions that meet your needs."],
-            "thumbnail": "/src/img/TestImage.jpg"
+            "thumbnail": "/src/svg/illustration/Illustration-Website.svg"
         }, 
         {
             "id": "2",
-            "title": "UI, UX and Prototyping",
+            "title": "UI, UX,<br>Prototyping",
             "subtitle": "Creative Design",
             "description": [ "Capturing users' attention and guiding them through unique journeys, finding the balance between aestetically pleasing layouts, ease of use, and a unique design is keen to memorable designs.", "In the past, I have worked on various projects building prototypes using Figma or XD, and implementing eye-catching designs in web-experiences."],
             "thumbnail": "/src/img/TestImage.jpg"
         }, 
         {
             "id": "3",
-            "title": "Logos, icons, colors and typography",
+            "title": "Logos, Icons, Colors,<br>Typography",
             "subtitle": "Branding",
-            "description": [ "Good branding conveys a message. Colors and fonts express feelings and create brand identity. ", "With a keen eye for colors and shapes, I have designed various logos that define a brand's purpose and meaning in a single svg."],
+            "description": [ "Good branding conveys a message. Colors and fonts express feelings and create brand identity. ", "With a keen eye for colors and shapes, I have designed various logos that define a brand's purpose and meaning in a single file."],
             "thumbnail": "/src/img/TestImage.jpg"
         }, 
         {
             "id": "4",
-            "title": "Networking",
+            "title": "Networking, Linux,<br>Domains",
             "subtitle": "Networking & Hosting",
             "description": [ "Everything on the web is on phsyical servers, knowing a bit about it won't harm.", "Not only through my education have I learned how to interact with Linux/Bash but also through working on Connect. This service is hosted on AWS, and the site itself is on a regional Swiss hosting. DNS, A-Recordings, Site forwarding etc. rings a bell for me."],
             "thumbnail": "/src/img/TestImage.jpg"
         }, 
         {
             "id": "5",
-            "title": "MySQL, NoSQL, Data Laws",
+            "title": "MySQL, NoSQL,<br>Data Laws",
             "subtitle": "Database",
-            "description": [ "Data is at heart of every application and web-page across the globe.", "", "Having an understanding of data regulations across the globe is equally important. How to treat personal data, how to ensure the safety and avoid risks that may lead to complications."],
-            "thumbnail": "/src/img/TestImage.jpg"
+            "description": [ "Data is at heart of every application and website across the globe.", "", "Having an understanding of data regulations across Europe and the world is equally important. How to treat personal data, how to ensure the safety and avoid risks that may lead to complications."],
+            "thumbnail": "/src/svg/illustration/Illustration-Database.svg"
         }, 
         {
             "id": "6",
             "title": "Software Development",
             "subtitle": "Object-Oriented Programming",
-            "description": [ "During my school time, I have gotten to know what it means to program object-oriented. ", "I am familiar with languages like Java or C# and can utilize the skills learned in other fields here too."],
+            "description": [ "During my school time, I have gotten to know what it means to program object-oriented code. ", "I am familiar with languages like Java or C# and can utilize skills from other fields programming object-oriented."],
             "thumbnail": "/src/img/TestImage.jpg"
         }
     ], 

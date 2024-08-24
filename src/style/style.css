@@ -489,6 +489,7 @@ body.body-modal-open .nav{
                 background-color: var(--black);
                 aspect-ratio: 400 / 480;
                 height: 360px;
+                max-height: 360px;
                 cursor: pointer;
                 padding: 16px;
                 border-radius: 16px;
@@ -498,19 +499,20 @@ body.body-modal-open .nav{
                     transition: background-color var(--anim_duration);
                 }
                 & .competence-card-thumbnail{
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
                     filter: saturate(.1);
                     mask-image: linear-gradient(180deg, var(--black) 0%, transparent 90%);
                     mask-size: 100% 100%;
                     transition: mask-size var(--anim_duration-slow);
                     & img{
-                        position: relative;
-                        border-radius: 16px;
-                        top: 50%;
-                        left: 50%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
                         width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        transform: translate(-50%, -50%);
+                        object-fit: contain;
+                        border-radius: 16px;
                     }
                 }
                 &:hover .competence-card-thumbnail{
@@ -581,7 +583,7 @@ body.body-modal-open .nav{
     display: flex;
     flex-direction: column;
     width: 50%;
-    background-color: var(--black-75);
+    background-color: var(--black);
     border-radius: 16px;
     transition: all var(--anim_duration-slow);
     overflow-y: scroll;
@@ -601,12 +603,14 @@ body.body-modal-open .nav{
     }
     & .competence-modal-header{
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         flex-direction: column;
         padding: 16px;
+        aspect-ratio: 300 / 360;
         transition: all var(--anim_duration-slow);
         & .competence-modal-header-image{
             border-radius: 16px;
+            object-fit: contain;
             filter: saturate(.1);
             mask-image: linear-gradient(180deg, var(--black) 0%, transparent 90%);
             mask-size: 100% 100%;
@@ -616,19 +620,21 @@ body.body-modal-open .nav{
                 height: 100%;
             }
         }
-        & .competence-modal-subtitle{
-            color: var(--gray);
-            font-size: var(--font_size-medium);
-            font-weight: var(--font_weight-regular);
-            text-align: left;
-            padding-bottom: 8px;
-        }
-        & .competence-modal-title{
-            text-align: left;
-            color: var(--white);
-            font-size: var(--font_size-regular);
-            font-weight: var(--font_weight-medium);
-            transition: all var(--anim_duration-slow);
+        & .competence-modal-header-text{
+            & .competence-modal-subtitle{
+                color: var(--gray);
+                font-size: var(--font_size-medium);
+                font-weight: var(--font_weight-regular);
+                text-align: left;
+                padding-bottom: 8px;
+            }
+            & .competence-modal-title{
+                text-align: left;
+                color: var(--white);
+                font-size: var(--font_size-regular);
+                font-weight: var(--font_weight-medium);
+                transition: all var(--anim_duration-slow);
+            }
         }
     }
     & .competence-modal-main{

@@ -30,10 +30,12 @@ export function createCompetenceModal(competence) {
     modalHeader.classList.add('competence-modal-header');
     modalHeader.innerHTML = `
         <div class="competence-modal-header-image">
-            <img src="src/img/TestImage.jpg" alt="">
+            <img src="${competence.thumbnail}" alt="">
         </div>
-        <p class="competence-modal-subtitle" id="competence-modal-subtitle">${competence.subtitle}</p>
-        <h3 class="competence-modal-title" id="competence-modal-title">${competence.title}</h3>
+        <div class="competence-modal-header-text">
+            <p class="competence-modal-subtitle" id="competence-modal-subtitle">${competence.subtitle}</p>
+            <h3 class="competence-modal-title" id="competence-modal-title">${competence.title}</h3>
+        </div>
     `;
 
     const modalMain = document.createElement('div');
