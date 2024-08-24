@@ -81,7 +81,7 @@
         {
             "id": "6",
             "title": "Software Development",
-            "subtitle": "Object-Oriented Programming",
+            "subtitle": "Object-Oriented<br>Programming",
             "description": [ "During my school time, I have gotten to know what it means to program object-oriented code. ", "I am familiar with languages like Java or C# and can utilize skills from other fields programming object-oriented."],
             "thumbnail": "/src/img/TestImage.jpg"
         }

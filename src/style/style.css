@@ -481,9 +481,13 @@ body.body-modal-open .nav{
             display: flex;
             flex-direction: row;
             gap: 8px;
+            scroll-snap-type: x mandatory;
             overflow-x: hidden;
+            scroll-behavior: smooth;
             & .competence-card{
                 display: flex;
+                scroll-snap-align: start;
+                flex: 0 0 auto;
                 flex-direction: column;
                 border: none;
                 background-color: var(--black);

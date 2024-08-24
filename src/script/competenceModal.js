@@ -1,4 +1,5 @@
 import { loadCompetenceData, createCompetenceModal } from '/src/script/competence.js';
+import { resetScrollPosition } from './competenceScroll.js';
 
 export function competenceModal() {
     const modalOverlay = document.querySelector('.competence-modal');
@@ -14,11 +15,13 @@ export function competenceModal() {
     const close = document.querySelector('.close');
 
     let initialRect = null;
+    let selectedCompetenceId = null;
 
     loadCompetenceData().then(competences => {
         competenceCards.forEach(competenceCard => {
             competenceCard.addEventListener('click', async () => {
                 const competenceCardId = competenceCard.getAttribute('data-competence-id');
+                selectedCompetenceId = competenceCardId;
                 console.log(competenceCardId);
                 const competence = competences.find(c => c.id === competenceCardId);
                 if (competence) {
@@ -116,7 +119,11 @@ export function competenceModal() {
                     competenceCards.forEach(card => {
                         card.style.opacity = '1';
                     });
-    
+                    
+                    if (selectedCompetenceId === '6') {
+                        resetScrollPosition();
+                    }
+
                     document.body.classList.remove('body-modal-open');
                     modalContent.innerHTML = '';
                 }, 800);
