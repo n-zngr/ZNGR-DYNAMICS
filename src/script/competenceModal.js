@@ -120,7 +120,7 @@ export function competenceModal() {
                         card.style.opacity = '1';
                     });
                     
-                    if (selectedCompetenceId === '6') {
+                    if (selectedCompetenceId === '6'/* || selectedCompetenceId === '5' || selectedCompetenceId === '4'*/) {
                         resetScrollPosition();
                     }
 
