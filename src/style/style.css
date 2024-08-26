@@ -22,7 +22,7 @@ body{background-color: var(--black);}
     border: var(--gray-75) 1px solid;
     border-radius: 0px 0px 16px 16px;
     padding: 16px 32px;
-    color: white;
+    color: var(--white);
     background-color: var(--black-75);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -110,6 +110,13 @@ body{background-color: var(--black);}
                 color: var(--gray);
                 font-weight: var(--font_weight-demi);
                 width: 75%;
+            }
+            & .nav-main-item-thumbnail{
+                width: 100%;
+                height: 100%;
+                background: url(/src/svg/illustration/Illustration-Experience.svg);
+                background-repeat: no-repeat;
+                background-position: 50%;
             }
         }
         & .nav-main-holder-item{
@@ -200,30 +207,14 @@ body{background-color: var(--black);}
                 gap: 8px;
                 padding-top: 8px;
                 margin-top: auto;
-                background-color: var(--black2);
                 border-radius: 16px;
-                &:hover::before{
-                    opacity: 1;
-                }
-                &::before{
-                    position: absolute;
-                    content: '';
-                    top: 0px;
-                    left: 0px;
-                    height: 100%;
-                    width: 100%;
-                    background: radial-gradient(800px circle at var(--mouseX) var(--mouseY), var(--white-10), transparent 40%);
-                    border-radius: 16px;
-                    z-index: 2;
-                    opacity: 0;
-                    transition: opacity var(--anim_duration);
-                }
             }
             & .nav-main-item-button-item {
                 position: relative;
                 display: flex;
                 justify-content: center;
                 flex: 1;
+                background-color: var(--black2);
                 color: var(--white);
                 padding: 8px 16px;
                 border: var(--gray-25) 1px solid;
@@ -252,7 +243,7 @@ body{background-color: var(--black);}
                     background-color: var(--black-75);
                 }
                 & svg{
-                    
+
                 }
             }
             & .holder-button:hover {
@@ -327,17 +318,18 @@ body.body-modal-open .nav{
             &::before{
                 content: '';
                 top: -20%;
-                left: 40%;
+                left: 65%;
                 height: 16px;
                 width: 16px;
                 background-size: 16px 16px;
                 position: absolute;
                 background-image: url('/src/svg/Icon_Star.svg');
+                filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.7));
             }
         }
         & .zngr-header-container-description{
             padding-top: 32px;
-            color: white;
+            color: var(--white);
             max-width: 640px;
             font-size: var(--font_size-large);
         }
@@ -425,7 +417,7 @@ body.body-modal-open .nav{
                 font-size: var(--font_size-big);
                 font-weight: var(--font_weight-demi);
                 background-color: transparent;
-                color: white;
+                color: var(--white);
             }
             .button-small{
                 display: flex;
@@ -468,6 +460,37 @@ body.body-modal-open .nav{
             
         }
     }
+    .zngr-projects-git{
+        display: flex;
+        flex-direction: column;
+
+        .project-card-git{
+            display: flex;
+            min-height: 160px;
+            color: var(--white5);
+            & .project-card-git-title{
+                & .project-card-git-title-icon{
+
+                }
+            }
+            & .project-card-git-description{
+                font-weight: var(--font_weight-regular);
+                font-size: var(--font_size-small);
+            }
+            & .project-card-git-language{
+                display: flex;
+                flex-direction: column;
+                & .project-card-git-languages-item{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: var(--gray-25) 1px solid;
+                    border-radius: 8px;
+                    background-color: var(--black3);
+                }
+            }
+        }
+    }
 }
 
 .zngr-competence{
@@ -485,6 +508,7 @@ body.body-modal-open .nav{
             font-size: var(--font_size-very-large);
             font-weight: var(--font_weight-bold);
             flex: 1;
+            text-wrap: balance;
         }
         & .zngr-competence-header-description{
             font-size: var(--font_size-regular);
