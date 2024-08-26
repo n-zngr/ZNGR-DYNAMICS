@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         target.style.setProperty("--mouseY", `${y}px`);
     }
 
-    for(const navItem of document.querySelectorAll('.nav-main-item, .nav-main-holder-item, .nav-main-item-button')) {
+    for(const navItem of document.querySelectorAll('.nav-main-item, .nav-main-holder-item, .nav-main-item-button-item')) {
         navItem.onmousemove = e => mouseMove(e);
     }
 

@@ -120,7 +120,6 @@ body{background-color: var(--black);}
             color: var(--white5);
             text-decoration: none;
             transition: opacity var(--anim_duration), transform var(--anim_duration);
-            cursor: pointer;
             opacity: 0;
             & .nav-main-item-title, .nav-main-item-info{
                 position: relative;
@@ -198,10 +197,10 @@ body{background-color: var(--black);}
             & .nav-main-item-button {
                 position: relative;
                 display: flex;
-                justify-content: space-between;
+                gap: 8px;
+                padding-top: 8px;
                 margin-top: auto;
                 background-color: var(--black2);
-                border: var(--gray-25) 1px solid;
                 border-radius: 16px;
                 &:hover::before{
                     opacity: 1;
@@ -219,21 +218,41 @@ body{background-color: var(--black);}
                     opacity: 0;
                     transition: opacity var(--anim_duration);
                 }
+            }
+            & .nav-main-item-button-item {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                flex: 1;
+                color: var(--white);
+                padding: 8px 16px;
+                border: var(--gray-25) 1px solid;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color var(--anim_duration);
+                z-index: 2;
+                &:hover::before{
+                    opacity: 1;
+                }
+                &::before{
+                    position: absolute;
+                    content: '';
+                    top: 0px;
+                    left: 0px;
+                    height: 100%;
+                    width: 100%;
+                    background: radial-gradient(800px circle at var(--mouseX) var(--mouseY), var(--white-10), transparent 40%);
+                    border-radius: 8px;
+                    z-index: 2;
+                    opacity: 0;
+                    transition: opacity var(--anim_duration);
+                }
                 &:active{
                     transform: scale(.99);
                     background-color: var(--black-75);
                 }
-            }
-            & .nav-main-item-button-item {
-                color: var(--white);
-                padding: 8px 16px;
-                border-radius: 8px;
-                border: none;
-                cursor: pointer;
-                transition: background-color var(--anim_duration);
-                z-index: 2;
-                &:hover{
-                    background-color: var(--white);
+                & svg{
+                    
                 }
             }
             & .holder-button:hover {
