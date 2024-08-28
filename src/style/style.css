@@ -218,7 +218,7 @@ body{background-color: var(--black);}
                 color: var(--white);
                 padding: 8px 16px;
                 border: var(--gray-25) 1px solid;
-                border-radius: 8px;
+                border-radius: 16px;
                 cursor: pointer;
                 transition: background-color var(--anim_duration);
                 z-index: 2;
@@ -233,7 +233,7 @@ body{background-color: var(--black);}
                     height: 100%;
                     width: 100%;
                     background: radial-gradient(800px circle at var(--mouseX) var(--mouseY), var(--white-10), transparent 40%);
-                    border-radius: 8px;
+                    border-radius: 16px;
                     z-index: 2;
                     opacity: 0;
                     transition: opacity var(--anim_duration);
