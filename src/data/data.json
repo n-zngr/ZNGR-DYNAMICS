@@ -32,9 +32,9 @@
             "title": "ZNGR DYNAMICS",
             "link": "https://zngr-dynamics.ch",
             "business": "Portfolio",
-            "description": ["ZNGR DYNAMICS is my personal site outfitted in a corporate style. Here all projects I have worked have a place.", "description 2", "description 3"],
-            "list": ["UI & UX Design", "Animation"],
-            "thumbnail": "/src/img/TestImage.jpg",
+            "description": ["ZNGR DYNAMICS is my personal site outfitted in a corporate style. Here, all projects I have worked on, have their place.", "This project has been in planning for quite some time, initially heavily sci-fi inspired. However, as I started drawing out the idea, I realized this was not the turn to take. I continued scouring the web for inspiration, my site should follow a modern, slick, and minimal design.", "In the future, "],
+            "list": ["UI & UX Design", "Illustration", "Animation"],
+            "thumbnail": "/src/svg/illustration/Illustration-Website.svg",
             "images": [
                 { "alt": "First Image", "src": "/src/img/TestImage.jpg" },
                 { "alt": "Second Image", "src": "/src/img/TestImage.jpg" },
@@ -55,14 +55,14 @@
             "title": "UI, UX,<br>Prototyping",
             "subtitle": "Creative Design",
             "description": [ "Capturing users' attention and guiding them through unique journeys, finding the balance between aestetically pleasing layouts, ease of use, and a unique design is keen to memorable designs.", "In the past, I have worked on various projects building prototypes using Figma or XD, and implementing eye-catching designs in web-experiences."],
-            "thumbnail": "/src/img/TestImage.jpg"
+            "thumbnail": "/src/svg/illustration/SketchIllustration-CreativeDesign.svg"
         }, 
         {
             "id": "3",
             "title": "Logos, Icons, Colors,<br>Typography",
             "subtitle": "Branding",
             "description": [ "Good branding conveys a message. Colors and fonts express feelings and create brand identity. ", "With a keen eye for colors and shapes, I have designed various logos that define a brand's purpose and meaning in a single file."],
-            "thumbnail": "/src/img/TestImage.jpg"
+            "thumbnail": "/src/svg/illustration/SketchIllustration-Branding.svg"
         }, 
         {
             "id": "4",
@@ -75,8 +75,8 @@
             "id": "5",
             "title": "MySQL, NoSQL,<br>Data Laws",
             "subtitle": "Database",
-            "description": [ "Data is at heart of every application and website across the globe.", "", "Having an understanding of data regulations across Europe and the world is equally important. How to treat personal data, how to ensure the safety and avoid risks that may lead to complications."],
-            "thumbnail": "/src/svg/illustration/Illustration-Database.svg"
+            "description": [ "Data is at heart of every application and website across the globe.", "Whether utilizing our beloved MySQL or NoSQL (e.g. MongoDB), I have utilized both in class and have gathered a broad understanding during the courses.", "Having an understanding of data regulations across Europe and the world is equally important."],
+            "thumbnail": "/src/svg/illustration/SketchIllustration-Database.svg"
         }, 
         {
             "id": "6",
