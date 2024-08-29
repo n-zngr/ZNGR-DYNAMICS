@@ -460,37 +460,6 @@ body.body-modal-open .nav{
             
         }
     }
-    .zngr-projects-git{
-        display: flex;
-        flex-direction: column;
-
-        .project-card-git{
-            display: flex;
-            min-height: 160px;
-            color: var(--white5);
-            & .project-card-git-title{
-                & .project-card-git-title-icon{
-
-                }
-            }
-            & .project-card-git-description{
-                font-weight: var(--font_weight-regular);
-                font-size: var(--font_size-small);
-            }
-            & .project-card-git-language{
-                display: flex;
-                flex-direction: column;
-                & .project-card-git-languages-item{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    border: var(--gray-25) 1px solid;
-                    border-radius: 8px;
-                    background-color: var(--black3);
-                }
-            }
-        }
-    }
 }
 
 .zngr-competence{
