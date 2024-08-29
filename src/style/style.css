@@ -686,10 +686,23 @@ body.body-modal-open .nav{
             background: linear-gradient(90deg, var(--gray) 0%, var(--gray) 100%);
         }
         & .footer-container-privacy{
+            display: flex;
             & .privacy{
                 text-decoration: none;
                 color: var(--white);
                 cursor: not-allowed;
+            } &:hover .privacy-notice{
+                opacity: 1;
+            }
+            & .privacy-notice{
+                text-decoration: none;
+                color: var(--gray);
+                font-size: var(--font_size-small);
+                font-weight: var(--font_weight-light);
+                align-self: end;
+                padding-left: 16px;
+                opacity: 0;
+                transition: opacity var(--anim_duration);
             }
         }
         & .footer-container-copyright{
