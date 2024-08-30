@@ -309,6 +309,25 @@ body.body-modal-open .nav{
             color: var(--black3);
             transform: translateY(-50%);
             z-index: -1;
+            &:hover::before{
+                opacity: 1;
+            }
+            &::before{
+                content: attr(data-text-2);
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                height: 100%;
+                width: 100%;
+                background: radial-gradient(800px circle at var(--mouseX) var(--mouseY), var(--white-25), transparent 40%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                border-radius: 16px;
+                z-index: 1;
+                opacity: 0;
+                transition: opacity var(--anim_duration);
+            }
         }
     }
     & .zngr-header-container{
@@ -712,6 +731,7 @@ body.body-modal-open .nav{
         display: flex;
         padding: 64px;
         flex-direction: column;
+        cursor: default;
         &::before{
             content: '';
             position: absolute;
@@ -739,9 +759,31 @@ body.body-modal-open .nav{
         display: flex;
         padding: 64px;
         & .footer-logo-item{
+            position: relative;
             font-family: Ethnocentric;
             font-size: 96px;
             color: var(--black5);
+            z-index: 1;
+            overflow: hidden;
+            &:hover::before{
+                opacity: 1;
+            }
+            &::before{
+                content: attr(data-text);
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                height: 100%;
+                width: 100%;
+                background: radial-gradient(800px circle at var(--mouseX) var(--mouseY), var(--white-25), transparent 40%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                border-radius: 16px;
+                z-index: 2;
+                opacity: 0;
+                transition: opacity var(--anim_duration);
+            }
         }
     }
 }

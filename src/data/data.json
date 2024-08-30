@@ -23,8 +23,9 @@
             "list": ["Branding", "UI & UX Design", "Discord Integration", "Product Management"],
             "thumbnail": "/src/img/connect/ConnectThumbnail.png",
             "images": [
-                { "alt": "First Image", "src": "/src/img/connect/ConnectWebFeatures.png" },
-                { "alt": "Second Image", "src": "/src/img/connect/ConnectWebCommunities.png" }
+                { "alt": "Connect Landing", "src": "/src/img/connect/ConnectExported.png" },
+                { "alt": "Connect Communities", "src": "/src/img/connect/ConnectWebCommunities.png" },
+                { "alt": "Connect Features", "src": "/src/img/connect/ConnectWebFeatures.png" }
             ]
         },
         {
@@ -69,7 +70,7 @@
             "title": "Networking, Linux,<br>Domains",
             "subtitle": "Networking & Hosting",
             "description": [ "Everything on the web is on phsyical servers, knowing a bit about it won't harm.", "Not only through my education have I learned how to interact with Linux/Bash but also through working on Connect. This service is hosted on AWS, and the site itself is on a regional Swiss hosting. DNS, A-Recordings, Site forwarding etc. rings a bell for me."],
-            "thumbnail": "/src/img/TestImage.jpg"
+            "thumbnail": "/src/svg/illustration/SketchIllustration-Networking.svg"
         }, 
         {
             "id": "5",

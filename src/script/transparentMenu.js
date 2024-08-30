@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
         target.style.setProperty("--mouseY", `${y}px`);
     }
 
-    for(const navItem of document.querySelectorAll('.nav-main-item, .nav-main-holder-item, .nav-main-item-button-item')) {
-        navItem.onmousemove = e => mouseMove(e);
+    for(const hoverItem of document.querySelectorAll('.nav-main-item, .nav-main-holder-item, .nav-main-item-button-item, .footer-logo-item')) {
+        hoverItem.onmousemove = e => mouseMove(e);
     }
 
     const overlay = document.querySelector('.overlay');
@@ -29,4 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.classList.remove('expanded');
         }
     });
+    /* Attempt to create hover for header-background-item, due to absolute position, this needs to be worked out.
+    for(const hoverItem of document.querySelectorAll('.zngr-header-background-item')) {
+        hoverItem.onmousemove = e => mouseMove(e);
+    }*/
 });
