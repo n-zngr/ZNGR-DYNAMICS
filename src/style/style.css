@@ -156,6 +156,7 @@ body{background-color: var(--black);}
                 }
             }
             & .nav-main-item-info{
+                flex: 1;
                 padding-top: 16px;
                 margin-top: 8px;
                 & .nav-main-item-info-name{
@@ -744,8 +745,12 @@ body.body-modal-open .nav{
         & .footer-container-privacy{
             & .privacy{
                 text-decoration: none;
-                color: var(--white);
+                color: var(--white5);
                 cursor: not-allowed;
+                transition: color var(--anim_duration);
+                &:hover{
+                    color: var(--white);
+                }
             }
         }
         & .footer-container-copyright{
@@ -757,7 +762,7 @@ body.body-modal-open .nav{
     }
     & .footer-logo{
         display: flex;
-        padding: 64px;
+        padding: 0px 64px 64px 64px;
         & .footer-logo-item{
             position: relative;
             font-family: Ethnocentric;

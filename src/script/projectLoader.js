@@ -1,3 +1,5 @@
+import { initializeScrollAnimation } from './scrollAnimation.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     fetch('/src/data/data.json')
     .then(response => response.json())
@@ -7,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         data.projects.forEach((project, index) => {
             const projectCard = document.createElement('button');
             projectCard.className = index % 3 === 2 ? 'project-card-big' : 'project-card';
+            projectCard.classList.add('animate-on-scroll')
             projectCard.setAttribute('data-project-id', project.id);
 
             projectCard.innerHTML = `
@@ -25,5 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             projectsContainer.appendChild(projectCard);
         });
+        initializeScrollAnimation();
     })
 });

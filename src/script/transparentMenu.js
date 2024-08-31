@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const menuButton = document.querySelector('.nav-header-button');
-    
-    menuButton.addEventListener('click', () => {
-        const nav = document.querySelector('.nav');
-        nav.classList.toggle('expanded');
-    })
+    const navToggle = document.querySelectorAll('.nav-header-button, .nav-main-item');
+
+    navToggle.forEach(navToggleElement => {
+        navToggleElement.addEventListener('click', () => {
+            const nav = document.querySelector('.nav');
+            nav.classList.toggle('expanded');
+        });
+    });
 
     const mouseMove = e => {
         const { currentTarget: target } = e;
