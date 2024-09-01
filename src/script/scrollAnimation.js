@@ -13,7 +13,7 @@ export const animateOnScroll = () => {
         const elementTop = element.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
         
-        if (elementTop < windowHeight * 0.9) { // 90% of viewport
+        if (elementTop < windowHeight * 0.95) { // Element is 90% in view
             element.style.transform = 'translateY(0)';
             element.style.opacity = '1';
         }
@@ -22,7 +22,10 @@ export const animateOnScroll = () => {
 
 //Intiliazes scroll Animation to be used in other scripts
 export const initializeScrollAnimation = () => {
-    initAnimationStyles(document.querySelectorAll('.animate-on-scroll'));
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    initAnimationStyles(elements);
     animateOnScroll();
     window.addEventListener('scroll', animateOnScroll);
+    
+    window.addEventListener('load', animateOnScroll);
 };

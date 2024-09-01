@@ -7,6 +7,7 @@
             "business": "Restaurant",
             "description": ["Gasthaus Rossberg is a restaurant in the beautiful Swiss mountains of the Bernese Oberland.", "The Rossberg website hasn't been touched since 2016. The client requested a complete overhaul of the page, wishing to be able to edit the page using a CMS.", "I have decided to use the CMS Joomla to cover the needs of the client and stick to a basic design. At the beginning, it was quite a challange creating a stable site using a CMS, understanding all the basics, as I was working alone on this project, and had barely any previous CMS experience.", "The page has successfully been completed back in 2022 and is continously maintained."],
             "list": ["Content Management System", "UX Design", "Hosting", "Continous Maintenance"],
+            "tech": [""],
             "thumbnail": "/src/img/rossberg/RossbergThumbnail.png",
             "images": [
                 { "alt": "Updated Home-Page", "src": "/src/img/rossberg/RossbergWeb.png" },
@@ -21,6 +22,7 @@
             "business": "Online Service",
             "description": ["Connect is an online platform dedicated to communities on the chatting-app Discord.", "What if we allowed for Discord communities to easily become more visible gaining more members and an audience faster? From Branding, to overseeing development and creating UI & UX, this project has been built from the ground up.", "The platform is made of two components, the Connect Discord App (bot) and its website. An API ties the two together. Users can interact with the Connect App directly on Discord sending the information to the API which the website uses to display the corresponding communities. Working with two other developers on the project, I have overseen the complete development process, using an agile workflow.", "With the idea in our heads, we wanted to create a modern, bold, provocative brand, which lead to the slogan \"Connect your community\". The logo depicts a paperclip, made of the \"C\" and \"O\" letters, connecting communities to a web-platform. "],
             "list": ["Branding", "UI & UX Design", "Discord Integration", "Product Management"],
+            "tech": [""],
             "thumbnail": "/src/img/connect/ConnectThumbnail.png",
             "images": [
                 { "alt": "Connect Landing", "src": "/src/img/connect/ConnectExported.png" },
@@ -35,6 +37,7 @@
             "business": "Portfolio",
             "description": ["ZNGR DYNAMICS is my personal site outfitted in a corporate style. Here, all projects I have worked on, have their place.", "This project has been in planning for quite some time, initially heavily sci-fi inspired. However, as I started drawing out the idea, I realized this was not the turn to take. I continued scouring the web for inspiration, my site should follow a modern, slick, and minimal design.", "In the future, "],
             "list": ["UI & UX Design", "Illustration", "Animation"],
+            "tech": [""],
             "thumbnail": "/src/svg/illustration/Illustration-Website.svg",
             "images": [
                 { "alt": "First Image", "src": "/src/img/TestImage.jpg" },
@@ -49,6 +52,7 @@
             "title": "Websites, Web Apps,<br>CMS",
             "subtitle": "Web Development",
             "description": [ "Your website embodies your mission online.", "My passion lies in designing, prototyping, and developing websites that truly reflect your vision.", "Over the years, I've gained valuable experience building web applications using Node.js and Express, as well as creating websites from scratch using code like HTML, CSS, and JavaScript. Whether I'm developing a dynamic web app or crafting a seamless website experience with a CMS like WordPress, my focus is always on delivering solutions that meet your needs."],
+            "tech": ["html", "css", "js", "nodejs", "ex", "wp", "joo"],
             "thumbnail": "/src/svg/illustration/Illustration-Website.svg"
         }, 
         {
@@ -56,6 +60,7 @@
             "title": "UI, UX,<br>Prototyping",
             "subtitle": "Creative Design",
             "description": [ "Capturing users' attention and guiding them through unique journeys, finding the balance between aestetically pleasing layouts, ease of use, and a unique design is keen to memorable designs.", "In the past, I have worked on various projects building prototypes using Figma or XD, and implementing eye-catching designs in web-experiences."],
+            "tech": ["html", "css", "js", "nodejs", "express", "xd"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-CreativeDesign.svg"
         }, 
         {
@@ -63,6 +68,7 @@
             "title": "Logos, Icons, Colors,<br>Typography",
             "subtitle": "Branding",
             "description": [ "Good branding conveys a message. Colors and fonts express feelings and create brand identity. ", "With a keen eye for colors and shapes, I have designed various logos that define a brand's purpose and meaning in a single file."],
+            "tech": ["html", "css", "js", "nodejs", "express"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-Branding.svg"
         }, 
         {
@@ -70,6 +76,7 @@
             "title": "Networking, Linux,<br>Domains",
             "subtitle": "Networking & Hosting",
             "description": [ "Everything on the web is on phsyical servers, knowing a bit about it won't harm.", "Not only through my education have I learned how to interact with Linux/Bash but also through working on Connect. This service is hosted on AWS, and the site itself is on a regional Swiss hosting. DNS, A-Recordings, Site forwarding etc. rings a bell for me."],
+            "tech": ["html", "css", "js", "nodejs", "express"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-Networking.svg"
         }, 
         {
@@ -77,6 +84,7 @@
             "title": "MySQL, NoSQL,<br>Data Laws",
             "subtitle": "Database",
             "description": [ "Data is at heart of every application and website across the globe.", "Whether utilizing our beloved MySQL or NoSQL (e.g. MongoDB), I have utilized both in class and have gathered a broad understanding during the courses.", "Having an understanding of data regulations across Europe and the world is equally important."],
+            "tech": ["html", "css", "js", "nodejs", "express"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-Database.svg"
         }, 
         {
@@ -84,7 +92,8 @@
             "title": "Software Development",
             "subtitle": "Object-Oriented<br>Programming",
             "description": [ "During my school time, I have gotten to know what it means to program object-oriented code. ", "I am familiar with languages like Java or C# and can utilize skills from other fields programming object-oriented."],
-            "thumbnail": "/src/img/TestImage.jpg"
+            "tech": ["html", "css", "js", "nodejs", "express"],
+            "thumbnail": "/src/svg/illustration/SketchIllustration-OOP.svg"
         }
     ], 
     "business-types": {

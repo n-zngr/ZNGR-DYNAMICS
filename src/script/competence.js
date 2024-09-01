@@ -47,8 +47,44 @@ export function createCompetenceModal(competence) {
         modalMain.appendChild(descriptionElement);
     });
 
+    const modalFooter = document.createElement('div');
+    modalFooter.classList.add('competence-modal-footer');
+    const techIcons = {
+        html: '/src/svg/external/Icon-Html.svg',
+        css: '/src/svg/external/Icon-Css.svg',
+        js: '/src/svg/external/Icon-Js.svg',
+        nodejs: '/src/svg/external/Icon-NodeJs.svg',
+        ex: '/src/svg/external/Icon-Express.svg',
+        joo: '/src/svg/external/Icon-Joomla.svg',
+        wp: '/src/svg/external/Icon-Wordpress.svg',
+        xd: '/src/svg/external/Icon-Xd.svg'
+    }
+    const techNames = {
+        html: 'HTML',
+        css: 'CSS',
+        js: 'JavaScript',
+        nodejs: 'NodeJs',
+        ex: 'ExpressJs',
+        joo: 'Joomla',
+        wp: 'WordPress',
+        xd: 'Adobe XD'
+    }
+    competence.tech.forEach(tech => {
+        const techName = tech.trim().toLowerCase();
+        if (techIcons[techName]) {
+            const techItem = document.createElement('div');
+            techItem.classList.add('competence-modal-footer-item');
+            techItem.setAttribute('data-tooltip', techNames[techName]);
+            techItem.innerHTML = `
+                <img src="${techIcons[techName]}" alt="${techNames[techName]}" height="24" width="24">
+            `;
+            modalFooter.appendChild(techItem);
+        }
+    })
+
     modalContainer.appendChild(modalHeader);
     modalContainer.appendChild(modalMain);
+    modalContainer.appendChild(modalFooter);
 
     modalContent.appendChild(modalTop);
     modalContent.appendChild(modalContainer);
