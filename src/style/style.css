@@ -270,7 +270,7 @@ body{background-color: var(--black);}
                     color: var(--white);
                 }
                 &:hover .nav-main-item-button-item-svg{
-                    transform: translate(128px, -32px);
+                    transform: translate(128px, -64px);
                     fill: var(--white);
                 }
             }
@@ -669,12 +669,14 @@ body.body-modal-open .nav{
     border-radius: 16px;
     transition: all var(--anim_duration-slow);
     overflow-y: scroll;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     & .competence-modal-top{
         position: absolute;
         top: 16px;
         right: 16px;
         opacity: 0;
+        z-index: 1;
         transform: opacity var(--anim_duration-slow);
     }
     & .competence-modal-container{
@@ -1084,17 +1086,26 @@ body.body-modal-open{
 }
 
 
-
-@media only screen and (max-width: 1280px){
-    .zngr-projects{padding-inline: 64px;}
-    .zngr-competence{padding-inline: 64px;}}
 @media only screen and (min-width: 1280px) {
     .zngr-projects{
         & .project-card-big{aspect-ratio: inherit; min-height: 100vh;}}}
+@media only screen and (max-width: 1280px){
+    .zngr-projects{padding-inline: 64px;}
+    .zngr-competence{padding-inline: 64px;}}
 @media only screen and (max-width: 768px){
+    .nav.expanded .nav-main{
+        height: calc(100vh - 58px);
+    }
+    .nav{
+        width: calc(100% - 2px);
+        margin: 0;
+        & .nav-main{
+            grid-template-columns: 1fr;
+        }
+    }
     .zngr-projects{padding-inline: 32px;}
     .zngr-competence{padding-inline: 32px;}}
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 500px){    
     .zngr-projects{padding-inline: 16px;}
     .zngr-competence{padding-inline: 16px;}}
 

@@ -80,7 +80,7 @@ export function competenceModal() {
     }
 
     modalOverlay.addEventListener('click', (event) => {
-        if (event.target === modalOverlay || event.target === close) {
+        if (event.target === modalOverlay || event.target.closest('.close')) {
             const competenceHeaderImage = document.querySelector('.competence-modal-header-image');
             const competenceModalTop = document.querySelector('.competence-modal-top');
             const competenceMain = document.querySelector('.competence-modal-main');
