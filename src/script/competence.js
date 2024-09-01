@@ -57,7 +57,18 @@ export function createCompetenceModal(competence) {
         ex: '/src/svg/external/Icon-Express.svg',
         joo: '/src/svg/external/Icon-Joomla.svg',
         wp: '/src/svg/external/Icon-Wordpress.svg',
-        xd: '/src/svg/external/Icon-Xd.svg'
+        xd: '/src/svg/external/Icon-Xd.svg',
+        ps: '/src/svg/external/Icon-Ps.svg',
+        figma: '/src/svg/external/Icon-Figma.svg',
+        linux: '/src/svg/external/Icon-Linux.svg',
+        bash: '/src/svg/external/Icon-Bash.svg',
+        cloudflare: '/src/svg/external/Icon-Cloudflare.svg',
+        aws: '/src/svg/external/Icon-Aws.svg',
+        java: '/src/svg/external/Icon-Java.svg',
+        maven: '/src/svg/external/Icon-Maven.svg',
+        cs: '/src/svg/external/Icon-Cs.svg',
+        dotnet: '/src/svg/external/Icon-Dotnet.svg',
+        
     }
     const techNames = {
         html: 'HTML',
@@ -67,7 +78,17 @@ export function createCompetenceModal(competence) {
         ex: 'ExpressJs',
         joo: 'Joomla',
         wp: 'WordPress',
-        xd: 'Adobe XD'
+        xd: 'Adobe XD',
+        ps: 'Adobe Photoshop',
+        figma: 'Figma',
+        linux: 'Linux',
+        bash: 'Bash',
+        cloudflare: 'Cloudflare',
+        aws: 'Amazon Web Services',
+        java: 'Java',
+        maven: 'Maven',
+        cs: 'CSharp',
+        dotnet: 'DotNet',
     }
     competence.tech.forEach(tech => {
         const techName = tech.trim().toLowerCase();

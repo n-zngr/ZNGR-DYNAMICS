@@ -60,7 +60,7 @@
             "title": "UI, UX,<br>Prototyping",
             "subtitle": "Creative Design",
             "description": [ "Capturing users' attention and guiding them through unique journeys, finding the balance between aestetically pleasing layouts, ease of use, and a unique design is keen to memorable designs.", "In the past, I have worked on various projects building prototypes using Figma or XD, and implementing eye-catching designs in web-experiences."],
-            "tech": ["html", "css", "js", "nodejs", "express", "xd"],
+            "tech": ["html", "css", "js", "figma", "xd"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-CreativeDesign.svg"
         }, 
         {
@@ -68,15 +68,15 @@
             "title": "Logos, Icons, Colors,<br>Typography",
             "subtitle": "Branding",
             "description": [ "Good branding conveys a message. Colors and fonts express feelings and create brand identity. ", "With a keen eye for colors and shapes, I have designed various logos that define a brand's purpose and meaning in a single file."],
-            "tech": ["html", "css", "js", "nodejs", "express"],
+            "tech": ["figma", "xd", "ps"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-Branding.svg"
         }, 
         {
             "id": "4",
             "title": "Networking, Linux,<br>Domains",
             "subtitle": "Networking & Hosting",
-            "description": [ "Everything on the web is on phsyical servers, knowing a bit about it won't harm.", "Not only through my education have I learned how to interact with Linux/Bash but also through working on Connect. This service is hosted on AWS, and the site itself is on a regional Swiss hosting. DNS, A-Recordings, Site forwarding etc. rings a bell for me."],
-            "tech": ["html", "css", "js", "nodejs", "express"],
+            "description": [ "Everything on the web is on physical servers, knowing a bit about it won't harm.", "Not only through my education have I learned how to interact with Linux/Bash but also through working on Connect. This service is hosted on AWS, and the site itself is on a regional Swiss hosting. DNS, A-Recordings, Site forwarding etc. rings a bell for me."],
+            "tech": ["linux", "bash", "cloudflare", "aws"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-Networking.svg"
         }, 
         {
@@ -91,8 +91,8 @@
             "id": "6",
             "title": "Software Development",
             "subtitle": "Object-Oriented<br>Programming",
-            "description": [ "During my school time, I have gotten to know what it means to program object-oriented code. ", "I am familiar with languages like Java or C# and can utilize skills from other fields programming object-oriented."],
-            "tech": ["html", "css", "js", "nodejs", "express"],
+            "description": [ "During my school time, I have gotten to know what it means to program object-oriented code. ", "I am familiar with languages like Java or C# and can utilize skills from other fields programming object-oriented.", "From building user interfaces using Java to creating console-applications using CSharp, I have a good understanding of the principles of object-oriented programming."],
+            "tech": ["java", "maven", "", "cs", "dotnet"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-OOP.svg"
         }
     ], 
