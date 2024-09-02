@@ -55,6 +55,7 @@ export function createCompetenceModal(competence) {
         js: '/src/svg/external/Icon-Js.svg',
         nodejs: '/src/svg/external/Icon-NodeJs.svg',
         ex: '/src/svg/external/Icon-Express.svg',
+        ejs: '/src/svg/external/Icon-Ejs.svg',
         joo: '/src/svg/external/Icon-Joomla.svg',
         wp: '/src/svg/external/Icon-Wordpress.svg',
         xd: '/src/svg/external/Icon-Xd.svg',
@@ -64,10 +65,14 @@ export function createCompetenceModal(competence) {
         bash: '/src/svg/external/Icon-Bash.svg',
         cloudflare: '/src/svg/external/Icon-Cloudflare.svg',
         aws: '/src/svg/external/Icon-Aws.svg',
+        mysql: '/src/svg/external/Icon-Mysql.svg',
+        mongodb: '/src/svg/external/Icon-Mongodb.svg',
+        eu: '/src/svg/external/Icon-Eu.svg',
+        ch: '/src/svg/external/Icon-Ch.svg',
         java: '/src/svg/external/Icon-Java.svg',
         maven: '/src/svg/external/Icon-Maven.svg',
         cs: '/src/svg/external/Icon-Cs.svg',
-        dotnet: '/src/svg/external/Icon-Dotnet.svg',
+        dotnet: '/src/svg/external/Icon-Dotnet.svg'
         
     }
     const techNames = {
@@ -76,6 +81,7 @@ export function createCompetenceModal(competence) {
         js: 'JavaScript',
         nodejs: 'NodeJs',
         ex: 'ExpressJs',
+        ejs: 'EJS',
         joo: 'Joomla',
         wp: 'WordPress',
         xd: 'Adobe XD',
@@ -85,10 +91,14 @@ export function createCompetenceModal(competence) {
         bash: 'Bash',
         cloudflare: 'Cloudflare',
         aws: 'Amazon Web Services',
+        mysql: 'MySQL',
+        mongodb: 'MongoDB',
+        eu: 'DSGVO, Datenschutzgrundverordnung',
+        ch: 'DSG, Datenschutzgesetz',
         java: 'Java',
         maven: 'Maven',
         cs: 'CSharp',
-        dotnet: 'DotNet',
+        dotnet: 'DotNet'
     }
     competence.tech.forEach(tech => {
         const techName = tech.trim().toLowerCase();

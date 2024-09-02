@@ -22,7 +22,7 @@
             "business": "Online Service",
             "description": ["Connect is an online platform dedicated to communities on the chatting-app Discord.", "What if we allowed for Discord communities to easily become more visible gaining more members and an audience faster? From Branding, to overseeing development and creating UI & UX, this project has been built from the ground up.", "The platform is made of two components, the Connect Discord App (bot) and its website. An API ties the two together. Users can interact with the Connect App directly on Discord sending the information to the API which the website uses to display the corresponding communities. Working with two other developers on the project, I have overseen the complete development process, using an agile workflow.", "With the idea in our heads, we wanted to create a modern, bold, provocative brand, which lead to the slogan \"Connect your community\". The logo depicts a paperclip, made of the \"C\" and \"O\" letters, connecting communities to a web-platform. "],
             "list": ["Branding", "UI & UX Design", "Discord Integration", "Product Management"],
-            "tech": [""],
+            "tech": ["html", "css", "js", "figma"],
             "thumbnail": "/src/img/connect/ConnectThumbnail.png",
             "images": [
                 { "alt": "Connect Landing", "src": "/src/img/connect/ConnectExported.png" },
@@ -52,7 +52,7 @@
             "title": "Websites, Web Apps,<br>CMS",
             "subtitle": "Web Development",
             "description": [ "Your website embodies your mission online.", "My passion lies in designing, prototyping, and developing websites that truly reflect your vision.", "Over the years, I've gained valuable experience building web applications using Node.js and Express, as well as creating websites from scratch using code like HTML, CSS, and JavaScript. Whether I'm developing a dynamic web app or crafting a seamless website experience with a CMS like WordPress, my focus is always on delivering solutions that meet your needs."],
-            "tech": ["html", "css", "js", "nodejs", "ex", "wp", "joo"],
+            "tech": ["html", "css", "js", "nodejs", "ex", "ejs", "wp", "joo"],
             "thumbnail": "/src/svg/illustration/Illustration-Website.svg"
         }, 
         {
@@ -83,8 +83,8 @@
             "id": "5",
             "title": "MySQL, NoSQL,<br>Data Laws",
             "subtitle": "Database",
-            "description": [ "Data is at heart of every application and website across the globe.", "Whether utilizing our beloved MySQL or NoSQL (e.g. MongoDB), I have utilized both in class and have gathered a broad understanding during the courses.", "Having an understanding of data regulations across Europe and the world is equally important."],
-            "tech": ["html", "css", "js", "nodejs", "express"],
+            "description": [ "Data is at heart of every application and website across the globe.", "Whether utilizing our beloved MySQL or NoSQL (e.g. MongoDB), I have utilized both and have gathered a broad understanding during my courses.", "In addition, I have a broad understanding of data regulations in the EU and Switzerland."],
+            "tech": ["mysql", "mongodb", "eu", "ch"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-Database.svg"
         }, 
         {
@@ -92,13 +92,8 @@
             "title": "Software Development",
             "subtitle": "Object-Oriented<br>Programming",
             "description": [ "During my school time, I have gotten to know what it means to program object-oriented code. ", "I am familiar with languages like Java or C# and can utilize skills from other fields programming object-oriented.", "From building user interfaces using Java to creating console-applications using CSharp, I have a good understanding of the principles of object-oriented programming."],
-            "tech": ["java", "maven", "", "cs", "dotnet"],
+            "tech": ["java", "maven", "cs", "dotnet"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-OOP.svg"
         }
-    ], 
-    "business-types": {
-        "finance": "Finance",
-        "restaurant": "Restaurant",
-        "lodging": "Lodging" 
-    }
+    ]
 }
