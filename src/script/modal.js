@@ -14,8 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const modalDescription = document.querySelector('.modal-main-about-description');
         const modalInfoContainer = document.querySelector('.modal-main-about-info');
         const modalListContainer = document.querySelector('.modal-main-about-list');
+        const modalFooter = document.querySelector('.modal-main-about-footer');
         const closeBtn = document.querySelector('.close');
         const modalImageContainer = document.querySelector('.modal-main-showcase');
+
 
         const animationDurationSlow = '800';
         let canCloseModal = false;
@@ -58,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 modalImageContainer.innerHTML = '';
                 modalInfoContainer.innerHTML = '';
                 modalDescription.innerHTML = '';
+                modalFooter.innerHTML = '';
 
                 modalTitle.textContent = content.title.toUpperCase();
 
@@ -133,6 +136,75 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 }
                 
+                const techIcons = {
+                    html: '/src/svg/external/Icon-Html.svg',
+                    css: '/src/svg/external/Icon-Css.svg',
+                    js: '/src/svg/external/Icon-Js.svg',
+                    nodejs: '/src/svg/external/Icon-NodeJs.svg',
+                    ex: '/src/svg/external/Icon-Express.svg',
+                    ejs: '/src/svg/external/Icon-Ejs.svg',
+                    djs: '/src/svg/external/Icon-Discordjs.svg',
+                    joo: '/src/svg/external/Icon-Joomla.svg',
+                    wp: '/src/svg/external/Icon-Wordpress.svg',
+                    xd: '/src/svg/external/Icon-Xd.svg',
+                    ps: '/src/svg/external/Icon-Ps.svg',
+                    figma: '/src/svg/external/Icon-Figma.svg',
+                    linux: '/src/svg/external/Icon-Linux.svg',
+                    bash: '/src/svg/external/Icon-Bash.svg',
+                    cloudflare: '/src/svg/external/Icon-Cloudflare.svg',
+                    aws: '/src/svg/external/Icon-Aws.svg',
+                    mysql: '/src/svg/external/Icon-Mysql.svg',
+                    mongodb: '/src/svg/external/Icon-Mongodb.svg',
+                    eu: '/src/svg/external/Icon-Eu.svg',
+                    ch: '/src/svg/external/Icon-Ch.svg',
+                    java: '/src/svg/external/Icon-Java.svg',
+                    maven: '/src/svg/external/Icon-Maven.svg',
+                    cs: '/src/svg/external/Icon-Cs.svg',
+                    dotnet: '/src/svg/external/Icon-Dotnet.svg',
+                    notion: '/src/svg/external/Icon-Notion.svg'};
+
+                const techNames = {
+                    html: 'HTML',
+                    css: 'CSS',
+                    js: 'JavaScript',
+                    nodejs: 'NodeJs',
+                    ex: 'ExpressJs',
+                    ejs: 'EJS',
+                    djs: 'DiscordJs',
+                    joo: 'Joomla',
+                    wp: 'WordPress',
+                    xd: 'Adobe XD',
+                    ps: 'Adobe Photoshop',
+                    figma: 'Figma',
+                    linux: 'Linux',
+                    bash: 'Bash',
+                    cloudflare: 'Cloudflare',
+                    aws: 'Amazon Web Services',
+                    mysql: 'MySQL',
+                    mongodb: 'MongoDB',
+                    eu: 'DSGVO, Datenschutzgrundverordnung',
+                    ch: 'DSG, Datenschutzgesetz',
+                    java: 'Java',
+                    maven: 'Maven',
+                    cs: 'CSharp',
+                    dotnet: 'DotNet',
+                    notion: 'Notion'};
+
+                if (content.tech) {
+                    content.tech.forEach(tech => {
+                        const techName = tech.trim().toLowerCase();
+                        if (techIcons[techName]) {
+                            const techItem = document.createElement('div');
+                            techItem.classList.add('modal-main-about-footer-item');
+                            techItem.setAttribute('data-tooltip', techNames[techName]);
+                            techItem.innerHTML = `
+                                <img src="${techIcons[techName]}" alt="${techNames[techName]}" height="24" width="24">
+                            `;
+                            modalFooter.appendChild(techItem);
+                        }
+                    });
+                }
+
                 highlightEffect();
 
                 /*competenceModal();*/

@@ -56,6 +56,7 @@ export function createCompetenceModal(competence) {
         nodejs: '/src/svg/external/Icon-NodeJs.svg',
         ex: '/src/svg/external/Icon-Express.svg',
         ejs: '/src/svg/external/Icon-Ejs.svg',
+        djs: '/src/svg/external/Icon-Discordjs.svg',
         joo: '/src/svg/external/Icon-Joomla.svg',
         wp: '/src/svg/external/Icon-Wordpress.svg',
         xd: '/src/svg/external/Icon-Xd.svg',
@@ -72,9 +73,8 @@ export function createCompetenceModal(competence) {
         java: '/src/svg/external/Icon-Java.svg',
         maven: '/src/svg/external/Icon-Maven.svg',
         cs: '/src/svg/external/Icon-Cs.svg',
-        dotnet: '/src/svg/external/Icon-Dotnet.svg'
-        
-    }
+        dotnet: '/src/svg/external/Icon-Dotnet.svg',
+        notion: '/src/svg/external/Icon-Notion.svg'};
     const techNames = {
         html: 'HTML',
         css: 'CSS',
@@ -82,6 +82,7 @@ export function createCompetenceModal(competence) {
         nodejs: 'NodeJs',
         ex: 'ExpressJs',
         ejs: 'EJS',
+        djs: 'DiscordJs',
         joo: 'Joomla',
         wp: 'WordPress',
         xd: 'Adobe XD',
@@ -98,8 +99,9 @@ export function createCompetenceModal(competence) {
         java: 'Java',
         maven: 'Maven',
         cs: 'CSharp',
-        dotnet: 'DotNet'
-    }
+        dotnet: 'DotNet',
+        notion: 'Notion'};
+
     competence.tech.forEach(tech => {
         const techName = tech.trim().toLowerCase();
         if (techIcons[techName]) {

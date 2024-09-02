@@ -723,7 +723,7 @@ body.body-modal-open .nav{
     }
     & .competence-modal-main{
         opacity: 0;
-        padding: 16px;
+        padding: 0px 16px 16px 16px;
         transition: all var(--anim_duration-slow);
         & .competence-modal-main-description{
             padding-top: 16px;
@@ -984,7 +984,7 @@ body.body-modal-open{
             & .modal-main-about-list{
                 display: flex;
                 flex-direction: column;
-                padding-top: 24px;
+                padding-top: 32px;
                 & .modal-main-about-list-item{
                     color: var(--white3);
                     font-weight: var(--font_weight-regular);
@@ -997,6 +997,44 @@ body.body-modal-open{
                     }
                     & .modal-main-about-list-item-svg{
                         fill: var(--white5);
+                    }
+                }
+            }
+            & .modal-main-about-footer{
+                display: flex;
+                flex-direction: row;
+                gap: 8px;
+                padding-top: 24px;
+                & .modal-main-about-footer-item{
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 32px;
+                    width: 32px;
+                    border: var(--gray-75) 1px solid;
+                    border-radius: 8px;
+                    background-color: var(--black-75);
+                    transition: all var(--anim_duration);
+                    cursor: pointer;
+                    &:hover{
+                        background-color: var(--gray);
+                    }
+                    &:hover::after{
+                        opacity: 1;
+                    }
+                    &::after{
+                        content: attr(data-tooltip);
+                        position: absolute;
+                        top: 40px;
+                        left: 0px;
+                        padding: 8px;
+                        border: var(--gray-75) 1px solid;
+                        border-radius: 8px;
+                        background-color: var(--black-75);
+                        color: var(--white5);
+                        font-size: 12px;
+                        opacity: 0;
                     }
                 }
             }
