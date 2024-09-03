@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (content.link) {
                     const linkDiv = document.createElement('a');
                     linkDiv.className = 'modal-main-about-info-link';
+                    linkDiv.target = '_blank';
                     linkDiv.href = content.link;
 
                     const linkItem = document.createElement('p');

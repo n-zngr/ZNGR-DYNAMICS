@@ -11,16 +11,6 @@ html{scroll-behavior: smooth;}
     
 body{background-color: var(--black);}
 
-
-.link{
-    text-decoration: none;
-    color: var(--white5);
-    transition: all var(--anim_duration);
-    &:hover{
-        color: var(--white);
-    }
-}
-
 .nav{
     position: fixed;
     display: flex;
@@ -987,7 +977,7 @@ body.body-modal-open{
                 padding-top: 32px;
                 & .modal-main-about-list-item{
                     color: var(--white3);
-                    font-weight: var(--font_weight-regular);
+                    font-weight: var(--font_weight-medium);
                     list-style: none;
                     padding-bottom: 8px;
                     display: flex;
@@ -1123,6 +1113,33 @@ body.body-modal-open{
     }
 }
 
+.link{
+    position: relative;
+    text-decoration: none;
+    color: var(--white5);
+    font-weight: var(--font_weight-regular);
+    transition: all var(--anim_duration);
+    &:hover{
+        color: var(--white);
+        font-weight: var(--font_weight-demi);
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--white);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform var(--anim_duration);
+    }
+    &:hover::before {
+    transform: scaleX(1);
+    }
+}
 
 @media only screen and (min-width: 1280px) {
     .zngr-projects{

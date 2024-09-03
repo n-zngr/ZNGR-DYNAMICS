@@ -35,8 +35,8 @@
             "title": "ZNGR DYNAMICS",
             "link": "https://zngr-dynamics.ch",
             "business": "Portfolio",
-            "description": ["ZNGR DYNAMICS is my personal site outfitted in a corporate style. Here, all projects I have worked on, have their place.", "This project has been in planning for quite some time, initially heavily sci-fi inspired. However, as I started drawing out the idea, I realized this was not the turn to take. I continued scouring the web for inspiration, my site should follow a modern, slick, and minimal design.", "In the future, "],
-            "list": ["UI & UX Design", "Illustration", "Animation"],
+            "description": ["ZNGR DYNAMICS is my personal site outfitted in a corporate style. Here, all projects I have worked on, have their place.", "This project has been in planning for quite some time, initially heavily sci-fi inspired. However, as I started drawing out the idea, I realized this was not the turn to take. I decided to create a modern, minimalistic design.", "I have decided to use the base-languages, html, css, js to strengthen the core before moving on with other frameworks. This not only helped me get a deeper understanding of the languages, but also showed me what a pain it can be sometimes for relatively simple features. But I always like a challenge."],
+            "list": ["UI & UX Design", "Illustration", "Implementation", "Animation", "Agile Project Management"],
             "tech": ["html", "css", "js", "figma", "notion"],
             "thumbnail": "/src/svg/illustration/Illustration-Website.svg",
             "images": [
@@ -51,7 +51,11 @@
             "id": "1",
             "title": "Websites, Web Apps,<br>CMS",
             "subtitle": "Web Development",
-            "description": [ "Your website embodies your mission online.", "My passion lies in designing, prototyping, and developing websites that truly reflect your vision.", "Over the years, I've gained valuable experience building web applications using Node.js and Express, as well as creating websites from scratch using code like HTML, CSS, and JavaScript. Whether I'm developing a dynamic web app or crafting a seamless website experience with a CMS like WordPress, my focus is always on delivering solutions that meet your needs."],
+            "description": [ 
+                "Your website embodies your mission online.", 
+                "My passion lies in designing, prototyping, and developing websites that truly reflect your vision.", 
+                "Over the years, I've gained valuable experience building web applications using Node.js and Express, as well as creating websites from scratch using code like HTML, CSS, and JavaScript. Whether I'm developing a dynamic web app or crafting a seamless website experience with a CMS like WordPress, my focus is always on delivering solutions that meet your needs."
+            ],
             "tech": ["html", "css", "js", "nodejs", "ex", "ejs", "wp", "joo"],
             "thumbnail": "/src/svg/illustration/Illustration-Website.svg"
         }, 
@@ -59,7 +63,9 @@
             "id": "2",
             "title": "UI, UX,<br>Prototyping",
             "subtitle": "Creative Design",
-            "description": [ "Capturing users' attention and guiding them through unique journeys, finding the balance between aestetically pleasing layouts, ease of use, and a unique design is keen to memorable designs.", "In the past, I have worked on various projects building prototypes using Figma or XD, and implementing eye-catching designs in web-experiences."],
+            "description": [ 
+                "Capturing users' attention and guiding them through unique journeys, finding the balance between aestetically pleasing layouts, ease of use, and a unique design is keen to memorable designs.", 
+                "In the past, I have worked on various projects building prototypes using Figma or XD, and implementing eye-catching designs in web-experiences."],
             "tech": ["html", "css", "js", "figma", "xd"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-CreativeDesign.svg"
         }, 
@@ -67,7 +73,10 @@
             "id": "3",
             "title": "Logos, Icons, Colors,<br>Typography",
             "subtitle": "Branding",
-            "description": [ "Good branding conveys a message. Colors and fonts express feelings and create the identity of a brand. ", "With a keen eye for colors and shapes, I have designed various logos that define a brand's purpose and meaning in a single file."],
+            "description": [ 
+                "Good branding conveys a message. Colors and fonts express feelings and create the identity of a brand. ", 
+                "With a keen eye for colors and shapes, I have designed various logos that define a brand's purpose and meaning in a single file."
+            ],
             "tech": ["figma", "xd", "ps"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-Branding.svg"
         }, 
@@ -75,7 +84,10 @@
             "id": "4",
             "title": "Networking, Linux,<br>Domains",
             "subtitle": "Networking & Hosting",
-            "description": [ "Everything on the web is on physical servers, knowing a bit about it won't harm.", "Not only through my education have I learned how to interact with Linux/Bash but also through working on Connect. This service is hosted on AWS, and the site itself is on a regional Swiss hosting. DNS, A-Recordings, Site forwarding etc. rings a bell for me."],
+            "description": [ 
+                "Everything on the web is on physical servers, knowing a bit about it won't harm.", 
+                "Not only through my education have I learned how to interact with Linux/Bash but also through working on Connect. This service is hosted on AWS, and the site itself is on a regional Swiss hosting. DNS, A-Recordings, Site forwarding etc. rings a bell for me."
+            ],
             "tech": ["linux", "bash", "cloudflare", "aws"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-Networking.svg"
         }, 
@@ -83,7 +95,10 @@
             "id": "5",
             "title": "MySQL, NoSQL,<br>Data Laws",
             "subtitle": "Database",
-            "description": [ "Data is at heart of every application and website across the globe.", "Whether utilizing our beloved MySQL or NoSQL (e.g. MongoDB), I have utilized both and have gathered a broad understanding during my courses.", "In addition, I have a broad understanding of data regulations in the EU and Switzerland."],
+            "description": [ 
+                "Data is at heart of every application and website across the globe.", 
+                "Whether utilizing our beloved MySQL or NoSQL (e.g. MongoDB), I have utilized both and have gathered a broad understanding during my courses.", 
+                "In addition, I have a broad understanding of data regulations in the EU and Switzerland."],
             "tech": ["mysql", "mongodb", "eu", "ch"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-Database.svg"
         }, 
@@ -91,7 +106,10 @@
             "id": "6",
             "title": "Software Development",
             "subtitle": "Object-Oriented<br>Programming",
-            "description": [ "During my school time I have gotten to know C# and Java pretty well, and have developed projects in both environments.", "I can utilize skills from other fields of programming, in OOP.", "From building user interfaces using Java to creating console-applications using CSharp, I have a good understanding of the object-oriented programming principles, like encapsulation, and inheritance."],
+            "description": [ 
+                "During my school time I have gotten to know C# and Java pretty well, and have developed projects in both environments.", 
+                "I can utilize skills from other fields of programming, in OOP.", 
+                "From building user interfaces using Java to creating console-applications using CSharp, I have a good understanding of the object-oriented programming principles, like encapsulation, and inheritance."],
             "tech": ["java", "maven", "cs", "dotnet"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-OOP.svg"
         }
