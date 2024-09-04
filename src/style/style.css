@@ -458,12 +458,14 @@ body.body-modal-open .nav{
                 font-weight: var(--font_weight-demi);
                 background-color: transparent;
                 color: var(--white);
+                text-align: left;
             }
             .button-small{
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 border: var(--gray) 2px solid;
+                min-width: 32px;
                 width: 32px;
                 height: 32px;
                 border-radius: 128px;
@@ -1142,10 +1144,32 @@ body.body-modal-open{
 
 @media only screen and (min-width: 1280px) {
     .zngr-projects{
-        & .project-card-big{aspect-ratio: inherit; min-height: 100vh;}}}
+        &.project-card-big{
+            aspect-ratio: inherit;
+            min-height: 100vh;
+        }
+    }
+    .zngr-footer{
+        & .footer-container{
+            padding: 32px;
+        }
+    }
+}
 @media only screen and (max-width: 1280px){
+    .nav{
+        overflow-y: auto;
+    }
     .zngr-projects{padding-inline: 64px;}
-    .zngr-competence{padding-inline: 64px;}}
+    .zngr-competence{padding-inline: 64px;}
+    .zngr-footer{
+        & .footer-logo{
+            padding: 0px 64px 64px 64px;
+            & .footer-logo-item{
+                font-size: 64px;
+            }
+        }
+    }
+}
 @media only screen and (max-width: 768px){
     .nav.expanded .nav-main{
         height: calc(100vh - 58px);
@@ -1153,15 +1177,107 @@ body.body-modal-open{
     .nav{
         width: calc(100% - 2px);
         margin: 0;
+        overflow-y: auto;
+        & .nav-header{
+            & .nav-header-logo{
+                position: unset;
+                overflow: hidden;
+                text-wrap: balance;
+                right: 0;
+                transform: translateX(0);
+            }
+        }
         & .nav-main{
             grid-template-columns: 1fr;
         }
     }
-    .zngr-projects{padding-inline: 32px;}
-    .zngr-competence{padding-inline: 32px;}}
-@media only screen and (max-width: 500px){    
-    .zngr-projects{padding-inline: 16px;}
-    .zngr-competence{padding-inline: 16px;}}
+    .zngr-header{
+        & .zngr-header-background{
+            & .zngr-header-background-item{
+                font-size: 430px;
+            }
+        }
+        & .zngr-header-container{
+            padding-right: 64px;
+            & .zngr-header-container-title{
+                font-size: 24px;
+            }
+        }
+    }
+    
+    .zngr-projects{
+        padding-inline: 32px;
+    }
+    .zngr-competence{
+        padding-top: 64px;
+        padding-inline: 32px;
+        & .zngr-competence-header{
+            flex-direction: column;
+            & .zngr-competence-header-title{
+                padding-bottom: 32px;
+                text-align: center;
+            }
+            & .zngr-competence-header-description{
+                padding-bottom: 32px;
+                text-align: center;
+            }
+        }
+    }
+    .zngr-footer{
+        & .footer-container{
+            padding: 32px;
+        }
+        & .footer-logo{
+            padding: 0px 32px 32px 32px;
+            & .footer-logo-item{
+                font-size: 42px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 500px){
+    .zngr-header{
+        & .zngr-header-background{
+            & .zngr-header-background-item{
+                font-size: 320px;
+            }
+        }
+        & .zngr-header-container{
+            padding-right: 32px;
+            & .zngr-header-container-title{
+                font-size: 22px;
+            }
+            & .zngr-header-container-description{
+                font-size: 20px;
+            }
+        }
+    }
+    .zngr-projects{
+        padding-inline: 16px;
+        grid-template-columns: 1fr;
+        & .project-card{
+            grid-column: 1;
+        }
+        & .project-card-big{
+            grid-column: 1;
+            &.project-card-big{
+                grid-column: 1;
+            }
+        }
+    }
+    .zngr-competence{padding-inline: 16px;}
+    .zngr-footer{
+        & .footer-container{
+            padding: 16px;
+        }
+        & .footer-logo{
+            padding: 0px 16px 16px 16px;
+            & .footer-logo-item{
+                font-size: 18px;
+            }
+        }
+    }
+}
 
 :root{
     --black: #020406;
