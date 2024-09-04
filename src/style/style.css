@@ -1121,7 +1121,6 @@ body.body-modal-open{
     transition: all var(--anim_duration);
     &:hover{
         color: var(--white);
-        font-weight: var(--font_weight-demi);
     }
     &::before {
         content: '';

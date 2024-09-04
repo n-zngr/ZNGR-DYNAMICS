@@ -54,7 +54,7 @@
             "description": [ 
                 "Your website embodies your mission online.", 
                 "My passion lies in designing, prototyping, and developing websites that truly reflect your vision.", 
-                "Over the years, I've gained valuable experience building web applications using Node.js and Express, as well as creating websites from scratch using code like HTML, CSS, and JavaScript. Whether I'm developing a dynamic web app or crafting a seamless website experience with a CMS like WordPress, my focus is always on delivering solutions that meet your needs."
+                "Over the years, I've gained valuable experience building web applications using Node.js and Express, as well as creating websites from scratch using code like html, css, and javascript. Whether I'm developing a dynamic web app or crafting a seamless website experience with a CMS like WordPress, my focus is always on delivering solutions that meet your needs."
             ],
             "tech": ["html", "css", "js", "nodejs", "ex", "ejs", "wp", "joo"],
             "thumbnail": "/src/svg/illustration/Illustration-Website.svg"
