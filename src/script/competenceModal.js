@@ -67,6 +67,7 @@ export function competenceModal() {
 
         requestAnimationFrame(() => {
             modalContent.style.top = '128px';
+            /*modalContent.classList.add('competence-modal-open');*/
             modalContent.style.left = '25%';
             modalContent.style.width = '50%';
             modalContent.style.height = 'calc(100% - 128px)';

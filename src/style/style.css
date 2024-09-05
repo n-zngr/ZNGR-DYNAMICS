@@ -1245,6 +1245,9 @@ body.body-modal-open{
             }
         }
     }
+    .competence-modal{
+        .competence-modal-content{}
+    }
     .zngr-footer{
         & .footer-container{
             padding: 32px;
