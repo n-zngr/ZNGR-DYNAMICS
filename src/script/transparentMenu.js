@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navToggle.forEach(navToggleElement => {
         navToggleElement.addEventListener('click', () => {
             const nav = document.querySelector('.nav');
+            document.body.classList.toggle('body-modal-open');
             nav.classList.toggle('expanded');
         });
     });
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const nav = document.querySelector('.nav');
         if (event.target === overlay) {
             nav.classList.remove('expanded');
+            document.body.classList.remove('body-modal-open');
         }
     });
     /* Attempt to create hover for header-background-item, due to absolute position, this needs to be worked out.
