@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.querySelectorAll('.nav-header-button, .nav-main-item');
+    const overlay = document.querySelector('.overlay');
+    const nav = document.querySelector('.nav');
+    const navMain = document.querySelector('.nav-main');
 
     navToggle.forEach(navToggleElement => {
         navToggleElement.addEventListener('click', () => {
-            const nav = document.querySelector('.nav');
             document.body.classList.toggle('body-modal-open');
             nav.classList.toggle('expanded');
         });
@@ -24,10 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hoverItem.onmousemove = e => mouseMove(e);
     }
 
-    const overlay = document.querySelector('.overlay');
-
     window.addEventListener('click', (event) => {
-        const nav = document.querySelector('.nav');
         if (event.target === overlay) {
             nav.classList.remove('expanded');
             document.body.classList.remove('body-modal-open');
@@ -38,3 +37,5 @@ document.addEventListener('DOMContentLoaded', () => {
         hoverItem.onmousemove = e => mouseMove(e);
     }*/
 });
+
+//!!! Fix nav by setting height to auto on open, on close set it to 0px. 

@@ -22,7 +22,7 @@ export function competenceModal() {
             competenceCard.addEventListener('click', async () => {
                 const competenceCardId = competenceCard.getAttribute('data-competence-id');
                 selectedCompetenceId = competenceCardId;
-                console.log(competenceCardId);
+                /*console.log(competenceCardId);*/
                 const competence = competences.find(c => c.id === competenceCardId);
                 if (competence) {
                     await createCompetenceModal(competence);
@@ -66,12 +66,30 @@ export function competenceModal() {
         modalContent.getBoundingClientRect();
 
         requestAnimationFrame(() => {
-            modalContent.style.top = '128px';
-            /*modalContent.classList.add('competence-modal-open');*/
-            modalContent.style.left = '25%';
-            modalContent.style.width = '50%';
-            modalContent.style.height = 'calc(100% - 128px)';
-            
+            const screenWidth = window.innerWidth;
+
+            if (screenWidth <= 500) {
+                modalContent.style.top = '80px';
+                modalContent.style.left = '0';
+                modalContent.style.width = '100%';
+                modalContent.style.height = 'calc(100% - 80px)';
+            } else if (screenWidth < 768) {
+                modalContent.style.top = '100px';
+                modalContent.style.left = '5%';
+                modalContent.style.width = '90%';
+                modalContent.style.height = 'calc(100% - 100px)';
+            } else if (screenWidth < 1280) {
+                modalContent.style.top = '120px';
+                modalContent.style.left = '15%';
+                modalContent.style.width = '70%';
+                modalContent.style.height = 'calc(100% - 120px)';
+            } else {
+                modalContent.style.top = '128px';
+                modalContent.style.left = '25%';
+                modalContent.style.width = '50%';
+                modalContent.style.height = 'calc(100% - 128px)';
+            }
+
             modalContent.style.overflowY = 'scroll';
             competenceModalTop.opacity = '1';
             competenceMain.style.opacity = '1';
@@ -80,6 +98,67 @@ export function competenceModal() {
         });
     }
 
+
+    modalOverlay.addEventListener('click', (event) => {
+        if (event.target === modalOverlay || event.target.closest('.close')) {
+            closeCompetenceModal();
+        }
+    })
+
+
+    function closeCompetenceModal() {
+        const competenceHeaderImage = document.querySelector('.competence-modal-header-image');
+        const competenceModalTop = document.querySelector('.competence-modal-top');
+        const competenceMain = document.querySelector('.competence-modal-main');
+        const competenceModalTitle = document.querySelector('.competence-modal-title');
+
+        modalContent.scrollTo(0, 0);
+        overlay.removeAttribute('style');
+
+        modalContent.style.top = `${initialRect.top}px`;
+        modalContent.style.left = `${initialRect.left}px`;
+        modalContent.style.width = `${initialRect.width}px`;
+        modalContent.style.height = `${initialRect.height}px`;
+
+        modalContent.style.overflowY = 'hidden';
+        competenceModalTop.removeAttribute('style');
+        competenceMain.removeAttribute('style');
+        competenceModalTitle.removeAttribute('style');
+        
+        competenceHeaderImage.removeAttribute('style');
+
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                modalOverlay.style.display = 'none';
+                modalContent.style.transition = '';
+                modalContent.style.position = '';
+                modalContent.style.top = '';
+                modalContent.style.left = '';
+                modalContent.style.width = '';
+                modalContent.style.height = '';
+
+                modalContent.removeAttribute('style');
+
+                competenceHeaderImage.style.maskSize = '100% 100%';
+                /*competenceHeaderImage.removeAttribute('style');*/
+
+                competenceCards.forEach(card => {
+                    card.style.opacity = '1';
+                });
+                
+                if (selectedCompetenceId === '6') {
+                    resetScrollPosition();
+                }
+
+                document.body.classList.remove('body-modal-open');
+                modalContent.innerHTML = '';
+            }, 800);
+        });
+    };
+};
+
+
+/* OLD BELOW
     modalOverlay.addEventListener('click', (event) => {
         if (event.target === modalOverlay || event.target.closest('.close')) {
             const competenceHeaderImage = document.querySelector('.competence-modal-header-image');
@@ -116,12 +195,12 @@ export function competenceModal() {
     
                     competenceHeaderImage.style.maskSize = '100% 100%';
                     /*competenceHeaderImage.removeAttribute('style');*/
-
+/*
                     competenceCards.forEach(card => {
                         card.style.opacity = '1';
                     });
                     
-                    if (selectedCompetenceId === '6'/* || selectedCompetenceId === '5' || selectedCompetenceId === '4'*/) {
+                    if (selectedCompetenceId === '6') {
                         resetScrollPosition();
                     }
 
@@ -132,6 +211,7 @@ export function competenceModal() {
             
         }
     });
+*/
 
     /*OLD BELOW*/
     /*
@@ -206,4 +286,4 @@ export function competenceModal() {
             }, 800);
         }
     });*/
-};
+
