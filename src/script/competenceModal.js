@@ -74,20 +74,20 @@ export function competenceModal() {
                 modalContent.style.width = '100%';
                 modalContent.style.height = 'calc(100% - 80px)';
             } else if (screenWidth < 768) {
-                modalContent.style.top = '100px';
-                modalContent.style.left = '5%';
-                modalContent.style.width = '90%';
-                modalContent.style.height = 'calc(100% - 100px)';
+                modalContent.style.top = 'calc(56px + 32px)';
+                modalContent.style.left = '16px';
+                modalContent.style.width = 'calc(100% - 32px)';
+                modalContent.style.height = 'calc(100% - 56px - 32px)';
             } else if (screenWidth < 1280) {
-                modalContent.style.top = '120px';
-                modalContent.style.left = '15%';
-                modalContent.style.width = '70%';
-                modalContent.style.height = 'calc(100% - 120px)';
+                modalContent.style.top = 'calc(56px + 64px)';
+                modalContent.style.left = '256px';
+                modalContent.style.width = 'calc(100% - 512px)';
+                modalContent.style.height = 'calc(100% - 56px - 64px)';
             } else {
-                modalContent.style.top = '128px';
+                modalContent.style.top = 'calc(56px + 64px)';
                 modalContent.style.left = '25%';
                 modalContent.style.width = '50%';
-                modalContent.style.height = 'calc(100% - 128px)';
+                modalContent.style.height = 'calc(100% - 56px - 64px)';
             }
 
             modalContent.style.overflowY = 'scroll';
