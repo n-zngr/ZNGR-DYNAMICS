@@ -145,7 +145,7 @@ body{background-color: var(--black);}
                     width: 100%;
                     background: radial-gradient(800px circle at var(--mouseX) var(--mouseY), var(--white-10), transparent 40%);
                     border-radius: 16px;
-                    z-index: 2;
+                    /*z-index: 2;*/
                     opacity: 0;
                     transition: opacity var(--anim_duration);
                 }
@@ -1119,13 +1119,13 @@ body.body-modal-open{
 .link{
     position: relative;
     text-decoration: none;
-    color: var(--white5);
-    font-weight: var(--font_weight-regular);
+    color: inherit;
+    font-weight: inherit;
     transition: all var(--anim_duration);
     &:hover{
         color: var(--white);
     }
-    &::before {
+    &::after {
         content: '';
         position: absolute;
         display: block;
@@ -1138,7 +1138,7 @@ body.body-modal-open{
         transform-origin: left;
         transition: transform var(--anim_duration);
     }
-    &:hover::before {
+    &:hover::after {
     transform: scaleX(1);
     }
 }
@@ -1244,7 +1244,17 @@ body.body-modal-open{
         }
     }
     .competence-modal{
-        .competence-modal-content{}
+        & .competence-modal-content{
+            & .competence-modal-container{
+                & .competence-modal-header{
+                    & .competence-modal-header-text{
+                        & .competence-modal-title{
+                            /*font-size: 24px !important;*/
+                        }
+                    }
+                }
+            }
+        }
     }
     .zngr-footer{
         & .footer-container{
@@ -1269,7 +1279,8 @@ body.body-modal-open{
             }
         }
         & .zngr-header-container{
-            padding-right: 32px;
+            padding-inline: 32px;
+            flex: unset;
             & .zngr-header-container-title{
                 font-size: 22px;
             }

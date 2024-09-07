@@ -107,7 +107,7 @@
             "title": "Software Development",
             "subtitle": "Object-Oriented<br>Programming",
             "description": [ 
-                "During my school time I have gotten to know C# and Java pretty well, and have developed projects in both environments.", 
+                "During my school time I have gotten to know C# and Java pretty well, and have developed projects in both environments. View on Github", 
                 "I can utilize skills from other fields of programming, in OOP. From building user interfaces using Java to creating console-applications using CSharp, I have a good understanding of the object-oriented programming principles, like encapsulation, and inheritance."],
             "tech": ["java", "maven", "cs", "dotnet"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-OOP.svg"
