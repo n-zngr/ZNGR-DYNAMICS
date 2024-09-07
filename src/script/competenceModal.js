@@ -80,8 +80,8 @@ export function competenceModal() {
                 modalContent.style.height = 'calc(100% - 56px - 32px)';
             } else if (screenWidth < 1280) {
                 modalContent.style.top = 'calc(56px + 64px)';
-                modalContent.style.left = '256px';
-                modalContent.style.width = 'calc(100% - 512px)';
+                modalContent.style.left = '15%';
+                modalContent.style.width = 'calc(100% - 30%)';
                 modalContent.style.height = 'calc(100% - 56px - 64px)';
             } else {
                 modalContent.style.top = 'calc(56px + 64px)';
