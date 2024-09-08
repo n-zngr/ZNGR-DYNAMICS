@@ -85,8 +85,8 @@
             "title": "Networking, Linux,<br>Domains",
             "subtitle": "Networking & Hosting",
             "description": [ 
-                "Everything on the web is on physical servers, knowing a bit about it won't harm.", 
-                "Not only through my education have I learned how to interact with Linux/Bash but also through working on Connect. This service is hosted on AWS, and the site itself is on a regional Swiss hosting. DNS, A-Recordings, Site forwarding etc. rings a bell for me."
+                "Everything online runs on physical servers, knowing how to use them is essential when hosting platforms yourself.", 
+                "Not only have I learnt how to use Linux/Bash through my education, but have also worked on projects like <a class=\"link white\" href=\"https://connect.deltagamez.ch\" target=\"_blank\">Connect</a>. This service is hosted on AWS, and the site itself is on a regional Swiss hosting. DNS, A-Records, site forwarding etc., all ring a bell for me."
             ],
             "tech": ["linux", "bash", "cloudflare", "aws"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-Networking.svg"

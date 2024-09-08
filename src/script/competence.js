@@ -43,7 +43,7 @@ export function createCompetenceModal(competence) {
     competence.description.forEach(description => {
         const descriptionElement = document.createElement('p');
         descriptionElement.classList.add('competence-modal-main-description');
-        descriptionElement.textContent = description;
+        descriptionElement.innerHTML = description;
         modalMain.appendChild(descriptionElement);
     });
 

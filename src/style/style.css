@@ -1150,6 +1150,9 @@ body.body-modal-open{
     &:hover::after {
     transform: scaleX(1);
     }
+    &.white{
+        color: var(--white);
+    }
 }
 
 
