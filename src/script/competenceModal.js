@@ -69,15 +69,15 @@ export function competenceModal() {
             const screenWidth = window.innerWidth;
 
             if (screenWidth <= 500) {
-                modalContent.style.top = '80px';
+                modalContent.style.top = 'calc(56px + 48px)';
                 modalContent.style.left = '0';
                 modalContent.style.width = '100%';
-                modalContent.style.height = 'calc(100% - 80px)';
+                modalContent.style.height = 'calc(100% - 56px - 48px)';
             } else if (screenWidth < 768) {
-                modalContent.style.top = 'calc(56px + 32px)';
-                modalContent.style.left = '16px';
-                modalContent.style.width = 'calc(100% - 32px)';
-                modalContent.style.height = 'calc(100% - 56px - 32px)';
+                modalContent.style.top = 'calc(56px + 64px)';
+                modalContent.style.left = '64px';
+                modalContent.style.width = 'calc(100% - 128px)';
+                modalContent.style.height = 'calc(100% - 56px - 64px)';
             } else if (screenWidth < 1280) {
                 modalContent.style.top = 'calc(56px + 64px)';
                 modalContent.style.left = '15%';

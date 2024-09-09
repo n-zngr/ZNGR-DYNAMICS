@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         target.style.setProperty("--mouseY", `${y}px`);
     }
 
-    for(const hoverItem of document.querySelectorAll('.nav-main-item, .nav-main-holder-item, .nav-main-item-button-item, .footer-logo-item')) {
+    for(const hoverItem of document.querySelectorAll('.nav-main-item, .nav-main-holder-item, .nav-main-item-button-item, .footer-logo-item, .zngr-contact-button')) {
         hoverItem.onmousemove = e => mouseMove(e);
     }
 

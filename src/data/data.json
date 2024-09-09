@@ -75,7 +75,7 @@
             "subtitle": "Branding",
             "description": [ 
                 "Good branding conveys a message. Colors and fonts express feelings and create the identity of a brand. ", 
-                "With a keen eye for colors and shapes, I have designed various logos that define a brand's purpose and meaning in a single file."
+                "With a keen eye for colors and shapes, I have designed various logos that define a brand's purpose and meaning in a single image."
             ],
             "tech": ["figma", "xd", "ps"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-Branding.svg"
@@ -107,7 +107,7 @@
             "title": "Software Development",
             "subtitle": "Object-Oriented<br>Programming",
             "description": [ 
-                "During my school time I have gotten to know C# and Java pretty well, and have developed projects in both environments. View on Github", 
+                "During my school time I have gotten to know C# and Java pretty well, and have developed <a class=\"link white\" href=\"https://connect.deltagamez.ch\" target=\"_blank\">projects</a> in both environments.", 
                 "I can utilize skills from other fields of programming, in OOP. From building user interfaces using Java to creating console-applications using CSharp, I have a good understanding of the object-oriented programming principles, like encapsulation, and inheritance."],
             "tech": ["java", "maven", "cs", "dotnet"],
             "thumbnail": "/src/svg/illustration/SketchIllustration-OOP.svg"
