@@ -683,7 +683,7 @@ body.body-modal-open .nav{
             content: '';
             position: absolute;
             top: 18px;
-            left: 60%;
+            left: 57%;
             height: 12px;
             width: 12px;
             background-size: 12px 12px;
@@ -1277,7 +1277,14 @@ body.body-modal-open{
     }
     .zngr-projects{padding-inline: 64px;}
     .zngr-competence{padding-inline: 64px;}
-    .zngr-contact{padding-inline: 64px;}
+    .zngr-contact{padding-inline: 64px;
+        & .zngr-contact-description{
+            &::before{
+                left: 62%;
+            }
+        }
+    }
+
     .zngr-footer{
         & .footer-logo{
             padding: 64px 64px 64px 0px;
