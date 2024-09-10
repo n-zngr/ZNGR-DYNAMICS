@@ -5,9 +5,13 @@
             "title": "Gasthaus Rossberg",
             "link": "https://gasthaus-rossberg.ch/",
             "business": "Restaurant",
-            "description": ["Gasthaus Rossberg is a restaurant in the beautiful Swiss mountains of the Bernese Oberland.", "The Rossberg website hasn't been touched since 2016. The client requested a complete overhaul of the page, wishing to be able to edit the page using a CMS.", "I have decided to use the CMS Joomla to cover the needs of the client and stick to a basic design. At the beginning, it was quite a challange creating a stable site using a CMS, understanding all the basics, as I was working alone on this project, and had barely any previous CMS experience.", "The page has successfully been completed back in 2022 and is continously maintained."],
+            "description": [
+                "Gasthaus Rossberg is a restaurant in the beautiful Swiss mountains of the Bernese Oberland.", 
+                "The Rossberg website hasn't been touched since 2016. The client requested a complete overhaul of the page, wishing to be able to edit the page using a CMS.",
+                "I have decided to use the CMS Joomla to cover the needs of the client and stick to a basic design. At the beginning, it was quite a challenge creating a stable site using a CMS, and learning all the basics from scratch, as I was working alone on this project, and had barely any previous CMS experience.",
+                "The page has successfully been completed back in 2022 and is continously being maintained."],
             "list": ["Content Management System", "UX Design", "Hosting", "Continous Maintenance"],
-            "tech": ["figma","joo"],
+            "tech": ["figma","joo", "php"],
             "thumbnail": "/src/img/rossberg/RossbergThumbnail.png",
             "images": [
                 { "alt": "Updated Home-Page", "src": "/src/img/rossberg/RossbergWeb.png" },
@@ -35,14 +39,15 @@
             "title": "ZNGR DYNAMICS",
             "link": "https://zngr-dynamics.ch",
             "business": "Portfolio",
-            "description": ["ZNGR DYNAMICS is my personal site outfitted in a corporate style. Here, all projects I have worked on, have their place.", "This project has been in planning for quite some time, initially heavily sci-fi inspired. However, as I started drawing out the idea, I realized this was not the turn to take. I decided to create a modern, minimalistic design.", "I have decided to use the base-languages, html, css, js to strengthen the core before moving on with other frameworks. This not only helped me get a deeper understanding of the languages, but also showed me what a pain it can be sometimes for relatively simple features. But I always like a challenge."],
-            "list": ["UI & UX Design", "Illustration", "Implementation", "Animation", "Agile Project Management"],
+            "description": ["ZNGR DYNAMICS is my personal site outfitted in a corporate style. Here all projects I have worked on have their place.", "This project has been in planning for quite some time, initially heavily sci-fi inspired. However, as I started drawing out the idea, I realized this was not the turn to take. I decided, a modern, minimalistic design would better fit into the picture.", "I have decided to use the base-languages, html, css, js to strengthen the core before moving on with other web-frameworks. This has not only helped me get a deeper understanding of the three languages, but has also put me up against tough challenges."],
+            "list": ["UI & UX Design", "Illustration", "Implementation", "Animation", "Project Management"],
             "tech": ["html", "css", "js", "figma", "notion"],
             "thumbnail": "/src/svg/illustration/Illustration-Website.svg",
             "images": [
-                { "alt": "First Image", "src": "/src/img/TestImage.jpg" },
-                { "alt": "Second Image", "src": "/src/img/TestImage.jpg" },
-                { "alt": "Third Image", "src": "/src/img/TestImage.jpg" }
+                { "alt": "Competence Sketch", "src": "/src/img/zngr-dynamics/ZNGRSketchCompetence.png" },
+                { "alt": "Sci-Fi Projects Sketch", "src": "/src/img/zngr-dynamics/ZNGRSketchProjectsOld.png" },
+                { "alt": "Sci-Fi UI Components Sketch", "src": "/src/img/zngr-dynamics/ZNGRSketchSciFiUI.png" },
+                { "alt": "Project Management", "src": "/src/img/zngr-dynamics/ZNGRProjectManagement.png" }
             ]
         }
     ], 
