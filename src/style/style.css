@@ -722,7 +722,7 @@ body.body-modal-open .nav{
                 left: 0px;
                 height: 100%;
                 width: 100%;
-                background: radial-gradient(800px circle at var(--mouseX) var(--mouseY), var(--white-10), transparent 40%);
+                background: radial-gradient(400px circle at var(--mouseX) var(--mouseY), var(--white-10), transparent 40%);
                 border-radius: 16px;
                 z-index: 2;
                 opacity: 0;
