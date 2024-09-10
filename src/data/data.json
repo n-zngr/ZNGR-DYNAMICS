@@ -1,0 +1,121 @@
+{
+    "projects": [
+        {
+            "id": "1",
+            "title": "Gasthaus Rossberg",
+            "link": "https://gasthaus-rossberg.ch/",
+            "business": "Restaurant",
+            "description": [
+                "Gasthaus Rossberg is a restaurant in the beautiful Swiss mountains of the Bernese Oberland.", 
+                "The Rossberg website hasn't been touched since 2016. The client requested a complete overhaul of the page, wishing to be able to edit the page using a CMS.",
+                "I have decided to use the CMS Joomla to cover the needs of the client and stick to a basic design. At the beginning, it was quite a challenge creating a stable site using a CMS, and learning all the basics from scratch, as I was working alone on this project, and had barely any previous CMS experience.",
+                "The page has successfully been completed back in 2022 and is continously being maintained."],
+            "list": ["Content Management System", "UX Design", "Hosting", "Continous Maintenance"],
+            "tech": ["figma","joo", "php"],
+            "thumbnail": "/src/img/rossberg/RossbergThumbnail.png",
+            "images": [
+                { "alt": "Updated Home-Page", "src": "/src/img/rossberg/RossbergWeb.png" },
+                { "alt": "Updated \"Grad ufem Herd\" page", "src": "/src/img/rossberg/RossbergWeb2.png" },
+                { "alt": "Old Website", "src": "/src/img/rossberg/RossbergOldWeb.png" }
+            ]
+        },
+        {
+            "id": "2",
+            "title": "Connect",
+            "link": "https://connect.deltagamez.ch/",
+            "business": "Online Service",
+            "description": ["Connect is an online platform dedicated to communities on the chatting-app Discord.", "What if we allowed for Discord communities to easily become more visible gaining more members and an audience faster? From Branding, to overseeing development and creating UI & UX, this project has been built from the ground up.", "The platform is made of two components, the Connect Discord App (bot) and its website. An API ties the two together. Users can interact with the Connect App directly on Discord sending the information to the API which the website uses to display the corresponding communities. Working with two other developers on the project, I have overseen the complete development process, using an agile workflow.", "With the idea in our heads, we wanted to create a modern, bold, provocative brand, which lead to the slogan \"Connect your community\". The logo depicts a paperclip, made of the \"C\" and \"O\" letters, connecting communities to a web-platform. "],
+            "list": ["Branding", "UI & UX Design", "Discord Integration", "Product Management"],
+            "tech": ["html", "css", "js", "nodejs", "djs", "figma", "notion"],
+            "thumbnail": "/src/img/connect/ConnectThumbnail.png",
+            "images": [
+                { "alt": "Connect Landing", "src": "/src/img/connect/ConnectExported.png" },
+                { "alt": "Connect Communities", "src": "/src/img/connect/ConnectWebCommunities.png" },
+                { "alt": "Connect Features", "src": "/src/img/connect/ConnectWebFeatures.png" }
+            ]
+        },
+        {
+            "id": "3",
+            "title": "ZNGR DYNAMICS",
+            "link": "https://zngr-dynamics.ch",
+            "business": "Portfolio",
+            "description": ["ZNGR DYNAMICS is my personal site outfitted in a corporate style. Here all projects I have worked on have their place.", "This project has been in planning for quite some time, initially heavily sci-fi inspired. However, as I started drawing out the idea, I realized this was not the turn to take. I decided, a modern, minimalistic design would better fit into the picture.", "I have decided to use the base-languages, html, css, js to strengthen the core before moving on with other web-frameworks. This has not only helped me get a deeper understanding of the three languages, but has also put me up against tough challenges."],
+            "list": ["UI & UX Design", "Illustration", "Implementation", "Animation", "Project Management"],
+            "tech": ["html", "css", "js", "figma", "notion"],
+            "thumbnail": "/src/svg/illustration/Illustration-Website.svg",
+            "images": [
+                { "alt": "Competence Sketch", "src": "/src/img/zngr-dynamics/ZNGRSketchCompetence.png" },
+                { "alt": "Sci-Fi Projects Sketch", "src": "/src/img/zngr-dynamics/ZNGRSketchProjectsOld.png" },
+                { "alt": "Sci-Fi UI Components Sketch", "src": "/src/img/zngr-dynamics/ZNGRSketchSciFiUI.png" },
+                { "alt": "Project Management", "src": "/src/img/zngr-dynamics/ZNGRProjectManagement.png" }
+            ]
+        }
+    ], 
+    "competences": [
+        {
+            "id": "1",
+            "title": "Websites, Web Apps,<br>CMS",
+            "subtitle": "Web Development",
+            "description": [ 
+                "Your website embodies your mission online.", 
+                "My passion lies in designing, prototyping, and developing websites that truly reflect your vision.", 
+                "Over the years, I've gained valuable experience building web applications using Node.js and Express, as well as creating websites from scratch using code like html, css, and javascript. Whether developing a dynamic web app or crafting a seamless website experience with a CMS like WordPress, my focus is always on delivering solutions that meet your needs."
+            ],
+            "tech": ["html", "css", "js", "nodejs", "ex", "ejs", "wp", "joo"],
+            "thumbnail": "/src/svg/illustration/Illustration-Website.svg"
+        }, 
+        {
+            "id": "2",
+            "title": "UI, UX,<br>Prototyping",
+            "subtitle": "Creative Design",
+            "description": [ 
+                "Capturing users' attention and guiding them through unique journeys, finding the balance between aestetically pleasing layouts, ease of use, and a unique design is keen to memorable designs.", 
+                "In the past, I have worked on various projects building prototypes using Figma or XD, and implementing eye-catching designs in web-experiences."],
+            "tech": ["html", "css", "js", "figma", "xd"],
+            "thumbnail": "/src/svg/illustration/SketchIllustration-CreativeDesign.svg"
+        }, 
+        {
+            "id": "3",
+            "title": "Logos, Icons, Colors,<br>Typography",
+            "subtitle": "Branding",
+            "description": [ 
+                "Good branding conveys a message. Colors and fonts express feelings and create the identity of a brand. ", 
+                "With a keen eye for colors and shapes, I have designed various logos that define a brand's purpose and meaning in a single image."
+            ],
+            "tech": ["figma", "xd", "ps"],
+            "thumbnail": "/src/svg/illustration/SketchIllustration-Branding.svg"
+        }, 
+        {
+            "id": "4",
+            "title": "Networking, Linux,<br>Domains",
+            "subtitle": "Networking & Hosting",
+            "description": [ 
+                "Everything online runs on physical servers, knowing how to use them is essential when hosting platforms yourself.", 
+                "Not only have I learnt how to use Linux/Bash through my education, but have also worked on projects like <a class=\"link white\" href=\"https://connect.deltagamez.ch\" target=\"_blank\">Connect</a>. This service is hosted on AWS, and the site itself is on a regional Swiss hosting. DNS, A-Records, site forwarding etc., all ring a bell for me."
+            ],
+            "tech": ["linux", "bash", "cloudflare", "aws"],
+            "thumbnail": "/src/svg/illustration/SketchIllustration-Networking.svg"
+        }, 
+        {
+            "id": "5",
+            "title": "MySQL, NoSQL,<br>Data Laws",
+            "subtitle": "Database",
+            "description": [ 
+                "Data is at heart of every application and website across the globe.", 
+                "Whether utilizing our beloved MySQL or NoSQL (e.g. MongoDB), I have utilized both and have gathered a broad understanding during my courses.", 
+                "In addition, I have a broad understanding of data regulations in the EU and Switzerland."],
+            "tech": ["mysql", "mongodb", "eu", "ch"],
+            "thumbnail": "/src/svg/illustration/SketchIllustration-Database.svg"
+        }, 
+        {
+            "id": "6",
+            "title": "Software Development",
+            "subtitle": "Object-Oriented<br>Programming",
+            "description": [ 
+                "During my school time I have gotten to know C# and Java pretty well, and have developed <a class=\"link white\" href=\"https://connect.deltagamez.ch\" target=\"_blank\">projects</a> in both environments.", 
+                "I can utilize skills from other fields of programming, in OOP. From building user interfaces using Java to creating console-applications using CSharp, I have a good understanding of the object-oriented programming principles, like encapsulation, and inheritance."],
+            "tech": ["java", "maven", "cs", "dotnet"],
+            "thumbnail": "/src/svg/illustration/SketchIllustration-OOP.svg"
+        }
+    ]
+}
