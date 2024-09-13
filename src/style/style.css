@@ -173,9 +173,9 @@ body{background-color: var(--black);}
                     font-weight: var(--font_weight-demi);
                     font-size: var(--font_size-big);
                     padding-bottom: 8px;
-                    & .nav-main-item-info-name-span{
+                    /*& .nav-main-item-info-name-span{
                         color: var(--gray5);
-                    }
+                    }*/
                 }
                 & .nav-main-item-info-item{
                     color: var(--gray5);
