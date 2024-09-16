@@ -514,6 +514,82 @@ body.body-modal-open .nav{
     }
 }
 
+.zngr-about{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 128px;
+    padding-top: 128px;
+    background-color: var(--black5);
+    z-index: 1;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(/src/svg/Noise2.svg);
+        opacity: 0.1;
+        pointer-events: none;
+       z-index: -1;
+    }
+    & .zngr-about-header{
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+
+        & .zngr-about-header-title{
+            color: var(--white);
+            font-size: var(--font_size-very-large);
+            font-weight: var(--font_weight-bold);
+            flex: 1;
+            text-wrap: balance;
+            padding-bottom: 32px;
+        }
+        & .zngr-about-header-description{
+            font-size: var(--font_size-regular);
+            color: var(--gray5);
+            flex: 1;
+            text-align: right;
+        }
+    }
+    & .zngr-about-container{
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        border-radius: 16px;
+        overflow-x: hidden;
+        & .about-card{
+            display: flex;
+            flex-direction: column;
+            height: 480px;
+            width: 33%;
+            padding: 16px;
+            background-color: var(--black);
+            border: var(--gray-25) 1px solid;
+            border-radius: 16px;
+            cursor: pointer;
+            & .about-card-thumbnail{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                filter: saturate(.1);
+                mask-image: linear-gradient(180deg, var(--black) 0%, transparent 90%);
+                mask-size: 100% 100%;
+                transition: mask-size var(--anim_duration-slow);
+            }
+            & .about-card-info{
+                & .about-card-info-title{
+                    font-size: var(--font_size-regular);
+                    color: var(--gray5);
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
 .zngr-competence{
     position: relative;
     display: flex;
