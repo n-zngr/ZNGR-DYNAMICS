@@ -574,10 +574,12 @@ body.body-modal-open .nav{
                 position: relative;
                 width: 100%;
                 height: 100%;
+                border-radius: 16px;
                 filter: saturate(.1);
                 mask-image: linear-gradient(180deg, var(--black) 0%, transparent 90%);
                 mask-size: 100% 100%;
-                transition: mask-size var(--anim_duration-slow);
+                overflow-x: hidden;
+                & .about-card-thumbnail-item{}
             }
             & .about-card-info{
                 & .about-card-info-title{
