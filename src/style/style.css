@@ -566,7 +566,7 @@ body.body-modal-open .nav{
             height: 480px;
             width: 33%;
             padding: 16px;
-            background-color: var(--black);
+            background-color: var(--black2);
             border: var(--gray-25) 1px solid;
             border-radius: 16px;
             cursor: pointer;
