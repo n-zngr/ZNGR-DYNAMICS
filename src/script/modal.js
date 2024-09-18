@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 if (content.business) {
                     const businessDiv = document.createElement('div');
-                    businessDiv.className = 'modal-main-about-info-business';
+                    businessDiv.className = 'about-info-business';
                     businessDiv.textContent = content.business;
 
                     modalInfoContainer.appendChild(businessDiv);

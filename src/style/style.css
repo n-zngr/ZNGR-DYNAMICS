@@ -53,16 +53,16 @@ body{background-color: var(--black);}
             transform: translateX(-50%);
             & .nav-header-logo-item{
                 font-family: Ethnocentric;
+                font-weight: var(--font_weight-regular);
                 font-size: var(--font_size-large);
                 color: var(--white5);
                 cursor: default;
             }
         }
     }
-
     & .nav-main {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         overflow: hidden;
         transition: height var(--anim_duration) ease, padding var(--anim_duration) ease;
         height: 0px;
@@ -101,9 +101,6 @@ body{background-color: var(--black);}
             &:active{
                 transform: scale(.99);
                 background-color: var(--black-75);
-            }
-            & .nav-main-item-title{
-
             }
             & .nav-main-item-description{
                 padding-top: 16px;
@@ -173,9 +170,6 @@ body{background-color: var(--black);}
                     font-weight: var(--font_weight-demi);
                     font-size: var(--font_size-big);
                     padding-bottom: 8px;
-                    /*& .nav-main-item-info-name-span{
-                        color: var(--gray5);
-                    }*/
                 }
                 & .nav-main-item-info-item{
                     color: var(--gray5);
@@ -1024,15 +1018,12 @@ body.body-modal-open{
                     text-decoration: none;
                     overflow: hidden;
                     transition: all var(--anim_duration-slow);
-
                     & .modal-main-about-info-link-text{
                         padding-right: 8px;
-                        transition: all var(--anim_duration-slow);
-                    }
+                        transition: all var(--anim_duration-slow);}
                     & .modal-main-about-info-link-svg{
                         transition: all var(--anim_duration-slow);
-                        fill: var(--white5);
-                    }
+                        fill: var(--white5);}
 
                     &:hover .modal-main-about-info-link-text{
                         color: var(--white);
@@ -1062,7 +1053,7 @@ body.body-modal-open{
                         transition: var(--anim_duration);
                     }
                 }
-                & .modal-main-about-info-business{
+                & .about-info-business{
                     display: flex;
                     align-items: center;
                     padding-left: 64px;
@@ -1384,20 +1375,6 @@ body.body-modal-open{
             padding-block: 48px;
             & .zngr-contact-button{
                 padding: 16px 32px;
-            }
-        }
-    }
-
-    .competence-modal{
-        & .competence-modal-content{
-            & .competence-modal-container{
-                & .competence-modal-header{
-                    & .competence-modal-header-text{
-                        & .competence-modal-title{
-                            /*font-size: 24px !important;*/
-                        }
-                    }
-                }
             }
         }
     }

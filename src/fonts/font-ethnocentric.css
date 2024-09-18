@@ -1,8 +1,8 @@
 @font-face { /*Regular*/
     font-family: Ethnocentric;
-    src: url(/src/fonts/Ethnocentric.otf);
+    src: url(/src/fonts/Ethnocentric/Ethnocentric.otf);
     font-style: normal;}
 @font-face { /*Regular Italic*/
     font-family: Ethnocentric;
-    src: url(/src/fonts/EthnocentricItalic.otf);
+    src: url(/src/fonts/Ethnocentric/EthnocentricItalic.otf);
     font-style: italic;}
