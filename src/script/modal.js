@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById('modal');
         const modalContainer = document.querySelector('.modal-container');
         const modalTitle = document.getElementById('modal-title');
-        const modalDescription = document.querySelector('.modal-main-about-description');
-        const modalInfoContainer = document.querySelector('.modal-main-about-info');
-        const modalListContainer = document.querySelector('.modal-main-about-list');
-        const modalFooter = document.querySelector('.modal-main-about-footer');
+        const modalDescription = document.querySelector('.about-description');
+        const modalInfoContainer = document.querySelector('.about-info');
+        const modalListContainer = document.querySelector('.about-list');
+        const modalFooter = document.querySelector('.about-footer');
         const closeBtn = document.querySelector('.close');
         const modalImageContainer = document.querySelector('.modal-main-showcase');
 
@@ -69,9 +69,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         const descriptionElement = document.createElement('p');
                         descriptionElement.textContent = description;
                         if (index === 0) {
-                            descriptionElement.className = 'modal-main-about-description-header';
+                            descriptionElement.className = 'about-description-header';
                         } else {
-                            descriptionElement.className = 'modal-main-about-description-main';
+                            descriptionElement.className = 'about-description-main';
                         }
                         modalDescription.appendChild(descriptionElement);
                     });
@@ -79,16 +79,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 if (content.link) {
                     const linkDiv = document.createElement('a');
-                    linkDiv.className = 'modal-main-about-info-link';
+                    linkDiv.className = 'about-info-link';
                     linkDiv.target = '_blank';
                     linkDiv.href = content.link;
 
                     const linkItem = document.createElement('p');
-                    linkItem.className = 'modal-main-about-info-link-text';
+                    linkItem.className = 'about-info-link-text';
                     linkItem.textContent = 'Visit';
 
                     const linkSvg = svgElements['IconRight.svg'].cloneNode(true);
-                    linkSvg.classList.add('modal-main-about-info-link-svg');
+                    linkSvg.classList.add('about-info-link-svg');
 
                     linkDiv.appendChild(linkItem);
                     linkDiv.appendChild(linkSvg);
@@ -122,14 +122,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (content.list) {
                     content.list.forEach((item, index) => {
                         const listItem = document.createElement('li');
-                        listItem.className = 'modal-main-about-list-item';
+                        listItem.className = 'about-list-item';
 
                         const listItemText = document.createElement('p');
                         listItemText.textContent = item;
-                        listItemText.className = 'modal-main-about-list-item-text';
+                        listItemText.className = 'about-list-item-text';
                         
                         const listItemIcon = svgElements[svgFiles[index % svgFiles.length]].cloneNode(true);
-                        listItemIcon.classList.add('modal-main-about-list-item-svg');
+                        listItemIcon.classList.add('about-list-item-svg');
 
                         listItem.appendChild(listItemIcon);
                         listItem.appendChild(listItemText);
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         const techName = tech.trim().toLowerCase();
                         if (techIcons[techName]) {
                             const techItem = document.createElement('div');
-                            techItem.classList.add('modal-main-about-footer-item');
+                            techItem.classList.add('about-footer-item');
                             techItem.setAttribute('data-tooltip', techNames[techName]);
                             techItem.innerHTML = `
                                 <img src="${techIcons[techName]}" alt="${techNames[techName]}" height="24" width="24">

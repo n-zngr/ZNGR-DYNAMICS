@@ -1,5 +1,5 @@
 export function highlightEffect() {
-    const highlightButtons = document.querySelectorAll('.modal-main-about-info-link');
+    const highlightButtons = document.querySelectorAll('.about-info-link');
     
     highlightButtons.forEach((highlightButton) => {
         let cooldown = false;
