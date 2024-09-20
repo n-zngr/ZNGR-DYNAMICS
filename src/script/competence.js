@@ -11,8 +11,6 @@ export async function loadCompetenceData() {
 
 export function createCompetenceModal(competence) {
     const modalContent = document.querySelector('.competence-modal-content');
-    /*modalContent.innerHTML = '';*/
-
     const modalTop = document.createElement('div');
     modalTop.classList.add('competence-modal-top');
     modalTop.innerHTML = `

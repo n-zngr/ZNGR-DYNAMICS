@@ -38,20 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             });
-            /*
-            competenceContainer.addEventListener('click', function(event) {
-                if (event.target.closest('.competence-card')) {
-                    const competenceCard = event.target.closest('.competence-card');
-                    if (canOpenModal) {
-                        canOpenModal = false;
-                        canCloseModal = false;
-                        const competenceId = competenceCard.getAttribute('data-competence-id');
-                        const competence = data.competences.find(c => c.id === competenceId);
-                        /*openModal(competence, svgElements);
-                    }
-                }
-            });*/
-            
         });
 
         function openModal(content, svgElements) {
@@ -106,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (content.images) {
                     content.images.forEach(image => {
                         const imageItem = document.createElement('div');
-                        imageItem.className = 'modal-main-showcase-card';
+                        imageItem.className = 'showcase-card';
 
                         const imgElement = document.createElement('img');
                         imgElement.src = image.src;
