@@ -6,8 +6,6 @@ export function resetScrollPosition() {
             const maxScrollLeft = containerMain.scrollWidth - containerMain.clientWidth;
             const isAtRightEnd = Math.ceil(containerMain.scrollLeft) >= maxScrollLeft - scroll;
             containerMain.style.scrollBehavior = 'auto';
-            /*containerMain.scrollLeft = maxScrollLeft;
-            console.log(`At right end: ${isAtRightEnd}`);*/
             
             if (isAtRightEnd) {
                 containerMain.scrollBy({

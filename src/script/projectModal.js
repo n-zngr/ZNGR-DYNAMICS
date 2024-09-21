@@ -1,6 +1,6 @@
 import { loadSvgFiles } from "./loadSvg.js";
 import { highlightEffect } from "./highlightButton.js";
-import { competenceModal } from "./competenceModal.js";
+import { competenceModal } from "./competence/modalController.js";
 
 document.addEventListener('DOMContentLoaded', function() {
     fetch('/src/data/data.json')
