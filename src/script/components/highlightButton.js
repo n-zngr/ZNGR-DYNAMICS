@@ -22,7 +22,7 @@ export function highlightEffect() {
         }
 
         highlightButton.addEventListener('mouseenter', () => {
-            hoverInterval = setInterval(activateEffect, 500); // Fix: Added timing interval
+            hoverInterval = setInterval(activateEffect, 500);
             activateEffect(); 
         });
 

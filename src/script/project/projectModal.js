@@ -1,13 +1,12 @@
-import { loadSvgFiles } from "./loadSvg.js";
-import { highlightEffect } from "./highlightButton.js";
-import { competenceModal } from "./competence/modalController.js";
+import { loadSvgFiles } from "./svgLoader.js";
+import { highlightEffect } from "../components/highlightButton.js";
+import { competenceModal } from "../competence/modalController.js";
 
 document.addEventListener('DOMContentLoaded', function() {
     fetch('/src/data/data.json')
     .then(response => response.json())
     .then(data => {
         const projectsContainer = document.querySelector('.zngr-projects');
-        const competenceContainer = document.querySelector('.zngr-competence-container-main');
         const modal = document.getElementById('modal');
         const modalContainer = document.querySelector('.modal-container');
         const modalTitle = document.getElementById('modal-title');
