@@ -1,3 +1,5 @@
+import { techIcons, techNames } from '../techIcons/techIconsLoader.js';
+
 export async function loadCompetenceData() {
     try {
         const response = await fetch('/src/data/data.json');
@@ -47,60 +49,6 @@ export function createCompetenceModal(competence) {
 
     const modalFooter = document.createElement('div');
     modalFooter.classList.add('competence-modal-footer');
-    const techIcons = {
-        html: '/src/svg/external/Icon-Html.svg',
-        css: '/src/svg/external/Icon-Css.svg',
-        js: '/src/svg/external/Icon-Js.svg',
-        php: '/src/svg/external/Icon-Php.svg',
-        nodejs: '/src/svg/external/Icon-NodeJs.svg',
-        ex: '/src/svg/external/Icon-Express.svg',
-        ejs: '/src/svg/external/Icon-Ejs.svg',
-        djs: '/src/svg/external/Icon-Discordjs.svg',
-        joo: '/src/svg/external/Icon-Joomla.svg',
-        wp: '/src/svg/external/Icon-Wordpress.svg',
-        xd: '/src/svg/external/Icon-Xd.svg',
-        ps: '/src/svg/external/Icon-Ps.svg',
-        figma: '/src/svg/external/Icon-Figma.svg',
-        linux: '/src/svg/external/Icon-Linux.svg',
-        bash: '/src/svg/external/Icon-Bash.svg',
-        cloudflare: '/src/svg/external/Icon-Cloudflare.svg',
-        aws: '/src/svg/external/Icon-Aws.svg',
-        mysql: '/src/svg/external/Icon-Mysql.svg',
-        mongodb: '/src/svg/external/Icon-Mongodb.svg',
-        eu: '/src/svg/external/Icon-Eu.svg',
-        ch: '/src/svg/external/Icon-Ch.svg',
-        java: '/src/svg/external/Icon-Java.svg',
-        maven: '/src/svg/external/Icon-Maven.svg',
-        cs: '/src/svg/external/Icon-Cs.svg',
-        dotnet: '/src/svg/external/Icon-Dotnet.svg',
-        notion: '/src/svg/external/Icon-Notion.svg'};
-    const techNames = {
-        html: 'HTML',
-        css: 'CSS',
-        js: 'JavaScript',
-        php: 'Php',
-        nodejs: 'NodeJs',
-        ex: 'ExpressJs',
-        ejs: 'EJS',
-        djs: 'DiscordJs',
-        joo: 'Joomla',
-        wp: 'WordPress',
-        xd: 'Adobe XD',
-        ps: 'Adobe Photoshop',
-        figma: 'Figma',
-        linux: 'Linux',
-        bash: 'Bash',
-        cloudflare: 'Cloudflare',
-        aws: 'Amazon Web Services',
-        mysql: 'MySQL',
-        mongodb: 'MongoDB',
-        eu: 'DSGVO, Datenschutzgrundverordnung',
-        ch: 'DSG, Datenschutzgesetz',
-        java: 'Java',
-        maven: 'Maven',
-        cs: 'CSharp',
-        dotnet: 'DotNet',
-        notion: 'Notion'};
 
     competence.tech.forEach(tech => {
         const techName = tech.trim().toLowerCase();
