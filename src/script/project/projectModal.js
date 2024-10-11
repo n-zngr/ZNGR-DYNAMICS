@@ -140,8 +140,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 highlightEffect();
 
-                /*competenceModal();*/
-
                 modal.removeAttribute('style');
                 document.body.classList.add('body-modal-open');
                 modalContainer.classList.add('modal-open');
