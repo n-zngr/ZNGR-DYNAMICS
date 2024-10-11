@@ -1,4 +1,4 @@
-import { initializeScrollAnimation } from './scrollAnimation.js';
+import { initializeScrollAnimation } from '../scrollAnimation.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     fetch('/src/data/data.json')

@@ -1,45 +1,45 @@
 @font-face { /*Black*/
     font-family: Termina;
-    src: url(/src/fonts/TerminaBlack.otf);
+    src: url(/src/fonts/Termina/TerminaBlack.otf);
     font-weight: 900;
     font-style: normal;}
 @font-face { /*Heavy*/
     font-family: Termina;
-    src: url(/src/fonts/TerminaHeavy.otf);
+    src: url(/src/fonts/Termina/TerminaHeavy.otf);
     font-weight: 800;
     font-style: normal;}
 @font-face { /*Bold*/
     font-family: Termina;
-    src: url(/src/fonts/TerminaBold.otf);
+    src: url(/src/fonts/Termina/TerminaBold.otf);
     font-weight: 700;
     font-style: normal;}
 @font-face { /*Demi*/
     font-family: Termina;
-    src: url(/src/fonts/TerminaDemi.otf);
+    src: url(/src/fonts/Termina/TerminaDemi.otf);
     font-weight: 600;
     font-style: normal;}
 @font-face { /*Medium*/
     font-family: Termina;
-    src: url(/src/fonts/TerminaMedium.otf);
+    src: url(/src/fonts/Termina/TerminaMedium.otf);
     font-weight: 500;
     font-style: normal;}
 @font-face { /*Regular*/
     font-family: Termina;
-    src: url(/src/fonts/TerminaRegular.otf);
+    src: url(/src/fonts/Termina/TerminaRegular.otf);
     font-weight: 400;
     font-style: normal;}
 @font-face { /*Light*/
     font-family: Termina;
-    src: url(/src/fonts/TerminaLight.otf);
+    src: url(/src/fonts/Termina/TerminaLight.otf);
     font-weight: 300;
     font-style: normal;}
 @font-face { /*Extra Light*/
     font-family: Termina;
-    src: url(/src/fonts/TerminaExtraLight.otf);
+    src: url(/src/fonts/Termina/TerminaExtraLight.otf);
     font-weight: 200;
     font-style: normal;}
 @font-face { /*Thin*/
     font-family: Termina;
-    src: url(/src/fonts/TerminaThin.otf);
+    src: url(/src/fonts/Termina/TerminaThin.otf);
     font-weight: 100;
     font-style: normal;}

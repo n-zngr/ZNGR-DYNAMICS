@@ -1,5 +1,5 @@
 export function highlightEffect() {
-    const highlightButtons = document.querySelectorAll('.modal-main-about-info-link');
+    const highlightButtons = document.querySelectorAll('.about-info-link');
     
     highlightButtons.forEach((highlightButton) => {
         let cooldown = false;
@@ -22,7 +22,7 @@ export function highlightEffect() {
         }
 
         highlightButton.addEventListener('mouseenter', () => {
-            hoverInterval = setInterval(activateEffect, 500); // Fix: Added timing interval
+            hoverInterval = setInterval(activateEffect, 500);
             activateEffect(); 
         });
 
